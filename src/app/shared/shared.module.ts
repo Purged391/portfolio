@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
-    HomePageComponent
+    MenuBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimeNgModule
+  ],
+  exports: [
+    MenuBarComponent
   ]
 })
 export class SharedModule { }
