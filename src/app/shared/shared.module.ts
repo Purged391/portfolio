@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
   ],
   imports: [
     CommonModule,
-    PrimeNgModule
+    PrimeNgModule,
+    PipesModule
   ],
   exports: [
     MenuBarComponent
