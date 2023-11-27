@@ -3,7 +3,7 @@
       <div class="col-12 sm:col-6 flex sm:justify-content-start justify-content-center sm:pb-2 pb-0 align-items-center">
         <img src="assets/Logo_MDG_HD.png" alt="Personal Logo" id="menubar_img">
       </div>
-      <div class="col-12 sm:col-6 sm:flex align-items-center sm:justify-content-end justify-content-center flex-wrap hidden ">
+      <div class="col-12 sm:col-6 flex align-items-center sm:justify-content-end justify-content-center flex-wrap">
         <div class="grid lg:flex hidden">
           <p-button label="{{'header.buttons.home'| translate}}" [rounded]="true" [text]="this.activeButton === 'home' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'home' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('home')"></p-button>
           <p-button label="{{'header.buttons.skills'| translate}}" [rounded]="true" [text]="this.activeButton === 'skills' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'skills' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('skills')"></p-button>
@@ -11,15 +11,15 @@
           <p-button label="{{'header.buttons.contact'| translate}}" [rounded]="true" [text]="this.activeButton === 'contact' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'contact' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('contact')"></p-button>
         </div>
         <div class="grid lg:hidden flex">
-          <p-button icon="pi pi-home" pTooltip="Inicio" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'home' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'home' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('home')"></p-button>
-          <p-button icon="pi pi-palette" pTooltip="Habilidades" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'skills' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'skills' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('skills')"></p-button>
-          <p-button icon="pi pi-code" pTooltip="Proyectos" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'projects' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'projects' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('projects')"></p-button>
-          <p-button icon="pi pi-share-alt" pTooltip="Contacto" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'contact' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'contact' ? 'menubar_button' : 'menubar_plain_button'" class="col-12 sm:col" (click)="this.navigateTo('contact')"></p-button>
+          <p-button icon="pi pi-home" pTooltip="Inicio" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'home' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'home' ? 'menubar_button' : 'menubar_plain_button'" class="col" (click)="this.navigateTo('home')"></p-button>
+          <p-button icon="pi pi-palette" pTooltip="Habilidades" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'skills' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'skills' ? 'menubar_button' : 'menubar_plain_button'" class="col" (click)="this.navigateTo('skills')"></p-button>
+          <p-button icon="pi pi-code" pTooltip="Proyectos" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'projects' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'projects' ? 'menubar_button' : 'menubar_plain_button'" class="col" (click)="this.navigateTo('projects')"></p-button>
+          <p-button icon="pi pi-share-alt" pTooltip="Contacto" tooltipPosition="bottom" [rounded]="true" [text]="this.activeButton === 'contact' ? false : true" [plain]="true" size="small" [styleClass]="this.activeButton === 'contact' ? 'menubar_button' : 'menubar_plain_button'" class="col" (click)="this.navigateTo('contact')"></p-button>
         </div>
       </div>
-      <div class="sm:hidden flex">
+      <!-- <div class="sm:hidden flex">
         <p-button icon="pi pi-angle-down" styleClass="menubar_collapsable_button" [text]="true" [plain]="true" size="small"></p-button>
-      </div>
+      </div> -->
       <hr class="sm:mx-0 mx-5"/>
   </div>
 </div>

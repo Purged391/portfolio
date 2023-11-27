@@ -58,14 +58,14 @@
     color: $color-secondary;
   }
 }
-@media screen and (max-width: 576px) {
-    :host ::ng-deep{
-      .menubar_button.p-button{
-        width: 100%;
+// @media screen and (max-width: 576px) {
+//     :host ::ng-deep{
+//       .menubar_button.p-button{
+//         width: 100%;
 
-      }
-      .menubar_button.p-button.p-button-rounded{
-        border-radius: 0;
-      }
-    }
-}
+//       }
+//       .menubar_button.p-button.p-button-rounded{
+//         border-radius: 0;
+//       }
+//     }
+// }
