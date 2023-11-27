@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './skills-page.component.scss'
 })
 export class SkillsPageComponent {
-
+  public items: string[] = ["Hola", "Adios"];
 }

@@ -1,1 +1,9 @@
-<p>skills-page works!</p>
+<div class="relative" id="skills_box">
+  <div class="grid grid-nogutter" id="skills_content">
+    <div class="card">
+      <p-carousel [value]="items">
+        <ng-template let-product pTemplate="item"></ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
