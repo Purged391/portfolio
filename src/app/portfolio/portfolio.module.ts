@@ -18,6 +18,8 @@ import { SkillsPageComponent } from './pages/skills-page/skills-page.component';
   imports: [
     CommonModule,
     PrimeNgModule
+  ],
+  exports: [
   ]
 })
 export class PortfolioModule { }

@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
+import { PaginatorModule } from 'primeng/paginator';
 import { TooltipModule } from 'primeng/tooltip';
 
 
@@ -16,8 +16,8 @@ import { TooltipModule } from 'primeng/tooltip';
   exports: [
     AccordionModule,
     ButtonModule,
-    CardModule,
     CarouselModule,
+    PaginatorModule,
     TooltipModule,
   ]
 })
