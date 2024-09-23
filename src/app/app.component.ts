@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   public title = 'portfolio';
   constructor(private primengConfig: PrimeNGConfig) {}
 
-  ngOnInit() {
+  public ngOnInit() {
       this.primengConfig.ripple = true;
   }
 }

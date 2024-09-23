@@ -6,7 +6,20 @@
         <p-carousel class="h-full" [value]="[{'a':1},{'a':2},{'a':3}]" [numVisible]="1" [numScroll]="1" [circular]="true">
           <ng-template let-product pTemplate="item">
             <div class="carousel_container">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex reprehenderit at, ducimus tempora dolore ipsa sapiente. Nihil facilis, tempore suscipit debitis aperiam iure dolor minus laborum ducimus natus nam id!
+              <div class="flex flex-row carousel_header">
+                Header
+              </div>
+              <div class="grid h-full carousel_box">
+                <div class="flex col-3 align-items-center justify-content-center">
+                  <div class="carousel_logo_box">
+
+                    <img class="carousel_logo" src="../../../../assets/Technologies/Java_Blue_Logo.png">
+                  </div>
+                </div>
+                <div class="col-9 careousel_content">
+                  Content
+                </div>
+              </div>
             </div>
           </ng-template>
         </p-carousel>

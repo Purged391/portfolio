@@ -12,10 +12,107 @@
     .carousel{
       height: 60%;
       .carousel_container{
-        height: 50vh;
+        height: 50vh; //temporal
         backdrop-filter: blur(10px);
-        color: white;
+        color: $color-primary;
+
+        .carousel_logo_box{
+          position: relative;
+        }
+        .carousel_logo_box::before{
+          position: absolute;
+          content: '';
+          width:100%;
+          height:100%;
+          left: -2px;
+          top: -2px;
+          border-color: transparent transparent transparent $color-button-blue;
+          border-style:solid;
+          border-width:2px;
+          border-radius: 50%;
+          animation: animate 5s linear infinite;
+          box-shadow: -20px 0 15px -20px $color-button-blue,
+                       20px 0 15px -20px $color-button-blue inset;
+        }
+        .carousel_logo{
+          height: 6rem;
+          aspect-ratio: 1;
+          padding: 5px;
+        }
       }
     }
   }
 }
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+  color: $color-button;
+  height: 5rem;
+  border-radius: 2rem;
+}
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+  color: $color-button;
+  height: 5rem;
+  border-radius: 2rem;
+}
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev:hover {
+  background: $color-button;
+  color: $color-secondary;
+}
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next:hover {
+  background: $color-button;
+  color: $color-secondary;
+}
+
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  border-radius: 100%;
+  height: 0.6rem;
+  width: 0.6rem;
+  //backdrop-filter: blur(10px);
+  opacity: 50%;
+  background: $color-secondary;
+}
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: $color-primary;
+  opacity: 100%;
+}
+
+@keyframes animate {
+  100%
+  {
+    transform-origin: center;
+    transform:rotate(360deg);
+  }
+//   //Arriba
+//   0%
+//   {
+//     box-shadow: 0 -20px 25px -20px $color-button-blue,
+
+//                 0 20px 25px -20px $color-button-blue inset;
+//   }
+//   25%
+//   {
+//     box-shadow: 20px 0 25px -20px $color-button-blue,
+
+//                 -20px 0 25px -20px $color-button-blue inset;
+//   }
+//   50%
+//   {
+//     box-shadow: 0 20px 25px -20px $color-button-blue,
+
+//                 0 -20px 25px -20px $color-button-blue inset;
+//   }
+//   75%
+//   {
+//   box-shadow: -20px 0 25px -20px $color-button-blue,
+
+//                 20px 0 25px -20px $color-button-blue inset;
+//   }
+// //Arriba
+//   100%
+//   {
+//     box-shadow: 0 -20px 25px -20px $color-button-blue,
+
+//                 0 20px 25px -20px $color-button-blue inset;
+//   }
+}
+

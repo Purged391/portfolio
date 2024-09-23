@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class SkillsPageComponent {
   public items: string[] = ["Hola", "Adios"];
+
 }

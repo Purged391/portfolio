@@ -2,7 +2,10 @@
     "header.buttons.home": "Inicio",
     "header.buttons.skills": "Habilidades",
     "header.buttons.projects": "Proyectos",
-    "header.buttons.contact": "Contacto"
+    "header.buttons.contact": "Contacto",
+
+    "home.header": "Desarrollador FullStack",
+    "home.text": "Hola, soy Mario Domínguez García y bienvenidos a mi portfolio. Actualmente resido en España. Estoy interesado en desarrollo Front-End con tecnologías como Angular o React"
 }
 
 

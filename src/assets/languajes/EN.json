@@ -2,7 +2,9 @@
   "header.buttons.home": "Home",
   "header.buttons.skills": "Skills",
   "header.buttons.projects": "Projects",
-  "header.buttons.contact": "Contact"
+  "header.buttons.contact": "Contact",
+
+  "home.header": "FullStack Developer"
 }
 
 
