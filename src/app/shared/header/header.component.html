@@ -1,0 +1,12 @@
+<div class="header grid">
+    <div class=" col-6 flex h-6rem justify-content-start align-items-center">
+      <p-button label="{{'header.buttons.home'| translate}}"  size="small" [text]="true" class="col flex-1 mx-2" [styleClass]="this.activeButton === 'home' ? 'button_active' : 'button_plain'" (click)="this.navigateTo('home')"></p-button>
+      <p-button label="{{'header.buttons.about'| translate}}"  size="small" [text]="true" class="col flex-1 mx-2" [styleClass]="this.activeButton === 'about' ? 'button_active' : 'button_plain'" (click)="this.navigateTo('about')"></p-button>
+      <p-button label="{{'header.buttons.resume'| translate}}"  size="small" [text]="true" class="col flex-1 mx-2" [styleClass]="this.activeButton === 'resume' ? 'button_active' : 'button_plain'" (click)="this.navigateTo('resume')"></p-button>
+    </div>
+    <div class="col-6 flex h-6rem align-items-center justify-content-end">
+      <div class="col flex-1"></div>
+      <p-button label="{{'header.buttons.contact'| translate}}"  size="small" [text]="true" class="col flex-1 mx-2" [styleClass]="this.activeButton === 'contact' ? 'button_active' : 'button_plain'" (click)="this.navigateTo('contact')"></p-button>
+      <p-button label="{{'header.buttons.projects'| translate}}"  size="small" [text]="true" class="col flex-1 mx-2" [styleClass]="this.activeButton === 'projects' ? 'button_active' : 'button_plain'" (click)="this.navigateTo('projects')"></p-button>
+    </div>
+</div>
