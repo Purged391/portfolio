@@ -2,7 +2,7 @@
 
 .header{
   //background: linear-gradient(to bottom, $color-primary 1rem, transparent); /* Gradiente de negro a transparente */
-  background-color: $color-primary;
+  background-color:  rgba($color-primary, 0.7);
   position: fixed;
   top: 0;
   left: 0;

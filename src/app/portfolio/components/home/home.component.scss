@@ -1,4 +1,8 @@
 .home-component{
   height: 100vh;
-  background-color: red;
+  //TO-DO Hacer que cambie dependiendo de la estacion
+  background-image: url('../../../../assets/images/Bosque1.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
