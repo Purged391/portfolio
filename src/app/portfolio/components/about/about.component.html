@@ -1,3 +1,35 @@
 <div class="about-component">
-  about works!
+  <div class="timeline">
+      <div class="container left-container" [@moveline]="inView() ? 'visible' : 'hidden'" id="myElement">
+        <img src="" alt="">
+        <p-card header="aaa" [ngClass]="isCardVisible()"  [@slideLeft]="isCardVisible()">
+          {{this.inView()}}
+          hgfdhgfdhgfd
+        </p-card>
+      </div>
+    <!-- <div class="container right-container" >
+      <img src="" alt="">
+      <p-card header="aaa" >
+        hgfhgfdhgfdhgfd
+      </p-card>
+    </div>
+    <div class="container left-container">
+      <img src="" alt="">
+      <p-card header="aaa" >
+        jkhlhgfdhgfdhgfd
+      </p-card>
+    </div>
+    <div class="container right-container">
+      <img src="" alt="">
+      <p-card header="aaa">
+        kñjhlhgfdhgfd
+      </p-card>
+    </div>
+    <div class="container left-container">
+      <img src="" alt="">
+      <p-card header="aaa" >
+        jhgfcjhgfdhgfd
+      </p-card>
+    </div> -->
+  </div>
 </div>
