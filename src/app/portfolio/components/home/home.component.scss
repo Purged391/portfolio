@@ -1,3 +1,6 @@
+@import '../../../../styles.scss';
+
+
 .home-component{
   height: 100vh;
   //TO-DO Hacer que cambie dependiendo de la estacion
@@ -5,4 +8,68 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+
+  .name{
+    font-weight: normal;
+    letter-spacing: 0.4rem;
+  }
+
+  .surname{
+    font-weight: 900;
+    letter-spacing: 0.4rem;
+    font-size: 3rem;
+    color: $color-secondary;
+    text-wrap: nowrap;
+  }
+
+  .description{
+    font-family: monospace;
+    letter-spacing: 1rem;
+    font-weight:bolder;
+  }
+
+  .gradient-bar {
+    height: 0.1rem; /* Ajusta la altura según lo desees */
+    background: linear-gradient(to right, transparent, $color-secondary); /* Gradiente de izquierda a derecha */
+    width: 100%;
+}
+
+/* Barra Gradiente Inferior */
+.gradient-bar.reverse {
+    height: 0.1rem; /* Ajusta la altura según lo desees */
+    background: linear-gradient(to left, transparent, $color-secondary); /* Gradiente de derecha a izquierda */
+    width: 100%;
+}
+
+}
+
+
+:host ::ng-deep{
+  .p-button {
+    color: $color-text-light;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgba($color-primary, 0.5);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.1s ease;
+  }
+
+  .p-button:hover {
+    color: $color-primary;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    box-shadow: 0 0 10px rgba($color-secondary, 0.6),
+                0 0 20px rgba($color-secondary, 0.4),
+                0 0 30px rgba($color-secondary, 0.2);
+  }
+
+  .p-button:active {
+    transform: scale(0.98);
+  }
+
+  .p-button:focus {
+    outline: none;
+    box-shadow: none !important;
+  }
 }
