@@ -4,18 +4,24 @@
   height: 100vh;
   position: relative;
   background-color: $color-primary;
+  overflow-y: scroll;
 
   .timeline{
     //position: relative;
     width: 100%;
-    padding: 2rem;
     //margin: 2rem;
+    padding: 2rem;
+    padding-top: 25rem;
+
+    .holder{
+      height: 20rem;
+    }
+
     .container{
       display: flex;
       padding: 2rem;
-      padding-top: 0;
       width: 50%;
-      height: 10rem;
+      height: 20rem;
 
       position: relative;
       //background-color: rgba($color: #000000, $alpha: 1.0);
@@ -31,10 +37,11 @@
         //background-color: #d7ee0d;
       }
 
-      p-card{
+      .card {
         width: 100%;
-        height: inherit;
+
       }
+
     }
     .container::after{
       content: '';

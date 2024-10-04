@@ -1,35 +1,40 @@
 <div class="about-component">
   <div class="timeline">
-      <div class="container left-container" [@moveline]="inView() ? 'visible' : 'hidden'" id="myElement">
+    <div class="holder">
+      <div class="container left-container box" [ngClass]="inView()[0] ? '':'opacity-0'" [@moveline]="inView()[0] ? 'visible' : 'hidden'">
         <img src="" alt="">
-        <p-card header="aaa" [ngClass]="isCardVisible()"  [@slideLeft]="isCardVisible()">
-          {{this.inView()}}
+        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[0] === 'hidden'? 'opacity-0':''"  [@slideLeft]="isCardVisible()[0]">
           hgfdhgfdhgfd
         </p-card>
       </div>
-    <!-- <div class="container right-container" >
-      <img src="" alt="">
-      <p-card header="aaa" >
-        hgfhgfdhgfdhgfd
-      </p-card>
     </div>
-    <div class="container left-container">
-      <img src="" alt="">
-      <p-card header="aaa" >
-        jkhlhgfdhgfdhgfd
-      </p-card>
+    <div class="holder">
+      <div class="container right-container box" [ngClass]="inView()[1] ? '':'opacity-0'" [@moveline]="inView()[1] ? 'visible' : 'hidden'" >
+        <img src="" alt="">
+        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[1] === 'hidden'? 'opacity-0':''"  [@slideRight]="isCardVisible()[1]">
+          hgfhgfdhgfdhgfd
+        </p-card>
+      </div>
     </div>
-    <div class="container right-container">
-      <img src="" alt="">
-      <p-card header="aaa">
-        kñjhlhgfdhgfd
-      </p-card>
+    <div class="holder">
+      <div class="container left-container box" [ngClass]="inView()[2] ? '':'opacity-0'" [@moveline]="inView()[2] ? 'visible' : 'hidden'">
+        <img src="" alt="">
+        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[2] === 'hidden'? 'opacity-0':''"  [@slideLeft]="isCardVisible()[2]">
+          hgfdhgfdhgfd
+        </p-card>
+      </div>
     </div>
-    <div class="container left-container">
-      <img src="" alt="">
-      <p-card header="aaa" >
-        jhgfcjhgfdhgfd
-      </p-card>
-    </div> -->
+    <div class="holder">
+      <div class="container right-container box" [ngClass]="inView()[3] ? '':'opacity-0'" [@moveline]="inView()[3] ? 'visible' : 'hidden'" >
+        <img src="" alt="">
+        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[3] === 'hidden'? 'opacity-0':''"  [@slideRight]="isCardVisible()[3]">
+          hgfhgfdhgfdhgfd
+        </p-card>
+      </div>
+    </div>
+<div class="flex justify-content-center">
+
+  <p class="mt-0">Future</p>
+</div>
   </div>
 </div>
