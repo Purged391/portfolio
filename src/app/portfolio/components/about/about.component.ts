@@ -1,6 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, HostListener, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
 
 @Component({
@@ -44,7 +44,6 @@ import { CardModule } from 'primeng/card';
   ]
 })
 export default class AboutComponent implements AfterViewInit {
-
   public inView = signal<boolean[]>([false, false, false, false]);  // Controla la visibilidad de los containers
   public isCardVisible = signal<string[]>(['hidden', 'hidden', 'hidden', 'hidden']); // Controla la visibilidad de los p-card
 
@@ -75,8 +74,6 @@ export default class AboutComponent implements AfterViewInit {
 
             } else {
               const rect = entry.boundingClientRect;
-              console.log(index)
-              console.log(rect)
               if (rect.top < 0) {
 
               } else if ((rect.top > 0 && index%2 === 0) || (rect.top -100 > 0 && index%2 !== 0)) {
@@ -99,34 +96,4 @@ export default class AboutComponent implements AfterViewInit {
       });
     }
   }
-
-
-  // inViewStates: boolean[]; // Estado para cada contenedor
-
-  // constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
-  //   this.inViewStates = [false, false, false, false, false]; // Inicializa el estado de visibilidad
-  // }
-
-  // ngAfterViewInit() {
-  //   // Solo ejecuta la lógica en el navegador
-  //   if (isPlatformBrowser(this.platformId)) {
-  //     const containers = this.el.nativeElement.querySelectorAll('.container');
-
-  //     containers.forEach((container: HTMLElement, index: number) => {
-  //       const observer = new IntersectionObserver((entries) => {
-  //         entries.forEach(entry => {
-  //           if (entry.isIntersecting) {
-  //             this.inViewStates[index] = true;  // Activa las animaciones para este contenedor
-  //             observer.disconnect();  // Detenemos el observador después de la primera intersección
-  //           }
-  //         });
-  //       }, {
-  //         threshold: 0.1 // Cambia este valor según tus necesidades
-  //       });
-
-  //       // Empieza a observar el contenedor
-  //       observer.observe(container);
-  //     });
-  //   }
-  // }
 }
