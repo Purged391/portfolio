@@ -2,6 +2,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, HostListener, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 @Component({
   selector: 'portfolio-about',
@@ -49,11 +52,17 @@ export default class AboutComponent implements AfterViewInit {
 
 
 
-  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
 
   ngAfterViewInit() {
 
     if (isPlatformBrowser(this.platformId)) {
+
+      this.initScrollAnimation();
+
+
       const targetElements = this.el.nativeElement.querySelectorAll('.box');
 
 
@@ -95,5 +104,26 @@ export default class AboutComponent implements AfterViewInit {
         observer.observe(targetElement);
       });
     }
+  }
+
+  public initScrollAnimation(): void{
+    // Selecciona el SVG o el texto dentro del SVG
+    const svgText = document.getElementById('svgText');
+
+    gsap.to(svgText,
+      {
+        scrollTrigger: {
+          trigger: '.about-component',
+          start: '12% 36%',
+          end: '20% 10%',
+          scrub: true,
+          markers: true,
+          pin: true,
+        },
+        opacity: 0,
+        //y: 100,
+        duration: 5
+      }
+    );
   }
 }
