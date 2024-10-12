@@ -1,63 +1,41 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
-.resume-component{
-  height: 100vh;
+.resume-component {
+  min-height: 50vh;
   position: relative;
   background-color: $color-primary;
 
-  .card{
+  .card {
     border-color: $color-primary-light;
     display: flex;
-  justify-content: center;
-  width: 8rem;
+    justify-content: center;
+    width: 8rem;
     height: 8rem;
-  align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  animation: float 3s ease-in-out infinite;
-  cursor: pointer;
-  perspective: 1000px;
-  //animation-delay: var(--animation-delay, 0s);
-  }
-  .card:hover{
-    transform: scale(1.2);
-    animation: none;
-    background-color: $color-primary-light;
-    transform: rotateY(15deg) rotateX(10deg);
-  }
-  .card:nth-child(1) {
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
     animation-delay: 0s;
-}
-
-.card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.card:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.card:nth-child(4) {
-    animation-delay: 2s;
-}
-.card:nth-child(5) {
-    animation-delay: 2.5s;
-}
-.card:nth-child(6) {
-    animation-delay: 3s;
-}
-.card:nth-child(7) {
-    animation-delay: 3.5s;
-}
+    cursor: pointer;
+    //perspective: 1000px;
+    //transition: transform 0.1s ease;
+    //animation-delay: var(--animation-delay, 0s);
+    //transition: transform 0.3s, box-shadow 0.3s;
+  }
+   .card:hover{
+     animation: none;
+     background-color: $color-primary-light;
+     //transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
 }
 
 @keyframes float {
   0% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
   50% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
