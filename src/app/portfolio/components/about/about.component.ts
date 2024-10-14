@@ -117,7 +117,6 @@ export default class AboutComponent implements AfterViewInit {
           start: '12% 36%',
           end: '20% 10%',
           scrub: true,
-          markers: true,
           pin: true,
         },
         opacity: 0,

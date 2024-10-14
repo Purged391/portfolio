@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { gsap } from 'gsap';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'portfolio-resume',
   standalone: true,
   imports: [
     CommonModule,
+    DialogModule,
+    ButtonModule
   ],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss',
@@ -26,12 +30,24 @@ export default class ResumeComponent {
       id: 'Docker',
     },
     {
+      id: 'SpringBoot',
+    },
+    {
+      id: 'MongoDB',
+    },
+    {
       id: 'Kubernentes',
     },
     {
-      id: 'SpringBoot',
+      id: 'Jira',
     },
   ];
+
+  public visible = false;
+
+  showDialog() {
+    this.visible = true;
+}
 
   public onMouseMove(event: MouseEvent): void {
     const card = event.currentTarget as HTMLElement;
