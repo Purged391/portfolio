@@ -4,7 +4,6 @@
   min-height: 50vh;
   position: relative;
   background-color: $color-primary;
-
   .card {
     border-color: $color-primary-light;
     display: flex;
@@ -26,6 +25,22 @@
      background-color: $color-primary-light;
      //transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     }
+}
+
+/* Asegúrate de que el estilo esté en el archivo SCSS correspondiente */
+:host ::ng-deep .p-dialog {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
 }
 
 @keyframes float {

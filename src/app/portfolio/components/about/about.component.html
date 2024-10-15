@@ -1,93 +1,234 @@
 <div class="about-component">
   <div class="back">
-    <svg class="masked-svg mt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" id="svgText">
+    <svg
+      class="masked-svg mt-2"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 20"
+      id="svgText"
+    >
       <defs>
-          <mask id="text-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="150" height="40">
-              <rect x="0" y="0" width="100" height="20" fill="black" />
-              <text x="50%" y="95%" font-size="20" fill="white" text-anchor="middle" font-family="'Roboto', sans-serif" font-weight="bold">
-                Sobre mi
-              </text>
-          </mask>
-          <linearGradient id="wordmark_b" x1="0" x2="982" y1="192" y2="192" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#F0060B">
-              <animate attributeName="stop-color" values="#F0060B; #CC26D5; #7702FF; #F0060B" dur="8s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="50%" stop-color="#CC26D5">
-              <animate attributeName="stop-color" values="#CC26D5; #7702FF; #F0060B; #CC26D5" dur="8s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="100%" stop-color="#7702FF">
-              <animate attributeName="stop-color" values="#7702FF; #F0060B; #CC26D5; #7702FF" dur="8s" repeatCount="indefinite" />
-            </stop>
-          </linearGradient>
+        <mask
+          id="text-mask"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="150"
+          height="40"
+        >
+          <rect x="0" y="0" width="100" height="20" fill="black" />
+          <text
+            x="50%"
+            y="95%"
+            font-size="20"
+            fill="white"
+            text-anchor="middle"
+            font-family="'Roboto', sans-serif"
+            font-weight="bold"
+          >
+            Sobre mi
+          </text>
+        </mask>
+        <linearGradient
+          id="wordmark_b"
+          x1="0"
+          x2="982"
+          y1="192"
+          y2="192"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#F0060B">
+            <animate
+              attributeName="stop-color"
+              values="#F0060B; #CC26D5; #7702FF; #F0060B"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="50%" stop-color="#CC26D5">
+            <animate
+              attributeName="stop-color"
+              values="#CC26D5; #7702FF; #F0060B; #CC26D5"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="100%" stop-color="#7702FF">
+            <animate
+              attributeName="stop-color"
+              values="#7702FF; #F0060B; #CC26D5; #7702FF"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </linearGradient>
 
-          <!-- Definir gradiente radial -->
-          <radialGradient id="wordmark_c" cx="1" cy="1.1" r="0.2" gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FF41F8">
-              <animate attributeName="stop-color" values="#FF41F8; #CC26D5; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
-              <animate attributeName="stop-color" values="#FF41F8; #7702FF; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
-              <animate attributeName="stop-color" values="#FF41F8; #CC26D5; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-          </radialGradient>
-          <radialGradient id="wordmark_d" cx="0.8" cy="0.8" r="0.2" gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FF41F8">
-              <animate attributeName="stop-color" values="#FF41F8; #CC26D5; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
-              <animate attributeName="stop-color" values="#FF41F8; #7702FF; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
-              <animate attributeName="stop-color" values="#FF41F8; #CC26D5; #FF41F8" dur="6s" repeatCount="indefinite" />
-            </stop>
-          </radialGradient>
+        <!-- Definir gradiente radial -->
+        <radialGradient
+          id="wordmark_c"
+          cx="1"
+          cy="1.1"
+          r="0.2"
+          gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FF41F8">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #7702FF; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </radialGradient>
+        <radialGradient
+          id="wordmark_d"
+          cx="0.8"
+          cy="0.8"
+          r="0.2"
+          gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FF41F8">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #7702FF; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </radialGradient>
       </defs>
 
-<rect x="0" y="0" width="100" height="20" fill="url(#wordmark_b)" mask="url(#text-mask)" />
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_b)"
+        mask="url(#text-mask)"
+      />
 
-<rect x="0" y="0" width="100" height="20" fill="url(#wordmark_c)" mask="url(#text-mask)"/>
-<rect x="0" y="0" width="100" height="20" fill="url(#wordmark_d)"  mask="url(#text-mask)"/>
-
-  </svg>
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_c)"
+        mask="url(#text-mask)"
+      />
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_d)"
+        mask="url(#text-mask)"
+      />
+    </svg>
   </div>
   <div class="timeline">
     <div class="holder">
-      <div class="container left-container box" [ngClass]="inView()[0] ? '':'opacity-0'" [@moveline]="inView()[0] ? 'visible' : 'hidden'">
-        <img src="" alt="">
-        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[0] === 'hidden'? 'opacity-0':''"  [@slideLeft]="isCardVisible()[0]">
+      <div
+        class="container left-container box"
+        [ngClass]="inView()[0] ? '' : 'opacity-0'"
+        [@moveline]="inView()[0] ? 'visible' : 'hidden'"
+      >
+        <img src="" alt="" />
+        <p-card
+          header="aaa"
+          class="card"
+          [ngClass]="isCardVisible()[0] === 'hidden' ? 'opacity-0' : ''"
+          [@slideLeft]="isCardVisible()[0]"
+        >
           hgfdhgfdhgfd
         </p-card>
       </div>
     </div>
     <div class="holder">
-      <div class="container right-container box" [ngClass]="inView()[1] ? '':'opacity-0'" [@moveline]="inView()[1] ? 'visible' : 'hidden'" >
-        <img src="" alt="">
-        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[1] === 'hidden'? 'opacity-0':''"  [@slideRight]="isCardVisible()[1]">
+      <div
+        class="container right-container box"
+        [ngClass]="inView()[1] ? '' : 'opacity-0'"
+        [@moveline]="inView()[1] ? 'visible' : 'hidden'"
+      >
+        <img src="" alt="" />
+        <p-card
+          header="aaa"
+          class="card"
+          [ngClass]="isCardVisible()[1] === 'hidden' ? 'opacity-0' : ''"
+          [@slideRight]="isCardVisible()[1]"
+        >
           hgfhgfdhgfdhgfd
         </p-card>
       </div>
     </div>
     <div class="holder">
-      <div class="container left-container box" [ngClass]="inView()[2] ? '':'opacity-0'" [@moveline]="inView()[2] ? 'visible' : 'hidden'">
-        <img src="" alt="">
-        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[2] === 'hidden'? 'opacity-0':''"  [@slideLeft]="isCardVisible()[2]">
+      <div
+        class="container left-container box"
+        [ngClass]="inView()[2] ? '' : 'opacity-0'"
+        [@moveline]="inView()[2] ? 'visible' : 'hidden'"
+      >
+        <img src="" alt="" />
+        <p-card
+          header="aaa"
+          class="card"
+          [ngClass]="isCardVisible()[2] === 'hidden' ? 'opacity-0' : ''"
+          [@slideLeft]="isCardVisible()[2]"
+        >
           hgfdhgfdhgfd
         </p-card>
       </div>
     </div>
     <div class="holder">
-      <div class="container right-container box" [ngClass]="inView()[3] ? '':'opacity-0'" [@moveline]="inView()[3] ? 'visible' : 'hidden'" >
-        <img src="" alt="">
-        <p-card header="aaa" class="card" [ngClass]="isCardVisible()[3] === 'hidden'? 'opacity-0':''"  [@slideRight]="isCardVisible()[3]">
+      <div
+        class="container right-container box"
+        [ngClass]="inView()[3] ? '' : 'opacity-0'"
+        [@moveline]="inView()[3] ? 'visible' : 'hidden'"
+      >
+        <img src="" alt="" />
+        <p-card
+          header="aaa"
+          class="card"
+          [ngClass]="isCardVisible()[3] === 'hidden' ? 'opacity-0' : ''"
+          [@slideRight]="isCardVisible()[3]"
+        >
           hgfhgfdhgfdhgfd
         </p-card>
       </div>
     </div>
-<div class="flex justify-content-center">
-
-  <p class="mt-0">Future</p>
-</div>
+    <div class="flex justify-content-center">
+      <p class="mt-0">Future</p>
+    </div>
   </div>
 </div>
