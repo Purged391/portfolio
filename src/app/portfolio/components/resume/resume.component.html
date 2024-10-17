@@ -8,7 +8,8 @@
       (mousemove)="onMouseMove($event)"
       (mouseleave)="onMouseLeave($event)"
       [ngStyle]="{ 'animation-delay': $index / 10 + 's' }"
-      (click)="showDialog()"
+      (click)="showDialog(card.id)"
+      pDraggable
     >
       @if (card.id === "Angular") {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -128,15 +129,53 @@
     }
   </div>
   <p-dialog
-    header="Technolgy"
+    [header]="this.header()"
     [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
     [draggable]="false"
     [resizable]="false"
     [modal]="true"
-    [(visible)]="visible"
-    [style]="{ width: '25rem' }"
+    [(visible)]="this.visible"
+    [style]="{ width: '50rem' }"
   >
-    <span class="p-text-secondary block mb-5">Experience</span>
-    <p>Information</p>
+    @if (this.header() === "Angular") {
+      <div class="flex justify-content-center align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428 512" width="100" height="100">
+          <path
+            fill="#DD0031"
+            d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z"
+          />
+        </svg>
+    </div>
+      <span class="p-text-secondary block mb-5">{{this.experience() | translate}}</span>
+      <h4>{{this.information().concat(".versions") | translate}}</h4>
+      <p-fieldset [legend]="this.information().concat('.basics') | translate">
+        <div class="flex align-items-center gap-2 flex-wrap">
+          @for (item of (this.information().concat(".basics.list") | translate).split(","); track $index) {
+              <p-chip styleClass="chip-1">{{item}}</p-chip>
+            }
+        </div>
+      </p-fieldset>
+      <p-fieldset [legend]="this.information().concat('.advanced') | translate">
+      <div class="flex align-items-center gap-2 flex-wrap">
+        @for (item of (this.information().concat(".advanced.list") | translate).split(","); track $index) {
+            <p-chip styleClass="chip-2">{{item}}</p-chip>
+          }
+      </div>
+    </p-fieldset>
+    <p-fieldset [legend]="this.information().concat('.libraries') | translate">
+      <div class="flex align-items-center gap-2 flex-wrap">
+        @for (item of (this.information().concat(".libraries.list") | translate).split(","); track $index) {
+            <p-chip styleClass="chip-3">{{item}}</p-chip>
+          }
+      </div>
+    </p-fieldset>
+    <p-fieldset [legend]="this.information().concat('.others') | translate">
+      <div class="flex align-items-center gap-2 flex-wrap">
+        @for (item of (this.information().concat(".others.list") | translate).split(","); track $index) {
+            <p-chip styleClass="chip-4">{{item}}</p-chip>
+          }
+      </div>
+    </p-fieldset>
+    }
   </p-dialog>
 </div>

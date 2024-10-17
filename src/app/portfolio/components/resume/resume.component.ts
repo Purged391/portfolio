@@ -1,8 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { gsap } from 'gsap';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { DragDropModule } from 'primeng/dragdrop';
+import { ChipModule } from 'primeng/chip';
+import { FieldsetModule } from 'primeng/fieldset';
+
+
+import TranslatePipe from '../../../pipes/translate.pipe';
+
+export interface Card {
+  id: string;
+  experience: string;
+  information: string;
+}
 
 @Component({
   selector: 'portfolio-resume',
@@ -10,43 +22,70 @@ import { DialogModule } from 'primeng/dialog';
   imports: [
     CommonModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    DragDropModule,
+    TranslatePipe,
+    ChipModule,
+    FieldsetModule,
   ],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss',
 })
 export default class ResumeComponent {
-  public cards = [
+  public cards: Card[] = [
     {
       id: 'Angular',
+      experience: 'resume.card.angular.experience',
+      information: 'resume.card.angular.information',
     },
     {
       id: 'React',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'GitHub',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'Docker',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'SpringBoot',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'MongoDB',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'Kubernentes',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
     {
       id: 'Jira',
+      experience: '3 years',
+      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
   ];
 
-  public visible = false;
+  public visible = signal<boolean>(false);
+  public header = signal<string>('');
+  public experience = signal<string>('');
+  public information = signal<string>('');
 
-  showDialog() {
-    this.visible = true;
+  public showDialog(id: string): void {
+    this.visible.set(true);
+    let card: Card = this.cards.find((card) => card.id === id)!;
+    this.header.set(card.id);
+    this.experience.set(card.experience);
+    this.information.set(card.information);
 }
 
   public onMouseMove(event: MouseEvent): void {

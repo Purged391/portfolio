@@ -3,6 +3,16 @@
   "header.buttons.about": "Sobre mi",
   "header.buttons.resume": "Resumen",
   "header.buttons.projects": "Proyectos",
-  "header.buttons.contact": "Contacto"
+  "header.buttons.contact": "Contacto",
 
+  "resume.card.angular.experience": "4 años de experiencia",
+  "resume.card.angular.information.versions": "De la V14 a la V18 (última)",
+  "resume.card.angular.information.basics": "Basicos de Angular",
+  "resume.card.angular.information.basics.list": "Componentes, Directivas, Servicios, Pipes, Módulos, Routing, Formularios, Observables, Http, Guards, Interceptors, Lazy Loading, Hooks",
+  "resume.card.angular.information.advanced": "Angular Avanzado",
+  "resume.card.angular.information.advanced.list": "Rxjs, Defers, Transiciones, Animaciones, Standalone Componentes, Pipes personalizados, Directivas personalizadas, Señales, SSR",
+  "resume.card.angular.information.libraries": "Librerías",
+  "resume.card.angular.information.libraries.list": "Angular Material, Bootstrap, Primeng, Primeflex, Tailwind, GSAP",
+  "resume.card.angular.information.others": "Otros",
+  "resume.card.angular.information.others.list": "iframe, Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox"
 }
