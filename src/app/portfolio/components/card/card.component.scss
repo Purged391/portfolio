@@ -1,0 +1,35 @@
+@import "../../../../styles.scss";
+
+.card {
+  border-color: $color-primary-light;
+  display: flex;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0s;
+  cursor: pointer;
+  //perspective: 1000px;
+  //transition: transform 0.1s ease;
+  //animation-delay: var(--animation-delay, 0s);
+  //transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  animation: none;
+  background-color: $color-primary-light;
+  //transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -14,6 +14,15 @@
   "resume.card.angular.information.libraries": "Libraries",
   "resume.card.angular.information.libraries.list": "Angular Material, Bootstrap, Primeng, Primeflex, Tailwind, iframe, GSAP",
   "resume.card.angular.information.others": "Others",
-  "resume.card.angular.information.others.list": "Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox"
+  "resume.card.angular.information.others.list": "Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox",
+
+  "resume.card.docker.experience": "6 months of experience",
+  "resume.card.docker.information.versions": "27 (last)",
+  "resume.card.docker.information.basics": "Docker Basics",
+  "resume.card.docker.information.basics.list": "Containers, Images, Dockerfile, Docker Ignore, Volumes, Networks",
+  "resume.card.docker.information.advanced": "Docker Advanced",
+  "resume.card.docker.information.advanced.list": "Docker Compose, Build, BuildX, Docker Hub, Multi Stage, Registries",
+  "resume.card.docker.information.others": "Others",
+  "resume.card.docker.information.others.list": "Digital Ocean, Kubernetes, GitHub Actions, NgInx"
 }
 

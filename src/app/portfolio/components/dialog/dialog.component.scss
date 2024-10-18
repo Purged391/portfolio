@@ -1,0 +1,97 @@
+/* Asegúrate de que el estilo esté en el archivo SCSS correspondiente */
+@import "../../../../styles.scss";
+
+:host ::ng-deep .p-dialog {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+  background-color: $color-primary !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .chip-0 {
+  background-color: $color-primary-light;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  padding: 0.5rem;
+  cursor: default;
+}
+
+:host ::ng-deep .chip-0:hover {
+  background-color: $color-primary-light-hover;
+}
+:host ::ng-deep .chip-1 {
+  background-color: $color-secondary;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  padding: 0.5rem;
+  cursor: default;
+}
+
+:host ::ng-deep .chip-1:hover {
+  background-color: $color-secondary-hover;
+}
+:host ::ng-deep .chip-2 {
+  background-color: $color-chip-2;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: default;
+}
+
+:host ::ng-deep .chip-2:hover {
+  background-color: $color-chip-2-hover;
+}
+:host ::ng-deep .chip-3 {
+  background-color: $color-chip-3;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: default;
+}
+
+:host ::ng-deep .chip-3:hover {
+  background-color: $color-chip-3-hover;
+}
+:host ::ng-deep .chip-4 {
+  background-color: $color-chip-4;
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: default;
+}
+
+:host ::ng-deep .chip-4:hover {
+  background-color: $color-chip-4-hover;
+}
+
+:host ::ng-deep .p-fieldset {
+  background-color: $color-primary;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+:host ::ng-deep .p-fieldset .p-fieldset-legend {
+  background-color: $color-primary;
+  color: #f5f5f5;
+  padding: 10px;
+  border: none;
+}
+
+:host ::ng-deep .p-fieldset-content {
+  background-color: $color-primary;
+  color: #f5f5f5;
+  padding: 15px;
+}
