@@ -17,7 +17,7 @@
   "resume.card.angular.information.others.list": "Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox",
 
   "resume.card.docker.experience": "6 months of experience",
-  "resume.card.docker.information.versions": "27 (last)",
+  "resume.card.docker.information.versions": "V27 (last)",
   "resume.card.docker.information.basics": "Docker Basics",
   "resume.card.docker.information.basics.list": "Containers, Images, Dockerfile, Docker Ignore, Volumes, Networks",
   "resume.card.docker.information.advanced": "Docker Advanced",
