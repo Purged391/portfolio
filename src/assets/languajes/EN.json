@@ -5,7 +5,7 @@
   "header.buttons.projects": "Projects",
   "header.buttons.contact": "Contact",
 
-  "resume.card.angular.experience": "4 years of experience",
+  "resume.card.angular.experience": "01/07/2020/of experience",
   "resume.card.angular.information.versions": "From V14 to V18 (last)",
   "resume.card.angular.information.basics": "Angular Basics",
   "resume.card.angular.information.basics.list": "Components, Directives, Services, Pipes, Modules, Routing, Forms, Observables, Http, Guards, Interceptors, Lazy Loading, Hooks",
@@ -16,13 +16,19 @@
   "resume.card.angular.information.others": "Others",
   "resume.card.angular.information.others.list": "Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox",
 
-  "resume.card.docker.experience": "6 months of experience",
+  "resume.card.docker.experience": "01/08/2024/of experience",
   "resume.card.docker.information.versions": "V27 (last)",
   "resume.card.docker.information.basics": "Docker Basics",
   "resume.card.docker.information.basics.list": "Containers, Images, Dockerfile, Docker Ignore, Volumes, Networks",
   "resume.card.docker.information.advanced": "Docker Advanced",
   "resume.card.docker.information.advanced.list": "Docker Compose, Build, BuildX, Docker Hub, Multi Stage, Registries",
   "resume.card.docker.information.others": "Others",
-  "resume.card.docker.information.others.list": "Digital Ocean, Kubernetes, GitHub Actions, NgInx"
+  "resume.card.docker.information.others.list": "Digital Ocean, Kubernetes, GitHub Actions, NgInx",
+
+  "resume.card.github.experience": "01/08/2021/of experience",
+  "resume.card.github.information.basics": "Git Basics",
+  "resume.card.github.information.basics.list": "Repositories, Branches, Commits, Merge, Pull, Push, Fetch, Clone, Fork, Branch, Checkout, Reset, Revert, Stash, Tag, Rebase",
+  "resume.card.github.information.advanced": "GitHub Advanced",
+  "resume.card.github.information.advanced.list": "Actions, Disscusions, GitIgnore, GitConfig, Workflows, Secrets, Pull Request, Readme"
 }
 

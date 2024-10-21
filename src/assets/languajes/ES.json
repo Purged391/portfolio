@@ -5,7 +5,7 @@
   "header.buttons.projects": "Proyectos",
   "header.buttons.contact": "Contacto",
 
-  "resume.card.angular.experience": "4 años de experiencia",
+  "resume.card.angular.experience": "01/07/2020/de experiencia",
   "resume.card.angular.information.versions": "De la V14 a la V18 (última)",
   "resume.card.angular.information.basics": "Basicos de Angular",
   "resume.card.angular.information.basics.list": "Componentes, Directivas, Servicios, Pipes, Módulos, Routing, Formularios, Observables, Http, Guards, Interceptors, Lazy Loading, Hooks",
@@ -16,12 +16,18 @@
   "resume.card.angular.information.others": "Otros",
   "resume.card.angular.information.others.list": "iframe, Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox",
 
-  "resume.card.docker.experience": "6 meses de experiencia",
+  "resume.card.docker.experience": "01/08/2024/de experiencia",
   "resume.card.docker.information.versions": "V27 (última)",
   "resume.card.docker.information.basics": "Basicos de Docker",
   "resume.card.docker.information.basics.list": "Contenedores, Imágenes, Dockerfile, Docker Ignore, Volumenes, Redes",
   "resume.card.docker.information.advanced": "Docker Avanzado",
   "resume.card.docker.information.advanced.list": "Docker Compose, Build, BuildX, Docker Hub, Multi Stage, Registros",
   "resume.card.docker.information.others": "Otros",
-  "resume.card.docker.information.others.list": "Digital Ocean, Kubernetes, GitHub Actions, NgInx"
+  "resume.card.docker.information.others.list": "Digital Ocean, Kubernetes, GitHub Actions, NgInx",
+
+  "resume.card.github.experience": "01/08/2021/de experiencia",
+  "resume.card.github.information.basics": "Basicos de Git",
+  "resume.card.github.information.basics.list": "Repositorios, Ramas, Commits, Merge, Pull, Push, Fetch, Clone, Fork, Branch, Checkout, Reset, Revert, Stash, Tag, Rebase",
+  "resume.card.github.information.advanced": "GitHub Avanzado",
+  "resume.card.github.information.advanced.list": "Actions, Disscusions, GitIgnore, GitConfig, Workflows, Secrets, Pull Request, Readme"
 }

@@ -37,8 +37,8 @@ export default class ResumeComponent {
     },
     {
       id: 'GitHub',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.github.experience',
+      information: 'resume.card.github.information',
     },
     {
       id: 'Docker',

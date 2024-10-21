@@ -5,6 +5,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 import TranslatePipe from '../../../pipes/translate.pipe';
 import { CommonModule } from '@angular/common';
 import { Card } from '../../interfaces/Card.interface';
+import TimeGapPipe from '../../../pipes/timeGap.pipe';
 
 @Component({
   selector: 'portfolio-dialog',
@@ -12,6 +13,7 @@ import { Card } from '../../interfaces/Card.interface';
   imports: [
     CommonModule,
     TranslatePipe,
+    TimeGapPipe,
     ChipModule,
     FieldsetModule,
     DialogModule,
