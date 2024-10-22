@@ -7,6 +7,7 @@
   [(visible)]="this.localVisible"
   (onHide)="this.setVisible()"
   [style]="{ width: '50rem' }"
+  transitionOptions="none"
 >
   @if (this.header() === "Angular") {
   <div class="flex justify-content-center align-items-center">

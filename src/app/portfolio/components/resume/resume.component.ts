@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
-import { Component, effect, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, effect, ElementRef, Inject, PLATFORM_ID, QueryList, signal, ViewChildren } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog';
-import { DragDropModule } from 'primeng/dragdrop';
-import { ChipModule } from 'primeng/chip';
-import { FieldsetModule } from 'primeng/fieldset';
+import { gsap } from 'gsap';
+import { Draggable } from 'gsap/Draggable';
+import { TextPlugin } from 'gsap/TextPlugin';
+
 
 
 import TranslatePipe from '../../../pipes/translate.pipe';
@@ -71,6 +71,36 @@ export default class ResumeComponent {
       information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
     },
   ];
+
+  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
+    gsap.registerPlugin(Draggable);
+    gsap.registerPlugin(TextPlugin);
+
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.makeCardsDraggable();
+      this.animateText();
+    }
+  }
+
+  private makeCardsDraggable(): void {
+    const portfolioCards = this.el.nativeElement.querySelectorAll('.portfolioCard');
+    portfolioCards.forEach((card: HTMLElement) => {
+      Draggable.create(card, {
+        type: 'x,y',
+        edgeResistance: 0.65,
+        bounds: '.resume-component',
+      });
+    });
+  }
+
+  private animateText(): void {
+    const tl = gsap.timeline({repeat:-1, repeatDelay:1, yoyo:true});
+    tl.to("h1 span", {duration: 4, text:" is so much fun you should try it some time!"})
+  }
+
   public visible = signal<boolean>(false);
   public card = signal<Card>({ id: '', experience: '', information: '' });
 

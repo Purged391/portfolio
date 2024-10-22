@@ -1,9 +1,15 @@
 <div class="resume-component">
+  <div class="text">
+    <h1 class="text-h1">
+      Drag and drop...
+      <span></span>
+    </h1>
+  </div>
   <div
-    class="flex flex-wrap p-5 align-items-center justify-content-center column-gap-4 row-gap-4"
+    class="flex flex-wrap p-5 align-items-center justify-content-center column-gap-4 row-gap-4 cards-container"
   >
     @for (card of this.cards; track $index) {
-      <portfolio-card [id]="card.id" [delay]="$index" (click)="this.showDialog(card.id)"/>
+      <portfolio-card class="portfolioCard" [id]="card.id" [delay]="$index" (click)="this.showDialog(card.id)"/>
     }
   </div>
   <portfolio-dialog [visible]="this.visible()" [card]="this.card()" (onSetVisible)="this.updateVisibility($event)"/>
