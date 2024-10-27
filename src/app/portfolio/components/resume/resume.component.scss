@@ -8,17 +8,32 @@
   .text{
     color: white;
     width: 100vw;
-    position: absolute;
+    min-height: 20rem;
+    //position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     top: 10%;
+    h1 span {
+      color: $color-secondary;
+      border-right: solid 3px $color-secondary;
+      animation:
+      blink 1s steps(1) infinite;
+    }
   }
 .cards-container{
-  position: absolute;
+  //position: absolute;
   top: 50%;
   width: 100vw;
+  height: fit-content;
 }
+}
+
+@keyframes blink {
+  from {border-color: transparent;}
+  50% {border-color: $color-secondary;}
+  to {background-color: $color-secondary;}
+
 }
 
 

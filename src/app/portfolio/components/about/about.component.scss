@@ -17,6 +17,12 @@
       height: 50rem; /* Ajusta el tamaño del SVG */
     }
   }
+  .about-me-section{
+    img {
+      scale: 0.4;
+      mask-image: linear-gradient(black 70%, transparent);
+    }
+  }
   .timeline {
     //position: relative;
     width: 100%;

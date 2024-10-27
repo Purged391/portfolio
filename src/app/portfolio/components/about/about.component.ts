@@ -109,20 +109,18 @@ export default class AboutComponent implements AfterViewInit {
   public initScrollAnimation(): void{
     // Selecciona el SVG o el texto dentro del SVG
     const svgText = document.getElementById('svgText');
-
-    gsap.to(svgText,
-      {
-        scrollTrigger: {
-          trigger: '.about-component',
-          start: '12% 36%',
-          end: '20% 10%',
-          scrub: true,
-          pin: true,
-        },
-        opacity: 0,
-        //y: 100,
-        duration: 5
-      }
-    );
+    gsap.to(svgText, {
+      scrollTrigger: {
+        trigger: '.about-component',
+        start: '12% 36%',
+        end: '40% 10%',
+        scrub: true,
+        pin: true, // Mantiene el pin durante toda la animación
+      },
+      keyframes: [
+        { opacity: 1, duration: 10 },
+        { opacity: 0, duration: 10 }
+      ],
+    });
   }
 }

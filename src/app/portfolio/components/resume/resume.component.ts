@@ -98,7 +98,7 @@ export default class ResumeComponent {
 
   private animateText(): void {
     const tl = gsap.timeline({repeat:-1, repeatDelay:1, yoyo:true});
-    tl.to("h1 span", {duration: 4, text:" is so much fun you should try it some time!"})
+    tl.to("small span", {duration: 5, text:"Why don't you try dragging the cards?...", ease:"none"});
   }
 
   public visible = signal<boolean>(false);
