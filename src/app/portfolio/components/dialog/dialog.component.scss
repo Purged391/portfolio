@@ -4,6 +4,9 @@
 :host ::ng-deep .p-dialog {
   background-color: $color-primary !important;
   color: #ffffff !important;
+  height: 60rem !important;
+  width: 50rem !important;
+  //overflow-y: scroll !important;
 }
 
 :host ::ng-deep .p-dialog .p-dialog-header {

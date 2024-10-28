@@ -13,9 +13,10 @@
     class="flex flex-wrap p-5 align-items-center justify-content-center column-gap-4 row-gap-4 cards-container"
   >
     @for (card of this.cards; track $index) {
-      <portfolio-card class="portfolioCard" [id]="card.id" [alt]="card.alt" [delay]="$index" (click)="this.showDialog(card.id)"/>
+      <div class="card-skeleton">
+        <portfolio-card data-flip-id="card"  class="portfolioCard" [ngClass]="card.id" [id]="card.id" [alt]="card.alt" [delay]="$index" (click)="this.showDialog(card.id)"/>
+      </div>
     }
   </div>
-  <portfolio-dialog class="dialog" [visible]="this.visible()" [card]="this.card()" (onSetVisible)="this.updateVisibility($event)"/>
-
+  <portfolio-dialog data-flip-id="card"  [ngClass]="this.visible()? '' : 'dialog'" [visible]="this.visible()" [card]="this.card()" (onSetVisible)="this.updateVisibility($event)"/>
 </div>

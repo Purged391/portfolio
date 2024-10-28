@@ -24,6 +24,7 @@ import TimeGapPipe from '../../../pipes/timeGap.pipe';
 export default class DialogComponent {
   public localVisible = signal<boolean>(false);
 
+
   @Input()
   set visible(value: boolean) {
     this.localVisible.set(value);
@@ -31,6 +32,10 @@ export default class DialogComponent {
 
   public onSetVisible = output<boolean>();
   public setVisible(): void{
+    this.header.set('');
+    this.experience.set('');
+    this.information.set('');
+    this.alt.set('');
       this.onSetVisible.emit(false);
   }
 

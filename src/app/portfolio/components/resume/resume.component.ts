@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { Flip } from 'gsap/Flip';
 
 
 
@@ -84,7 +85,7 @@ export default class ResumeComponent {
   constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(TextPlugin);
-
+    gsap.registerPlugin(Flip);
   }
 
   ngAfterViewInit(): void {
@@ -111,14 +112,30 @@ export default class ResumeComponent {
   }
 
   public visible = signal<boolean>(false);
+  public click = signal<boolean>(false);
   public card = signal<Card>({ id: '', experience: '', information: '', alt: '' });
 
   public showDialog(id: string): void {
+    this.click.set(true);
+    this.card.set({ id: '', experience: '', information: '', alt: '' });
+    //const portfolioCard = document.querySelector(".portfolioCard"),
+    //dialog = document.querySelector(".dialog");
+    const state = Flip.getState(".dialog, ." + id);
+
+    Flip.from(state, {
+      duration: 0.6,
+      fade: true,
+      scale: true,
+      absolute: true,
+      //toggleClass: "flipping",
+      ease: "power1.inOut",
+    });
     this.visible.set(true);
-    this.card.set(this.cards.find((card) => card.id === id)!);
-    // this.header.set(card.id);
-    // this.experience.set(card.experience);
-    // this.information.set(card.information);
+    setTimeout(() => {
+      this.card.set(this.cards.find((card) => card.id === id)!);
+      this.click.set(false);
+    }, 700);
+
 }
 
 public updateVisibility(value: boolean): void {
