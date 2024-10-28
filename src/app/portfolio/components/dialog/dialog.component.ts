@@ -39,8 +39,10 @@ export default class DialogComponent {
     this.header.set(value.id);
     this.experience.set(value.experience);
     this.information.set(value.information);
+    this.alt.set(value.alt);
   }
   public header = signal<string>('');
   public experience = signal<string>('');
   public information = signal<string>('');
+  public alt = signal<string>('');
 }

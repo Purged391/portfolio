@@ -20,6 +20,7 @@ export default class CardComponent {
 
 
   public id = input.required<string>();
+  public alt = input.required<string>();
 
   public delay = input.required<number>();
 

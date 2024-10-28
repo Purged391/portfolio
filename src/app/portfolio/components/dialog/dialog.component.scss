@@ -24,6 +24,13 @@
   padding: 0.5rem;
   cursor: default;
 }
+:host ::ng-deep .p-chip img {
+  border-radius: 0 !important;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
 
 :host ::ng-deep .chip-0:hover {
   background-color: $color-primary-light-hover;
