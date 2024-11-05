@@ -112,7 +112,7 @@ export default class AboutComponent implements AfterViewInit {
     gsap.to(svgText, {
       scrollTrigger: {
         trigger: '.about-component',
-        start: '12% 36%',
+        start: '9% 36%',
         end: '40% 10%',
         scrub: true,
         pin: true, // Mantiene el pin durante toda la animación
