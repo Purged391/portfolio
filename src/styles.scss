@@ -4,6 +4,7 @@
 @import "primeng/resources/primeng.css";
 
 html, body {
+  scroll-behavior: smooth;
   height: 100%;
   &::-webkit-scrollbar {
     width: 12px; /* Ancho de la barra de desplazamiento */
