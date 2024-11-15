@@ -1,62 +1,12 @@
-<div class="header grid">
-  <div class="col-6 flex h-6rem justify-content-start align-items-center">
-    <div class="col flex justify-content-center align-items-center">
-      <p-button
-        label="{{ 'header.buttons.home' | translate }}"
-        size="small"
-        [text]="true"
-        [styleClass]="
-          this.activeButton === 'home' ? 'button_active' : 'button_plain'
-        "
-        (click)="this.navigateTo('home')"
-      ></p-button>
-    </div>
-    <div class="col flex justify-content-center align-items-center">
-      <p-button
-        label="{{ 'header.buttons.about' | translate }}"
-        size="small"
-        [text]="true"
-        [styleClass]="
-          this.activeButton === 'about' ? 'button_active' : 'button_plain'
-        "
-        (click)="this.navigateTo('about')"
-      ></p-button>
-    </div>
-    <div class="col flex justify-content-center align-items-center">
-      <p-button
-        label="{{ 'header.buttons.resume' | translate }}"
-        size="small"
-        [text]="true"
-        [styleClass]="
-          this.activeButton === 'resume' ? 'button_active' : 'button_plain'
-        "
-        (click)="this.navigateTo('resume')"
-      ></p-button>
-    </div>
-  </div>
-  <div class="col-6 flex h-6rem align-items-center justify-content-end">
-    <div class="col flex-1"></div>
-    <div class="col flex justify-content-center align-items-center">
-      <p-button
-        label="{{ 'header.buttons.contact' | translate }}"
-        size="small"
-        [text]="true"
-        [styleClass]="
-          this.activeButton === 'contact' ? 'button_active' : 'button_plain'
-        "
-        (click)="this.navigateTo('contact')"
-      ></p-button>
-    </div>
-    <div class="col flex justify-content-center align-items-center">
-      <p-button
-        label="{{ 'header.buttons.projects' | translate }}"
-        size="small"
-        [text]="true"
-        [styleClass]="
-          this.activeButton === 'projects' ? 'button_active' : 'button_plain'
-        "
-        (click)="this.navigateTo('projects')"
-      ></p-button>
-    </div>
-  </div>
-</div>
+<header class="header-container">
+  <nav class="menu-item">
+    @for (navSection of this.navigationSections; track $index) {
+      <a [routerLink]="navSection.route" [fragment]="navSection.id"  [ngClass]="{'active': this.fragment() === navSection.id}">{{navSection.label | translate}}</a>
+    }
+  </nav>
+  <nav class="menu-item-reduced">
+    @for (navSection of this.navigationSections; track $index) {
+      <a [routerLink]="navSection.route" [fragment]="navSection.id" [ngClass]="{'active': this.fragment() === navSection.id}"><i class="pi" [ngClass]="navSection.icon"></i></a>
+    }
+  </nav>
+</header>

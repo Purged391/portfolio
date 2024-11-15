@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, effect, ElementRef, Inject, PLATFORM_ID, QueryList, signal, ViewChildren } from '@angular/core';
+import { Component, effect, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, QueryList, signal, ViewChildren } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
@@ -12,6 +12,7 @@ import TranslatePipe from '../../../pipes/translate.pipe';
 import { Card } from '../../interfaces/Card.interface';
 import CardComponent from '../card/card.component';
 import DialogComponent from '../dialog/dialog.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'portfolio-resume',
   standalone: true,
@@ -82,7 +83,7 @@ export default class ResumeComponent {
     },
   ];
 
-  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private router: Router, private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(TextPlugin);
     gsap.registerPlugin(Flip);
@@ -141,4 +142,6 @@ export default class ResumeComponent {
 public updateVisibility(value: boolean): void {
     this.visible.set(value);
 }
+
+
 }

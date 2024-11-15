@@ -1,37 +1,130 @@
 @import '../../../styles.scss';
 
-.header{
-  //background: linear-gradient(to bottom, $color-primary 1rem, transparent); /* Gradiente de negro a transparente */
-  background-color:  rgba($color-primary, 0.7);
+.header-container{
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
   z-index: 999;
-  //background: radial-gradient(circle at top, $color-primary 2rem, transparent);
-  //clip-path: polygon(0 0, 100% 0, 100% 40%, 90% 35%, 85% 40%, 70% 30%, 60% 35%, 50% 30%, 40% 35%, 30% 20%, 15% 25%, 0 20%);
+
+  .menu-item{
+    display: flex;
+    background-color: $color-primary;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 3rem;
+    a{
+      text-decoration: none;
+      color: $color-text-light;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s linear;
+      padding-bottom: 2px;
+      cursor: pointer;
+      &::after{
+        content: "";
+        display: block;
+        border-bottom: 2px solid $color-secondary;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s linear;
+      }
+      &:hover {
+        color: $color-secondary-hover;
+        //text-decoration: underline;
+      }
+      &:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.3s linear;
+      }
+      &.active {
+        color: $color-secondary;
+        font-weight: bold;
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+  .menu-item-reduced{
+    display: none;
+  }
+
+
+
+
 }
-:host ::ng-deep{
-  .button_plain.p-button{
-    color: $color-text-light;
-    align-self: center;
-    //width: 100%;
-    //border: 0;
-    //box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    //outline: none;
+@media (max-width: 768px) {
+  .header-container {
+    justify-content: center;
+
+    .menu-item {
+      display: none;
+    }
+
+    .menu-item-reduced {
+      background-color: $color-primary;
+      padding: 1rem;
+      border-radius: 1rem;
+      display: flex;
+      gap: 2rem;
+
+      a {
+        text-decoration: none;
+        color: $color-text-light;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: 0.3s linear;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 2px solid $color-secondary;
+          width: 100%;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s linear;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+          transition: transform 0.3s linear;
+        }
+        &.active {
+          color: $color-secondary;
+          font-weight: bold;
+          &::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+          .pi {
+            color: $color-secondary;
+          }
+        }
+        &:hover .pi {
+          color: $color-secondary-hover;
+          transform: scale(1.1);
+          transition: color 0.3s linear, transform 0.3s linear;
+        }
+      }
+      .pi {
+        font-size: 1.5rem;
+        color: $color-text-light;
+        cursor: pointer;
+        transition: 0.3s linear;
+      }
+    }
   }
-  .p-button:hover{
-    background-color: transparent;
-  }
-  .p-button:focus{
-    box-shadow: none;
-  }
-  .p-button:focus:focus-visible{
-    box-shadow: none;
-  }
-  .button_active.p-button{
-    color: $color-secondary;
-    //width: 100%;
-    font-size: medium;
-  }
+}
+
+@media (max-width: 576px) {
 }

@@ -15,4 +15,4 @@ import HeaderComponent from "../shared/header/header.component";
   styleUrl: './portfolio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class PortfolioComponent { }
+export default class PortfolioComponent {}

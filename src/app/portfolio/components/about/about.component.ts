@@ -1,9 +1,10 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, HostListener, Inject, PLATFORM_ID, signal } from '@angular/core';
+import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -52,7 +53,7 @@ export default class AboutComponent implements AfterViewInit {
 
 
 
-  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object, private router: Router) {
     gsap.registerPlugin(ScrollTrigger);
   }
 
@@ -123,4 +124,8 @@ export default class AboutComponent implements AfterViewInit {
       ],
     });
   }
+
+
+
+
 }
