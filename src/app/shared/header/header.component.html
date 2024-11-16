@@ -6,7 +6,7 @@
   </nav>
   <nav class="menu-item-reduced">
     @for (navSection of this.navigationSections; track $index) {
-      <a [routerLink]="navSection.route" [fragment]="navSection.id" [ngClass]="{'active': this.fragment() === navSection.id}"><i class="pi" [ngClass]="navSection.icon"></i></a>
+      <a [routerLink]="navSection.route" [fragment]="navSection.id" [ngClass]="{'active': this.fragment() === navSection.id}" [attr.data-tooltip]="navSection.label | translate"><i class="pi" [ngClass]="navSection.icon"></i></a>
     }
   </nav>
 </header>
