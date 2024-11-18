@@ -1,37 +1,22 @@
 <div class="home-component">
-  <div class="flex h-full">
-    <div class="col-12 lg:col-6 flex align-items-center justify-content-center">
-      <div class="text-white">
-        <h1 class="name font-light m-0">Mario</h1>
-        <h1 class="surname font-bold m-0 opacity-90">DOMÍNGUEZ GARCÍA</h1>
-        <p class="description font-light">FullStack Developer</p>
-        <div class="flex justify-content-center gap-2 mt-4">
-          <div class="w-full">
-            <p-button
-              label="{{ 'header.buttons.resume' | translate }}"
-              (click)="navigateTo($event, 'resume')"
-              [outlined]="true"
-              [rounded]="true"
-              class="fadeinup animation-duration-1000"
-            >
-            </p-button>
-          </div>
-          <div class="w-full">
-            <p-button
-              label="{{ 'header.buttons.projects' | translate }}"
-              (click)="navigateTo($event, 'projects')"
-              [outlined]="true"
-              [rounded]="true"
-              class="fadeinup animation-duration-1000"
-            >
-            </p-button>
-          </div>
+  <img class="background" src="../../../../assets/images/Bosque1.jpeg"/>
+    <div class="home-card">
+      <div class="home-card-content">
+        <h1 class="name">Mario</h1>
+        <h1 class="surname">DOMÍNGUEZ GARCÍA</h1>
+        <p class="description">FullStack Developer</p>
+        <div class="section-button">
+            <button (click)="navigateTo($event, 'resume')">
+            {{ 'header.buttons.resume' | translate }}
+            </button>
+            <button (click)="navigateTo($event, 'projects')">
+            {{ 'header.buttons.projects' | translate }}
+            </button>
         </div>
-        <div class="flex mt-5">
+        <div class="section-gradient-bar">
           <div class="gradient-bar"></div>
           <div class="gradient-bar reverse"></div>
         </div>
       </div>
     </div>
-  </div>
 </div>

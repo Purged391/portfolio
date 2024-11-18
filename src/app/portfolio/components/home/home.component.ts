@@ -1,6 +1,5 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import TranslatePipe from '../../../pipes/translate.pipe';
 import { Router } from '@angular/router';
 
@@ -9,7 +8,6 @@ import { Router } from '@angular/router';
   selector: 'portfolio-home',
   standalone: true,
   imports: [
-    ButtonModule,
     CommonModule,
     TranslatePipe
   ],
@@ -20,7 +18,7 @@ export default class HomeComponent {
 
   public navigateTo(event: MouseEvent, dest: string): void{
     const target = event.target as HTMLElement;
+    //Don't lose shadow effect on click
     target.blur();
   }
-
 }

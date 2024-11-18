@@ -1,5 +1,4 @@
 import { Component, computed, Inject, inject, PLATFORM_ID } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { toSignal } from '@angular/core/rxjs-interop';
 import TranslatePipe from '../../pipes/translate.pipe';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
@@ -9,7 +8,6 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   selector: 'shared-header',
   standalone: true,
   imports: [
-    ButtonModule,
     RouterModule,
     TranslatePipe,
     CommonModule,
