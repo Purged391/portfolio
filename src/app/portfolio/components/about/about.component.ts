@@ -5,6 +5,7 @@ import { CardModule } from 'primeng/card';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Router } from '@angular/router';
+import TranslatePipe from '../../../pipes/translate.pipe';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
   imports: [
     CardModule,
     CommonModule,
+    TranslatePipe
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
