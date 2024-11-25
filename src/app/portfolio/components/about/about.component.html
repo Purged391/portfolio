@@ -162,90 +162,46 @@
     <div class="card">
       <img src="assets/images/foto_portfolio.png" alt="Photo of myself: Mario Domínguez García" />
       <div class="card-content">
-        <h1>Yo...</h1>
-        <p>Soy un joven de "poner edad automatica" apasionado por las tecnologías y con ganas de seguir avanzando en mi carrera profesionar.
-          Tengo un grado en ingeniería informática en la universidad Carlos III de Madrid donde aparte de aprender conocimientos teóricos, he podido poner en práctica muchas de las cosas aprendidas.
-          Actualmente estoy trabajando en una empresa de desarrollo de software llamada <a href="https://www.izertis.com/">Izertis</a> donde he podido aprender mucho sobre el desarrollo de software y la gestión de proyectos.
-          Estoy muy interesado en el desarrollo de software, sobre todo en el desarrollo web y en el desarrollo de aplicaciones móviles. Pero también me apasiona la inteligencia artifical y el machine learning, la ciberseguridad y el devops.
-        </p>
-        <h1>Puedo aportar...</h1>
+        <h1>{{'about.resume.section' | translate}}</h1>
         <p>
-          Ahora mismo puedo aportar conocimientos en el desarrollo de software y en el desarrollo web tras "insertar fecha automatica" años de experiencia en el sector. Asi mismo dispongo de mas conocimientos en gestión de proyectos y metodologias ágiles.
+            {{'about.resume.paragraph.first.part.one' | translate}} <span>{{this.age()}}</span> {{'about.resume.paragraph.first.part.two' | translate}}
         </p>
-      </div>
+        <p>
+            {{'about.resume.paragraph.second.part.one' | translate}}<a href="https://www.keifitech.com/#/home" target="_blank">Keifi Technologies By Izertis</a>{{'about.resume.paragraph.second.part.two' | translate}}
+        </p>
+
+        <h1>{{'about.value.section' | translate}}</h1>
+        <p>
+            {{'about.value.paragraph.first.part.one' | translate}} <span>{{this.workExperience()}}</span> {{'about.value.paragraph.first.part.two' | translate}}
+        </p>
+    </div>
     </div>
   </div>
-  <!--<div class="timeline">
-    <div class="holder">
-      <div
-        class="container left-container box"
-        [ngClass]="inView()[0] ? '' : 'opacity-0'"
-        [@moveline]="inView()[0] ? 'visible' : 'hidden'"
-      >
+  <div class="section-timeline">
+      <div data-aos="fade-down" data-aos-offset="1600" data-aos-anchor-placement="bottom-bottom" class="container left-container">
         <img src="" alt="" />
-        <p-card
-          header="Universidad"
-          class="card"
-          [ngClass]="isCardVisible()[0] === 'hidden' ? 'opacity-0' : ''"
-          [@slideLeft]="isCardVisible()[0]"
-        >
-          Años de universidad
-        </p-card>
+        <div class="card" data-aos="fade-right" data-aos-offset="1600" data-aos-delay="300" data-aos-anchor-placement="top-center">
+          <h3>
+            University
+          </h3>
+          <p>
+            Años de universidad
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="holder">
-      <div
-        class="container right-container box"
-        [ngClass]="inView()[1] ? '' : 'opacity-0'"
-        [@moveline]="inView()[1] ? 'visible' : 'hidden'"
-      >
+      <div data-aos="fade-down" data-aos-offset="1650" data-aos-anchor-placement="bottom-bottom" class="container right-container">
         <img src="" alt="" />
-        <p-card
-          header="Practicas Junior"
-          class="card"
-          [ngClass]="isCardVisible()[1] === 'hidden' ? 'opacity-0' : ''"
-          [@slideRight]="isCardVisible()[1]"
-        >
-          Duracion
-        </p-card>
+        <div class="card" data-aos="fade-left" data-aos-offset="1650" data-aos-delay="300" data-aos-anchor-placement="top-center">
+          <h3>
+            Practicas Junior
+          </h3>
+          <p>
+            Duracion
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="holder">
-      <div
-        class="container left-container box"
-        [ngClass]="inView()[2] ? '' : 'opacity-0'"
-        [@moveline]="inView()[2] ? 'visible' : 'hidden'"
-      >
-        <img src="" alt="" />
-        <p-card
-          header="Fullstack"
-          class="card"
-          [ngClass]="isCardVisible()[2] === 'hidden' ? 'opacity-0' : ''"
-          [@slideLeft]="isCardVisible()[2]"
-        >
-          Duracion
-        </p-card>
-      </div>
-    </div>
-    <div class="holder">
-      <div
-        class="container right-container box"
-        [ngClass]="inView()[3] ? '' : 'opacity-0'"
-        [@moveline]="inView()[3] ? 'visible' : 'hidden'"
-      >
-        <img src="" alt="" />
-        <p-card
-          header="aaa"
-          class="card"
-          [ngClass]="isCardVisible()[3] === 'hidden' ? 'opacity-0' : ''"
-          [@slideRight]="isCardVisible()[3]"
-        >
-          hgfhgfdhgfdhgfd
-        </p-card>
-      </div>
-    </div>
-    <div class="flex justify-content-center">
+    <div class="final-text">
       <p class="mt-0">Future</p>
     </div>
-  </div>-->
+  </div>
 </div>

@@ -1,9 +1,20 @@
 {
   "header.buttons.home": "Home",
-  "header.buttons.about": "About",
-  "header.buttons.resume": "Resume",
+  "header.buttons.about": "About Me",
+  "header.buttons.resume": "Skills",
   "header.buttons.projects": "Projects",
   "header.buttons.contact": "Contact",
+
+  "about.resume.section": "Resume",
+  "about.resume.paragraph.first.part.one": "I am a young ",
+  "about.resume.paragraph.first.part.two": " years old technology enthusiast with a great desire to continue advancing in my professional career. I graduated in Computer Engineering from Carlos III University of Madrid, where I acquired solid theoretical knowledge and applied it in practical projects that strengthened my technical skills.",
+  "about.resume.paragraph.second.part.one": "Currently, I work as a software developer at ",
+  "about.resume.paragraph.second.part.two": ", an experience that has allowed me to consolidate my skills in software development and project management. I am especially interested in web and mobile application development, but I am also passionate about emerging areas such as artificial intelligence, machine learning, BigData, cybersecurity and DevOps.",
+  "about.value.section": "What can I bring?",
+  "about.value.paragraph.first.part.one": "With ",
+  "about.value.paragraph.first.part.two": " years of experience in the technology sector, I bring solid knowledge in software development, web development and agile project management methodologies. My practical experience and my enthusiasm for learning make me an adaptable professional in constant evolution, prepared to face new challenges and bring value to the teams I collaborate with.",
+
+
 
   "resume.card.angular.experience": "01/07/2020/of experience",
   "resume.card.angular.information.versions": "From V14 to V18 (last)",

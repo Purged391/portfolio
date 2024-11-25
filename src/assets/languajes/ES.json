@@ -1,9 +1,18 @@
 {
   "header.buttons.home": "Inicio",
   "header.buttons.about": "Sobre mi",
-  "header.buttons.resume": "Resumen",
+  "header.buttons.resume": "Habilidades",
   "header.buttons.projects": "Proyectos",
   "header.buttons.contact": "Contacto",
+
+  "about.resume.section": "Resumen",
+  "about.resume.paragraph.first.part.one": "Soy un joven de ",
+  "about.resume.paragraph.first.part.two": " años apasionado por la tecnología y con un gran deseo de seguir avanzando en mi carrera profesional. Me gradué en Ingeniería Informática en la Universidad Carlos III de Madrid, donde adquirí sólidos conocimientos teóricos y los apliqué en proyectos prácticos que fortalecieron mis habilidades técnicas.",
+  "about.resume.paragraph.second.part.one": "Actualmente, trabajo como desarrollador de software en ",
+  "about.resume.paragraph.second.part.two": ", una experiencia que me ha permitido consolidar mis habilidades en el desarrollo de software y la gestión de proyectos. Estoy especialmente interesado en el desarrollo web y de aplicaciones móviles, pero también me apasionan áreas emergentes como la inteligencia artificial, el machine learning, el BigData, la ciberseguridad y el DevOps.",
+  "about.value.section": "¿Qué puedo aportar?",
+  "about.value.paragraph.first.part.one": "Con ",
+  "about.value.paragraph.first.part.two": " años de experiencia en el sector tecnológico, aporto conocimientos sólidos en desarrollo de software, desarrollo web y metodologías ágiles de gestión de proyectos. Mi experiencia práctica y mi entusiasmo por aprender me convierten en un profesional adaptable y en constante evolución, preparado para enfrentar nuevos desafíos y aportar valor a los equipos con los que colaboro.",
 
   "resume.card.angular.experience": "01/07/2020/de experiencia",
   "resume.card.angular.information.versions": "De la V14 a la V18 (última)",

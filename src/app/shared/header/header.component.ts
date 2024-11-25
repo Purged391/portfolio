@@ -17,7 +17,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 })
 export default class HeaderComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+  private platformId = inject(PLATFORM_ID);
 
   public navigationSections = [
     {id: 'home', label: 'header.buttons.home', route: '/portfolio/home', icon: 'pi-home' },
