@@ -113,19 +113,23 @@
       display: flex;
       padding: 2rem;
       width: 50%;
-      height: 20rem;
+      height: fit-content;
       position: relative;
       img {
         position: absolute;
-        width: 2rem;
-        height: 2rem;
+        width: 4rem;
+        height: 4rem;
         border-radius: 50%;
-        right: -1rem;
+        right: -2rem;
         top: 0;
         z-index: 5;
+        border: 3px solid $color-primary-light;
+        background-color: white;
+        aspect-ratio: 1/1;
       }
       .card {
         width: 100%;
+        margin-top: 3rem;
         height: fit-content;
         border-radius: 0.5rem;
         border-width: 3px;
@@ -155,9 +159,9 @@
             }
       }
       .right-container {
-        left: 50%;
+        left: 50.1%;
         img {
-          left: -1rem;
+          left: -2rem;
         }
         &::after {
           right: 100%;
@@ -184,13 +188,13 @@
       .container {
         width: 100% !important;
         img {
-          right: -1rem;
+          right: -4rem;
         }
       }
       .left-container {
         left: 0;
         img {
-          left: -1rem;
+          left: -2rem;
         }
         &::after {
           left: 0 !important;
