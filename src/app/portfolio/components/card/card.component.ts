@@ -5,14 +5,13 @@ import { CommonModule } from '@angular/common';
 import { DragDropModule } from 'primeng/dragdrop';
 
 @Component({
-  selector: 'portfolio-card',
-  standalone: true,
-  imports: [
-    CommonModule,
-    DragDropModule,
-  ],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+    selector: 'portfolio-card',
+    imports: [
+        CommonModule,
+        DragDropModule,
+    ],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.scss'
 })
 export default class CardComponent {
 

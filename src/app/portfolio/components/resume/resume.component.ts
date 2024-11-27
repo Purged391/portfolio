@@ -14,16 +14,15 @@ import CardComponent from '../card/card.component';
 import DialogComponent from '../dialog/dialog.component';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'portfolio-resume',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonModule,
-    CardComponent,
-    DialogComponent
-  ],
-  templateUrl: './resume.component.html',
-  styleUrl: './resume.component.scss',
+    selector: 'portfolio-resume',
+    imports: [
+        CommonModule,
+        ButtonModule,
+        CardComponent,
+        DialogComponent
+    ],
+    templateUrl: './resume.component.html',
+    styleUrl: './resume.component.scss'
 })
 export default class ResumeComponent {
   public cards: Card[] = [

@@ -8,18 +8,17 @@ import { Card } from '../../interfaces/Card.interface';
 import TimeGapPipe from '../../../pipes/timeGap.pipe';
 
 @Component({
-  selector: 'portfolio-dialog',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslatePipe,
-    TimeGapPipe,
-    ChipModule,
-    FieldsetModule,
-    DialogModule,
-  ],
-  templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+    selector: 'portfolio-dialog',
+    imports: [
+        CommonModule,
+        TranslatePipe,
+        TimeGapPipe,
+        ChipModule,
+        FieldsetModule,
+        DialogModule,
+    ],
+    templateUrl: './dialog.component.html',
+    styleUrl: './dialog.component.scss'
 })
 export default class DialogComponent {
   public localVisible = signal<boolean>(false);

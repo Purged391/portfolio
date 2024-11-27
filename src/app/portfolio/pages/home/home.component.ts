@@ -6,11 +6,10 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'page-home',
-  standalone: true,
-  imports: [HomeComponent, AboutComponent, ResumeComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'page-home',
+    imports: [HomeComponent, AboutComponent, ResumeComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export default class HomePageComponent implements OnInit, OnDestroy {
 

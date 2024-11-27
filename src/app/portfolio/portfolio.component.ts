@@ -4,15 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import HeaderComponent from "../shared/header/header.component";
 
 @Component({
-  selector: 'app-portfolio',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HeaderComponent
-],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-portfolio',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        HeaderComponent
+    ],
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class PortfolioComponent {}

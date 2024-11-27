@@ -6,25 +6,21 @@ import { trigger, transition, style, animate } from '@angular/animations';
 
 
 @Component({
-  selector: 'portfolio-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TranslatePipe
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  animations: [
-    trigger('cardAnimation', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(50px)' }),
-        animate(
-          '800ms ease-out',
-          style({ opacity: 1, transform: 'translateY(0)' })
-        ),
-      ]),
-    ]),
-  ],
+    selector: 'portfolio-home',
+    imports: [
+        CommonModule,
+        TranslatePipe
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    animations: [
+        trigger('cardAnimation', [
+            transition(':enter', [
+                style({ opacity: 0, transform: 'translateY(50px)' }),
+                animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+            ]),
+        ]),
+    ]
 })
 export default class HomeComponent {
 

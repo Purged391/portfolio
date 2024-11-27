@@ -1,21 +1,19 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, inject, PLATFORM_ID, signal } from '@angular/core';
-import { CardModule } from 'primeng/card';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import TranslatePipe from '../../../pipes/translate.pipe';
 
 
 @Component({
-  selector: 'portfolio-about',
-  standalone: true,
-  imports: [
-    CardModule,
-    CommonModule,
-    TranslatePipe
-  ],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+    selector: 'portfolio-about',
+    imports: [
+        CommonModule,
+        TranslatePipe
+    ],
+    standalone: true,
+    templateUrl: './about.component.html',
+    styleUrl: './about.component.scss'
 })
 export default class AboutComponent implements AfterViewInit {
 

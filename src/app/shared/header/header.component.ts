@@ -5,15 +5,14 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'shared-header',
-  standalone: true,
-  imports: [
-    RouterModule,
-    TranslatePipe,
-    CommonModule,
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'shared-header',
+    imports: [
+        RouterModule,
+        TranslatePipe,
+        CommonModule,
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export default class HeaderComponent {
 
