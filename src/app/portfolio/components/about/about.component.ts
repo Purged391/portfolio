@@ -57,8 +57,14 @@ export default class AboutComponent implements AfterViewInit {
     gsap.to(svgText, {
       scrollTrigger: {
         trigger: '.about-component',
-        start: '9% 36%',
-        end: '40% 10%',
+        start: () => {
+        const viewportHeight = window.innerHeight;
+        return `${viewportHeight * 0.36}px ${viewportHeight * 0.36}px`;
+      },
+      end: () => {
+        const viewportHeight = window.innerHeight;
+        return `${viewportHeight * 0.80}px ${viewportHeight * 0.10}px`;
+      },
         scrub: true,
         pin: true,
       },

@@ -7,7 +7,8 @@
 }
 
 .about-component {
-  height: 400vh;
+  min-height: 400vh;
+  height: fit-content;
   position: relative;
   background-color: $color-primary;
   display: flex;
@@ -33,7 +34,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     .card{
       color: $color-text-light;
       width: 100%;
@@ -106,9 +107,10 @@
   .section-timeline {
     position: relative;
     width: 100%;
-    height: auto;
+    height: fit-content;
     padding: 2rem;
-    margin-top: 10rem;
+    margin-top: 40%;
+    margin-bottom: 30%;
     .container {
       display: flex;
       padding: 2rem;
