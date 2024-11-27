@@ -1,5 +1,5 @@
 /* Asegúrate de que el estilo esté en el archivo SCSS correspondiente */
-@import "../../../../styles.scss";
+@use "../../../../styles.scss" as *;
 
 :host ::ng-deep .p-dialog {
   background-color: $color-primary !important;

@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@use "../../../../styles.scss" as *;
 
 .card {
   border-color: $color-primary-light;
