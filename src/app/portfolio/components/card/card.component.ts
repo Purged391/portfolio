@@ -1,6 +1,5 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, Input, input, signal } from '@angular/core';
 import { gsap } from 'gsap';
-import { Card } from '../../interfaces/Card.interface';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from 'primeng/dragdrop';
 
@@ -14,13 +13,8 @@ import { DragDropModule } from 'primeng/dragdrop';
     styleUrl: './card.component.scss'
 })
 export default class CardComponent {
-
-
-
-
   public id = input.required<string>();
   public alt = input.required<string>();
-
   public delay = input.required<number>();
 
 

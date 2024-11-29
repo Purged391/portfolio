@@ -1,30 +1,22 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, effect, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, QueryList, signal, ViewChildren } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID } from '@angular/core';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { TextPlugin } from 'gsap/TextPlugin';
-import { Flip } from 'gsap/Flip';
-
-
 
 import TranslatePipe from '../../../pipes/translate.pipe';
 import { Card } from '../../interfaces/Card.interface';
 import CardComponent from '../card/card.component';
-import DialogComponent from '../dialog/dialog.component';
-import { Router } from '@angular/router';
 @Component({
     selector: 'portfolio-resume',
     imports: [
         CommonModule,
-        ButtonModule,
         CardComponent,
-        DialogComponent
     ],
     templateUrl: './resume.component.html',
     styleUrl: './resume.component.scss'
 })
-export default class ResumeComponent {
+export default class ResumeComponent implements AfterViewInit {
   public cards: Card[] = [
     {
       id: 'Angular',
@@ -81,14 +73,16 @@ export default class ResumeComponent {
       alt: 'Mulesoft Logo',
     },
   ];
+  private platformId = inject(PLATFORM_ID);
+  private el = inject(ElementRef);
 
-  constructor(private router: Router, private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(TextPlugin);
-    gsap.registerPlugin(Flip);
+    //gsap.registerPlugin(Flip);
   }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.makeCardsDraggable();
       this.animateText();
@@ -101,7 +95,11 @@ export default class ResumeComponent {
       Draggable.create(card, {
         type: 'x,y',
         edgeResistance: 0.65,
-        bounds: '.resume-component',
+        bounds: this.el.nativeElement.querySelector('.resume-component'),
+        inertia: true,
+        onDrag: function() {
+          this['applyBounds']();
+        }
       });
     });
   }
@@ -110,37 +108,4 @@ export default class ResumeComponent {
     const tl = gsap.timeline({repeat:-1, repeatDelay:1, yoyo:true});
     tl.to("small span", {duration: 5, text:"Why don't you try dragging the cards?...", ease:"none"});
   }
-
-  public visible = signal<boolean>(false);
-  public click = signal<boolean>(false);
-  public card = signal<Card>({ id: '', experience: '', information: '', alt: '' });
-
-  public showDialog(id: string): void {
-    this.click.set(true);
-    this.card.set({ id: '', experience: '', information: '', alt: '' });
-    //const portfolioCard = document.querySelector(".portfolioCard"),
-    //dialog = document.querySelector(".dialog");
-    const state = Flip.getState(".dialog, ." + id);
-
-    Flip.from(state, {
-      duration: 0.6,
-      fade: true,
-      scale: true,
-      absolute: true,
-      //toggleClass: "flipping",
-      ease: "power1.inOut",
-    });
-    this.visible.set(true);
-    setTimeout(() => {
-      this.card.set(this.cards.find((card) => card.id === id)!);
-      this.click.set(false);
-    }, 700);
-
-}
-
-public updateVisibility(value: boolean): void {
-    this.visible.set(value);
-}
-
-
 }
