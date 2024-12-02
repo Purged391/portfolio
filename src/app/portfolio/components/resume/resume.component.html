@@ -11,8 +11,13 @@
   </div>
   <div class="cards-container">
     @for (card of this.cards; track $index) {
-        <portfolio-card class="portfolioCard" [ngClass]="card.id" [id]="card.id" [alt]="card.alt" [delay]="$index"/>
+      @if ($index === 0) {
+        <img id="clickme" src="../../../../assets/svg/click-me.svg" alt="Click Me with and arrow">
+      }
+        <portfolio-card class="portfolioCard" [ngClass]="card.id" [id]="card.id" [alt]="card.alt" [delay]="$index" (click)="this.openModal(card)"/>
       }
   </div>
-  <!-- <portfolio-dialog data-flip-id="card"  [ngClass]="this.visible()? '' : 'dialog'" [visible]="this.visible()" [card]="this.card()" (onSetVisible)="this.updateVisibility($event)"/> -->
+  @if (this.showModal()) {
+    <portfolio-dialog [cardInput]="this.card()" (modalClosed)="closeModal()"/>
+  }
 </div>

@@ -46,7 +46,7 @@
   "about.timeline.fullstack.description.point.four": "- Integrante del equipo de Gobierno encargado de realizar diversas tareas como Code Reviews y merges a Preproducción y Producción.",
 
   "resume.card.angular.experience": "01/07/2020/de experiencia",
-  "resume.card.angular.information.versions": "De la V14 a la V18 (última)",
+  "resume.card.angular.information.versions": "De la V14 a la V19 (última)",
   "resume.card.angular.information.basics": "Basicos de Angular",
   "resume.card.angular.information.basics.list": "Componentes, Directivas, Servicios, Pipes, Módulos, Routing, Formularios, Observables, Http, Guards, Interceptors, Lazy Loading, Hooks",
   "resume.card.angular.information.advanced": "Angular Avanzado",

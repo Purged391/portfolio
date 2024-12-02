@@ -26,6 +26,7 @@
     }
   }
 .cards-container{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 5rem;
@@ -37,21 +38,12 @@
   top: 50%;
   width: 100vw;
   height: fit-content;
-  .card-skeleton{
-    width: 8rem;
-    height: 8rem;
+  img{
+    position: absolute;
+    //transform: translate(-230%, -110%) rotate(330deg);
+    z-index: 2;
+    animation: increment 5s ease-in-out infinite;
   }
-}
-
-.dialog{
-  border: dashed 1px $color-secondary;
-  position: absolute;
-  height: 60rem;
-  width: 50rem;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
 }
 }
 
@@ -60,6 +52,18 @@
   50% {border-color: $color-secondary;}
   to {background-color: $color-secondary;}
 
+}
+
+@keyframes increment {
+  0% {
+    transform: translate(-230%, -110%) rotate(340deg) scale(1) ;
+  }
+  50% {
+    transform: translate(-230%, -110%) rotate(340deg) scale(1.2) ;
+  }
+  100% {
+    transform: translate(-230%, -110%) rotate(340deg) scale(1) ;
+  }
 }
 
 

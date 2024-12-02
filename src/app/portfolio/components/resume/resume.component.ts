@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, signal } from '@angular/core';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -7,11 +7,13 @@ import { TextPlugin } from 'gsap/TextPlugin';
 import TranslatePipe from '../../../pipes/translate.pipe';
 import { Card } from '../../interfaces/Card.interface';
 import CardComponent from '../card/card.component';
+import DialogComponent from '../dialog/dialog.component';
 @Component({
     selector: 'portfolio-resume',
     imports: [
         CommonModule,
         CardComponent,
+        DialogComponent,
     ],
     templateUrl: './resume.component.html',
     styleUrl: './resume.component.scss'
@@ -76,6 +78,10 @@ export default class ResumeComponent implements AfterViewInit {
   private platformId = inject(PLATFORM_ID);
   private el = inject(ElementRef);
 
+  public card = signal<Card | null>(null);
+  public showModal = signal(false);
+
+
   constructor() {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(TextPlugin);
@@ -107,5 +113,15 @@ export default class ResumeComponent implements AfterViewInit {
   private animateText(): void {
     const tl = gsap.timeline({repeat:-1, repeatDelay:1, yoyo:true});
     tl.to("small span", {duration: 5, text:"Why don't you try dragging the cards?...", ease:"none"});
+  }
+
+  public openModal(card: Card): void {
+    document.getElementById('clickme')!.style.display = 'none';
+    this.card.set(card);
+    this.showModal.set(true);
+  }
+
+  public closeModal(): void {
+    this.showModal.set(false);
   }
 }
