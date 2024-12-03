@@ -5,7 +5,7 @@ dialog{
   background-color: $color-primary;
   color: $color-text-light;
   height: 90%;
-  width: 60%;
+  width: 50%;
   border: none;
   border-radius: 10px;
   padding: 20px;
@@ -56,6 +56,41 @@ dialog{
     align-items: center;
     gap: 0.2rem;
     flex-wrap: wrap;
+    .form-input{
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-self: flex-end;
+      i {
+        position: absolute;
+        left: 10px;
+        font-size: 1.2rem;
+        color: $color-text-light;
+        pointer-events: none;
+    }
+    input{
+      margin-block: 1rem;
+      font-size: 1rem;
+      border: 1px solid $color-text-light;
+      border-radius: 25px;
+      outline: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: $color-text-light;
+      background-color: $color-primary;
+      padding: 0.5rem 1rem;
+      padding-left: 2.5rem;
+      &:focus {
+        border-color: adjust($color-primary, 10%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    }
+      }
+    }
 
   }
   .fieldset{
@@ -133,7 +168,43 @@ dialog{
       background-color: $color-chip-4-hover;
     }
   }
+  .certificate-section{
+    margin: 2rem;
+    img{
+      border-radius: 16px;
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
 
+@media (max-width: 1200px) {
+  dialog{
+    width: calc(100% - 20vw);
+
+  }
+}
+
+
+@media (max-width: 768px) {
+  dialog{
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    .content-section{
+      .form-input{
+      .input-wrapper {
+      flex-grow: 1;
+        input{
+          flex-grow: 1;
+        }
+        }
+      }
+
+    }
+  }
 }
 
 

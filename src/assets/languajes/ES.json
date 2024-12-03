@@ -45,6 +45,8 @@
   "about.timeline.fullstack.description.point.three": "- Desarrollo de APIs en Mulesoft.",
   "about.timeline.fullstack.description.point.four": "- Integrante del equipo de Gobierno encargado de realizar diversas tareas como Code Reviews y merges a Preproducción y Producción.",
 
+  "resume.card.common.certificates": "Certificados",
+
   "resume.card.angular.experience": "01/07/2020/de experiencia",
   "resume.card.angular.information.versions": "De la V14 a la V19 (última)",
   "resume.card.angular.information.basics": "Basicos de Angular",
@@ -69,5 +71,14 @@
   "resume.card.github.information.basics": "Basicos de Git",
   "resume.card.github.information.basics.list": "Repositorios, Ramas, Commits, Merge, Pull, Push, Fetch, Clone, Fork, Branch, Checkout, Reset, Revert, Stash, Tag, Rebase",
   "resume.card.github.information.advanced": "GitHub Avanzado",
-  "resume.card.github.information.advanced.list": "Actions, Disscusions, GitIgnore, GitConfig, Workflows, Secrets, Pull Request, Readme"
+  "resume.card.github.information.advanced.list": "Actions, Disscusions, GitIgnore, GitConfig, Workflows, Secrets, Pull Request, Readme",
+
+  "resume.card.mongodb.experience": "01/12/2024/de experiencia",
+  "resume.card.mongodb.information.versions": "v8.0",
+  "resume.card.mongodb.information.basics": "Basicos de MongoDB",
+  "resume.card.mongodb.information.basics.list": "Bases de datos, Colecciones, Documentos, Consultas, MongoDB Shell, MongoDB Compass, Índices, Agregaciones",
+  "resume.card.mongodb.information.advanced": "MongoDB Avanzado",
+  "resume.card.mongodb.information.advanced.list": "Replicación, Sharding, Backup y Restore, Seguridad, Rendimiento, MongoDB Atlas",
+  "resume.card.mongodb.information.others": "Otros",
+  "resume.card.mongodb.information.others.list": "Índices Geoespaciales"
 }

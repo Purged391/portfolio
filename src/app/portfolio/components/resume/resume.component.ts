@@ -52,8 +52,8 @@ export default class ResumeComponent implements AfterViewInit {
     },
     {
       id: 'MongoDB',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.mongodb.experience',
+      information: 'resume.card.mongodb.information',
       alt: 'MongoDB Logo',
     },
     {

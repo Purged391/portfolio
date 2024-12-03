@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, inject, PLATFORM_ID, signal } from '@angular/core';
 import TranslatePipe from '../../../pipes/translate.pipe';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -32,4 +32,16 @@ export default class HomeComponent {
     target.blur();
     this.router.navigate([`/portfolio/${dest}`], { fragment: dest });
   }
+
+  private platformId = inject(PLATFORM_ID);
+  public showScrollDown = signal(false);
+  @HostListener('window:scroll', [])
+  public onWindowScroll(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.scrollY > 0 && !this.showScrollDown()) {
+        this.showScrollDown.set(true);
+      }
+    }
+  }
 }
+
