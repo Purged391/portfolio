@@ -80,6 +80,49 @@
   "resume.card.mongodb.information.advanced": "MongoDB Advanced",
   "resume.card.mongodb.information.advanced.list": "Replication, Sharding, Backup and Restore, Security, Performance, MongoDB Atlas",
   "resume.card.mongodb.information.others": "Others",
-  "resume.card.mongodb.information.others.list": "Geospatial Indexes"
+  "resume.card.mongodb.information.others.list": "Geospatial Indexes",
+
+  "resume.card.mulesoft.experience": "20/12/2021/of experience",
+  "resume.card.mulesoft.information.versions": "v4.4",
+  "resume.card.mulesoft.information.basics": "Mulesoft Basics",
+  "resume.card.mulesoft.information.basics.list": "APIs, Connectors, Flows, Transforms, Vars, Validations, Properties, Error Handling, Logs, Debugging",
+  "resume.card.mulesoft.information.advanced": "Mulesoft Advanced",
+  "resume.card.mulesoft.information.advanced.list": "API Manager, Anypoint Studio, Anypoint Platform, IBM Api Connect, DataWeave, MUnit, APIKit, RAML, YAML, SOAP, REST, DB, JWT",
+  "resume.card.mulesoft.information.others": "Others",
+  "resume.card.mulesoft.information.others.list": "Postman, Swagger, OpenAPI, Jenkins, Code Review",
+
+  "resume.card.springboot.experience": "20/12/2021/of experience",
+  "resume.card.springboot.information.versions": "v3.3.4",
+  "resume.card.springboot.information.basics": "SpringBoot Basics",
+  "resume.card.springboot.information.basics.list": "Controllers, Services, Repositories, Entities, DTOs, Security, JWT, CORS, Swagger, Properties, Logs, Inheritance",
+  "resume.card.springboot.information.advanced": "SpringBoot Advanced",
+  "resume.card.springboot.information.advanced.list": "Threads, Reactive Programming, WebSockets, WebFlux, WebClient, RestTemplate, JDBC, JPA, Hibernate, MapStruct, Caching, Validations, Test",
+  "resume.card.springboot.information.others": "Others",
+  "resume.card.springboot.information.others.list": "SonarQube, Code Review, Fortify, OpenAPI, Darwin, Gluon",
+
+  "resume.card.react.experience": "20/12/2021/of experience",
+  "resume.card.react.information.versions": "v19",
+  "resume.card.react.information.basics": "React Basics",
+  "resume.card.react.information.basics.list": "Components, Props, State, Hooks, Context, Refs, Lifecycle, Events, Render, JSX, CSS, Sass",
+  "resume.card.react.information.advanced": "React Advanced",
+  "resume.card.react.information.advanced.list": "Redux, Router, Axios, Fetch, Promises, Async/Await, Testing, Debugging, Personalized Hooks, SSR",
+  "resume.card.react.information.libraries": "Libraries",
+  "resume.card.react.information.libraries.list": "Bootstrap, Tailwind, GSAP, Material UI, PrimeReact, PrimeIcons, Reactstrap, React Router, React Query",
+  "resume.card.react.information.others": "Others",
+  "resume.card.react.information.others.list": "iframe, Docker, Jira, Netlify, Vercel, Firebase, MongoDb, SVG, MapBox",
+
+  "resume.card.jira.experience": "20/12/2021/of experience",
+  "resume.card.jira.information.versions": "v10.2",
+  "resume.card.jira.information.basics": "Jira Basics",
+  "resume.card.jira.information.basics.list": "Proyects, Tables, Epics, Histories, Tasks, Subtasks, Bugs, Improvements, New Functionalities, Versions, Sprints, Kanban, Scrum",
+  "resume.card.jira.information.others": "Others",
+  "resume.card.jira.information.others.list": "Confluence, Trello",
+
+  "resume.card.kubernetes.experience": "01/08/2024/of experience",
+  "resume.card.kubernetes.information.versions": "v27.1",
+  "resume.card.kubernetes.information.basics": "Kubernetes Basics",
+  "resume.card.kubernetes.information.basics.list": "Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, Namespaces, Volumes",
+  "resume.card.kubernetes.information.others": "Others",
+  "resume.card.kubernetes.information.others.list": "Helm, Minikube"
 }
 

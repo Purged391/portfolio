@@ -28,8 +28,8 @@ export default class ResumeComponent implements AfterViewInit {
     },
     {
       id: 'React',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.react.experience',
+      information: 'resume.card.react.information',
       alt: 'React Logo',
     },
     {
@@ -46,8 +46,8 @@ export default class ResumeComponent implements AfterViewInit {
     },
     {
       id: 'SpringBoot',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.springboot.experience',
+      information: 'resume.card.springboot.information',
       alt: 'Spring Boot Logo',
     },
     {
@@ -58,20 +58,20 @@ export default class ResumeComponent implements AfterViewInit {
     },
     {
       id: 'Kubernetes',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.kubernetes.experience',
+      information: 'resume.card.kubernetes.information',
       alt: 'Kubernetes Logo',
     },
     {
       id: 'Jira',
-      experience: '3 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.jira.experience',
+      information: 'resume.card.jira.information',
       alt: 'Jira Logo',
     },
     {
       id: 'Mulesoft',
-      experience: '4 years',
-      information: 'Angular is a platform and framework for building single-page client applications using HTML and TypeScript.',
+      experience: 'resume.card.mulesoft.experience',
+      information: 'resume.card.mulesoft.information',
       alt: 'Mulesoft Logo',
     },
   ];

@@ -6,6 +6,7 @@
   <div class="image-section">
     <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
   </div>
+  <h1>{{this.card().id}}</h1>
   <span class="experience-section">{{ this.card().experience| translate | timeGap }}</span>
   <h4>{{ this.card().information.concat(".versions") | translate }}</h4>
   <div class="content-section">
@@ -82,10 +83,88 @@
     <img src="../../../../assets/images/certificates/CertificadoAngularUdemy.jpg" alt="Angular Udemy Certificate">
   </div>
   }
+  @if (this.card().id === "React") {
+    <div class="image-section">
+      <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+    </div>
+    <h1>{{this.card().id}}</h1>
+    <span class="experience-section">{{ this.card().experience| translate | timeGap }}</span>
+    <h4>{{ this.card().information.concat(".versions") | translate }}</h4>
+    <div class="content-section">
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/html.svg'" alt="HTML logo"/>
+        HTML</div>
+        <div class="chip">
+        <img [src]="'../../../../assets/svg/css.svg'" alt="CSS logo"/>
+        CSS
+      </div>
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/typescript.svg'" alt="Typescript logo"/>
+        Typescript
+      </div>
+      <form class="form-input" [formGroup]="this.form">
+        <div class="input-wrapper">
+            <i class="pi pi-search"></i>
+            <input type="text" formControlName="searchInput" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.basics') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".basics.list") |
+        translate).split(","); track $index) {
+        @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+          <div class="chip chip-1">{{ item }}</div>
+        }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+       {{this.card().information.concat('.advanced') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".advanced.list") |
+        translate).split(","); track $index) {
+        @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+          <div class="chip chip-2">{{ item }}</div>
+        }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.libraries') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".libraries.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-3">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.others') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".others.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-4">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+  }
   @if (this.card().id === "Docker") {
   <div class="image-section">
     <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
   </div>
+  <h1>{{this.card().id}}</h1>
   <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
   <h4>{{this.card().information.concat(".versions") | translate}}</h4>
   <div class="content-section">
@@ -145,6 +224,7 @@
   <div class="image-section">
     <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
   </div>
+  <h1>{{this.card().id}}</h1>
   <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
   <h4>{{this.card().information.concat(".versions") | translate}}</h4>
   <div class="content-section">
@@ -188,13 +268,10 @@
     <div class="image-section">
       <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
     </div>
+    <h1>{{this.card().id}}</h1>
     <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
     <h4>{{this.card().information.concat(".versions") | translate}}</h4>
     <div class="content-section">
-      <div class="chip">
-        <img [src]="'../../../../assets/svg/sql.svg'" alt="SQL logo"/>
-        SQL
-      </div>
       <form class="form-input" [formGroup]="this.form">
         <div class="input-wrapper">
             <i class="pi pi-search"></i>
@@ -241,6 +318,210 @@
     <div class="certificate-section">
       <h3>{{'resume.card.common.certificates' | translate }}</h3>
       <img src="../../../../assets/images/certificates/CertificadoMongoDBUdemy.jpg" alt="Docker Udemy Certificate">
+    </div>
+  }
+  @if (this.card().id === "Mulesoft") {
+    <div class="image-section">
+      <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+    </div>
+    <h1>{{this.card().id}}</h1>
+    <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
+    <h4>{{this.card().information.concat(".versions") | translate}}</h4>
+    <div class="content-section">
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/java.svg'" alt="SQL logo"/>
+        Java
+      </div>
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/dataweave.svg'" alt="SQL logo"/>
+        Dataweave
+      </div>
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/yaml.svg'" alt="SQL logo"/>
+        Yaml
+      </div>
+      <form class="form-input" [formGroup]="this.form">
+        <div class="input-wrapper">
+            <i class="pi pi-search"></i>
+            <input type="text" formControlName="searchInput" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.basics') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".basics.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-1">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.advanced') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".advanced.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-2">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.others') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".others.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-4">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="certificate-section">
+      <h3>{{'resume.card.common.certificates' | translate }}</h3>
+      <img src="../../../../assets/images/certificates/CertificadoMulesoftOficial.jpeg" alt="Docker Udemy Certificate">
+    </div>
+  }
+  @if (this.card().id === "SpringBoot") {
+    <div class="image-section">
+      <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+    </div>
+    <h1>{{this.card().id}}</h1>
+    <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
+    <h4>{{this.card().information.concat(".versions") | translate}}</h4>
+    <div class="content-section">
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/java.svg'" alt="SQL logo"/>
+        Java
+      </div>
+      <form class="form-input" [formGroup]="this.form">
+        <div class="input-wrapper">
+            <i class="pi pi-search"></i>
+            <input type="text" formControlName="searchInput" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.basics') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".basics.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-1">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.advanced') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".advanced.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-2">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.others') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".others.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-4">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+  }
+  @if (this.card().id === "Jira") {
+    <div class="image-section">
+      <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+    </div>
+    <h1>{{this.card().id}}</h1>
+    <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
+    <h4>{{this.card().information.concat(".versions") | translate}}</h4>
+    <div class="content-section">
+      <form class="form-input" [formGroup]="this.form">
+        <div class="input-wrapper">
+            <i class="pi pi-search"></i>
+            <input type="text" formControlName="searchInput" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.basics') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".basics.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-1">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.others') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".others.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-4">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+  }
+  @if (this.card().id === "Kubernetes") {
+    <div class="image-section">
+      <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+    </div>
+    <h1>{{this.card().id}}</h1>
+    <span class="experience-section">{{this.card().experience| translate | timeGap}}</span>
+    <h4>{{this.card().information.concat(".versions") | translate}}</h4>
+    <div class="content-section">
+      <form class="form-input" [formGroup]="this.form">
+        <div class="input-wrapper">
+            <i class="pi pi-search"></i>
+            <input type="text" formControlName="searchInput" placeholder="Search..." />
+        </div>
+      </form>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.basics') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".basics.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-1">{{ item }}</div>
+          }
+        }
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat('.others') | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(".others.list") | translate).split(","); track $index) {
+          @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+            <div class="chip chip-4">{{ item }}</div>
+          }
+        }
+      </div>
     </div>
   }
 </dialog>
