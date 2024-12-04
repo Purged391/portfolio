@@ -19,24 +19,21 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export default class DialogComponent{
   public cardInput = input.required<Card | null>();
-  public cardId = computed(() => {
+
+  public card = computed(() => {
     if(this.cardInput()){
       const dialog = document.querySelector('dialog');
       dialog!.style.visibility = 'hidden';
+      console.log(this.cardInput());
+
       dialog!.showModal();
       setTimeout(() => {
         dialog!.style.visibility = 'visible';
       }, 100);
       document.body.style.overflow = 'hidden';
-      return this.card()?.id;
-    }
-    return null;
-  });
-  public card = computed(() => {
-    if(this.cardInput()){
       return this.cardInput()!;
     }
-    return {id: '', experience: '', information: '', alt: ''};
+    return {id: '', experience: '', information: '', alt: '', chipList: [], sections: [], certificates: []};
   });
 
 

@@ -25,54 +25,82 @@ export default class ResumeComponent implements AfterViewInit {
       experience: 'resume.card.angular.experience',
       information: 'resume.card.angular.information',
       alt: 'Angular Logo',
+      chipList: ['HTML', 'CSS', 'TypeScript'],
+      sections: ['.basics', '.advanced', '.libraries', '.others'],
+      certificates: ['../../../../assets/images/certificates/CertificadoAngularUdemy.jpg']
     },
     {
       id: 'React',
       experience: 'resume.card.react.experience',
       information: 'resume.card.react.information',
       alt: 'React Logo',
+      chipList: ['HTML', 'CSS', 'TypeScript'],
+      sections: ['.basics', '.advanced', '.libraries', '.others'],
+      certificates: []
+
     },
     {
       id: 'GitHub',
       experience: 'resume.card.github.experience',
       information: 'resume.card.github.information',
       alt: 'GitHub Logo',
+      chipList: ['Git'],
+      sections: ['.basics', '.advanced'],
+      certificates: []
     },
     {
       id: 'Docker',
       experience: 'resume.card.docker.experience',
       information: 'resume.card.docker.information',
       alt: 'Docker Logo',
+      chipList: ['YAML'],
+      sections: ['.basics', '.advanced', '.others'],
+      certificates: ['../../../../assets/images/certificates/CertificadoDockerUdemy.jpg']
     },
     {
       id: 'SpringBoot',
       experience: 'resume.card.springboot.experience',
       information: 'resume.card.springboot.information',
       alt: 'Spring Boot Logo',
+      chipList: ['Java'],
+      sections: ['.basics', '.advanced', '.others'],
+      certificates: []
     },
     {
       id: 'MongoDB',
       experience: 'resume.card.mongodb.experience',
       information: 'resume.card.mongodb.information',
       alt: 'MongoDB Logo',
+      chipList: [],
+      sections: ['.basics', '.advanced', '.others'],
+      certificates: ['../../../../assets/images/certificates/CertificadoMongoDBUdemy.jpg']
     },
     {
       id: 'Kubernetes',
       experience: 'resume.card.kubernetes.experience',
       information: 'resume.card.kubernetes.information',
       alt: 'Kubernetes Logo',
+      chipList: [],
+      sections: ['.basics', '.others'],
+      certificates: []
     },
     {
       id: 'Jira',
       experience: 'resume.card.jira.experience',
       information: 'resume.card.jira.information',
       alt: 'Jira Logo',
+      chipList: [],
+      sections: ['.basics', '.others'],
+      certificates: []
     },
     {
       id: 'Mulesoft',
       experience: 'resume.card.mulesoft.experience',
       information: 'resume.card.mulesoft.information',
       alt: 'Mulesoft Logo',
+      chipList: ['Java', 'Dataweave', 'YAML'],
+      sections: ['.basics', '.advanced', '.others'],
+      certificates: ['../../../../assets/images/certificates/CertificadoMulesoftOficial.jpeg']
     },
   ];
   private platformId = inject(PLATFORM_ID);
