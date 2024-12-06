@@ -1,6 +1,6 @@
 @use '../../../styles.scss' as *;
 
-.header-container{
+.header-container {
   position: fixed;
   top: 0;
   height: 5rem;
@@ -11,13 +11,13 @@
   padding: 0 2rem;
   z-index: 999;
 
-  .menu-item{
+  .menu-item {
     display: flex;
     background-color: $color-primary;
     padding: 1rem;
     border-radius: 1rem;
     gap: 3rem;
-    a{
+    a {
       text-decoration: none;
       color: $color-text-light;
       font-size: 1rem;
@@ -25,7 +25,7 @@
       transition: 0.3s linear;
       padding-bottom: 2px;
       cursor: pointer;
-      &::after{
+      &::after {
         content: "";
         display: block;
         border-bottom: 2px solid $color-secondary;
@@ -36,9 +36,8 @@
       }
       &:hover {
         color: $color-secondary-hover;
-        //text-decoration: underline;
       }
-      &:hover::after{
+      &:hover::after {
         transform: scaleX(1);
         transform-origin: left;
         transition: transform 0.3s linear;
@@ -52,15 +51,55 @@
         }
       }
     }
+
+    .dropdown {
+      display: flex;
+      position: relative;
+      .dropbtn {
+        background-color: $color-primary;
+        color: $color-text-light;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        margin-top: 1.5rem;
+        left: -65%;
+        padding: 0.5rem;
+        background-color: $color-primary;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border: 2px solid $color-text-light;
+        border-radius: 0.5rem;
+
+        a {
+          color: $color-text-light;
+          padding: 0.5rem 1rem;
+          display: block;
+          text-align: left;
+          border-radius: 0.5rem;
+
+          &:hover {
+            background-color: $color-secondary;
+          }
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
   }
-  .menu-item-reduced{
+
+  .menu-item-reduced {
     display: none;
   }
-
-
-
-
 }
+
 @media (max-width: 768px) {
   .header-container {
     justify-content: center;
@@ -108,7 +147,7 @@
         &::after {
           content: "";
           display: block;
-          border-bottom: 2px solid $color-secondary;
+          border: 2px solid $color-secondary;
           width: 100%;
           transform: scaleX(0);
           transform-origin: right;
@@ -142,6 +181,48 @@
         color: $color-text-light;
         cursor: pointer;
         transition: 0.3s linear;
+      }
+
+      .dropdown {
+        display: flex;
+        position: relative;
+        .dropbtn {
+          background-color: $color-primary;
+          color: $color-text-light;
+          font-size: 1rem;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          margin-top: 1.5rem;
+          left: -65%;
+          padding: 0.5rem;
+          background-color: $color-primary;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          border: 2px solid $color-text-light;
+          border-radius: 0.5rem;
+
+          a {
+            color: $color-text-light;
+            padding: 0.5rem 1rem;
+            display: block;
+            text-align: left;
+            border-radius: 0.5rem;
+
+            &:hover {
+              background-color: $color-secondary;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
       }
     }
   }

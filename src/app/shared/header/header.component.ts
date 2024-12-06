@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import TranslatePipe from '../../pipes/translate.pipe';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { LanguajeService } from '../../portfolio/services/languaje.service';
 
 @Component({
     selector: 'shared-header',
@@ -45,5 +46,14 @@ export default class HeaderComponent {
     localStorage.setItem('fragment', fragment);
     return fragment;
   });
+  private languajeService = inject(LanguajeService);
+  public currentLanguage = this.languajeService.languaje;
+
+  public setLanguage(lang: 'ES'|'EN'): void {
+    this.languajeService.languaje = lang;
+    this.currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    window.location.reload();
+  }
 
 }

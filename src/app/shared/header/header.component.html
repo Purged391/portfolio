@@ -3,10 +3,24 @@
     @for (navSection of this.navigationSections; track $index) {
       <a [routerLink]="navSection.route" [fragment]="navSection.id"  [ngClass]="{'active': this.fragment() === navSection.id}">{{navSection.label | translate}}</a>
     }
+    <div class="dropdown">
+      <button class="dropbtn">{{ currentLanguage }}</button>
+      <div class="dropdown-content">
+        <a (click)="setLanguage('EN')">EN</a>
+        <a (click)="setLanguage('ES')">ES</a>
+      </div>
+    </div>
   </nav>
   <nav class="menu-item-reduced">
     @for (navSection of this.navigationSections; track $index) {
       <a [routerLink]="navSection.route" [fragment]="navSection.id" [ngClass]="{'active': this.fragment() === navSection.id}" [attr.data-tooltip]="navSection.label | translate"><i class="pi" [ngClass]="navSection.icon"></i></a>
     }
+    <div class="dropdown">
+      <button class="dropbtn">{{ currentLanguage }}</button>
+      <div class="dropdown-content">
+        <a (click)="setLanguage('EN')">EN</a>
+        <a (click)="setLanguage('ES')">ES</a>
+      </div>
+    </div>
   </nav>
 </header>
