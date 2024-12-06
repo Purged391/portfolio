@@ -102,6 +102,33 @@ export default class ResumeComponent implements AfterViewInit {
       sections: ['.basics', '.advanced', '.others'],
       certificates: ['../../../../assets/images/certificates/CertificadoMulesoftOficial.jpeg']
     },
+    {
+      id: 'Flask',
+      experience: 'resume.card.flask.experience',
+      information: 'resume.card.flask.information',
+      alt: 'Flask Logo',
+      chipList: ['Python'],
+      sections: ['.basics', '.others'],
+      certificates: []
+    },
+    {
+      id: 'Jupiter',
+      experience: 'resume.card.jupiter.experience',
+      information: 'resume.card.jupiter.information',
+      alt: 'Jupiter Notebook Logo',
+      chipList: ['Python'],
+      sections: ['.basics', '.others'],
+      certificates: ['../../../../assets/images/certificates/CertificadoMachineLearningUdemy.jpg']
+    },
+    {
+      id: 'Aptitudes',
+      experience: 'resume.card.aptitudes.experience',
+      information: 'resume.card.aptitudes.information',
+      alt: 'Aptitudes Logo',
+      chipList: [],
+      sections: ['.basics'],
+      certificates: []
+    },
   ];
   private platformId = inject(PLATFORM_ID);
   private el = inject(ElementRef);

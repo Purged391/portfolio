@@ -6,7 +6,9 @@
     <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
   </div>
   <h1>{{this.card().id}}</h1>
-  <span class="experience-section">{{ this.card().experience| translate | timeGap }}</span>
+  @if (this.card().experience.length > 0) {
+    <span class="experience-section">{{ this.card().experience| translate | timeGap }}</span>
+  }
   <h4>{{ this.card().information.concat(".versions") | translate }}</h4>
   <div class="content-section">
     @for (chip of this.card().chipList; track $index) {

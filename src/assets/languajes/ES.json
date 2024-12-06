@@ -123,5 +123,24 @@
   "resume.card.kubernetes.information.basics": "Basicos de Kubernetes",
   "resume.card.kubernetes.information.basics.list": "Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, Namespaces, Volumes",
   "resume.card.kubernetes.information.others": "Otros",
-  "resume.card.kubernetes.information.others.list": "Helm, Minikube"
+  "resume.card.kubernetes.information.others.list": "Helm, Minikube",
+
+  "resume.card.flask.experience": "01/01/2022/de experiencia",
+  "resume.card.flask.information.versions": "v3.0.1",
+  "resume.card.flask.information.basics": "Basicos de Flask",
+  "resume.card.flask.information.basics.list": "Rutas, Métodos, Plantillas, Formularios, Sesiones, Cookies, Contextos",
+  "resume.card.flask.information.others": "Otros",
+  "resume.card.flask.information.others.list": "MySQL, PostgreSQL, Firebase, MongoDB, Redis, JWT, CORS, Swagger, OpenAPI",
+
+  "resume.card.jupiter.experience": "01/06/2024/de experiencia",
+  "resume.card.jupiter.information.versions": "v7.3.1",
+  "resume.card.jupiter.information.basics": "Basicos de Jupiter Notebook",
+  "resume.card.jupiter.information.basics.list": "Celdas, Markdown, Código, Resultados, Variables, Funciones, Gráficos, Estadísticas",
+  "resume.card.jupiter.information.others": "Otros",
+  "resume.card.jupiter.information.others.list": "Machine Learning, Big Data, Data Science",
+
+  "resume.card.aptitudes.experience": "20/12/2021/de experiencia",
+  "resume.card.aptitudes.information.versions": "",
+  "resume.card.aptitudes.information.basics": "Aptitudes Personales",
+  "resume.card.aptitudes.information.basics.list": "Resolutivo, Proactivo, Trabajo en Equipo, Comunicación, Empatía, Creatividad, Organización, Adaptabilidad, Aprendizaje Continuo"
 }
