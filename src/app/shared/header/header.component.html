@@ -1,4 +1,4 @@
-<header class="header-container">
+<header class="header-container" @headerAnimation>
   <nav class="menu-item">
     @for (navSection of this.navigationSections; track $index) {
       <a [routerLink]="navSection.route" [fragment]="navSection.id"  [ngClass]="{'active': this.fragment() === navSection.id}">{{navSection.label | translate}}</a>

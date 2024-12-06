@@ -4,6 +4,7 @@ import TranslatePipe from '../../pipes/translate.pipe';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LanguajeService } from '../../portfolio/services/languaje.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
     selector: 'shared-header',
@@ -13,7 +14,15 @@ import { LanguajeService } from '../../portfolio/services/languaje.service';
         CommonModule,
     ],
     templateUrl: './header.component.html',
-    styleUrl: './header.component.scss'
+    styleUrl: './header.component.scss',
+    animations: [
+      trigger('headerAnimation', [
+          transition(':enter', [
+              style({ opacity: 0, transform: 'translateX(50px)' }),
+              animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+          ]),
+      ]),
+  ]
 })
 export default class HeaderComponent {
 
