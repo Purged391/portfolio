@@ -10,6 +10,33 @@
   overflow-x: hidden;
   padding: 2rem;
   padding-top: 4rem;
+  .filters {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $color-primary-light;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    select {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid $color-primary;
+      background-color: $color-primary-light;
+      color: $color-text-light;
+      font-weight: bold;
+      option{
+        &:hover{
+          background-color: $color-secondary-light !important;
+        }
+      }
+    }
+  }
+  .project-list {
+    display: flex;
+    flex-direction: column;
   .card{
     margin: 2rem;
     padding: 1rem;
@@ -73,6 +100,7 @@
         font-size: small;
         padding: 0.5rem;
         width: fit-content;
+        gap: 0.2rem;
         img {
           border-radius: 0 !important;
           height: 20px;
@@ -85,6 +113,7 @@
       }
     }
   }
+}
 }
 
 @media (max-width: 768px) {

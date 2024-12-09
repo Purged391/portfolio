@@ -142,7 +142,16 @@
   "resume.card.aptitudes.experience": "20/12/2021/of experience",
   "resume.card.aptitudes.information.versions": "",
   "resume.card.aptitudes.information.basics": "Aptitudes",
-  "resume.card.aptitudes.information.basics.list": "Resolute, Proactive, Teamwork, Communication, Empathy, Creativity, Organization, Adaptability, Continuous Learning"
+  "resume.card.aptitudes.information.basics.list": "Resolute, Proactive, Teamwork, Communication, Empathy, Creativity, Organization, Adaptability, Continuous Learning",
+
+  "project.type": "Type",
+  "project.type.personal": "Personal",
+  "project.type.course": "Course",
+  "project.type.company": "Company",
+  "project.github": "See on GitHub",
+  "project.technologies": "Technologies",
+
+  "project.card.portfolio.description": "sdghfds"
 
 }
 

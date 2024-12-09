@@ -142,5 +142,16 @@
   "resume.card.aptitudes.experience": "20/12/2021/de experiencia",
   "resume.card.aptitudes.information.versions": "",
   "resume.card.aptitudes.information.basics": "Aptitudes Personales",
-  "resume.card.aptitudes.information.basics.list": "Resolutivo, Proactivo, Trabajo en Equipo, Comunicación, Empatía, Creatividad, Organización, Adaptabilidad, Aprendizaje Continuo"
+  "resume.card.aptitudes.information.basics.list": "Resolutivo, Proactivo, Trabajo en Equipo, Comunicación, Empatía, Creatividad, Organización, Adaptabilidad, Aprendizaje Continuo",
+
+
+  "project.type": "Tipo",
+  "project.type.personal": "Personal",
+  "project.type.course": "Curso",
+  "project.type.company": "Empresa",
+  "project.github": "Ver en GitHub",
+  "project.technologies": "Tecnologías",
+
+  "project.card.portfolio.description": "sdghfds"
+
 }
