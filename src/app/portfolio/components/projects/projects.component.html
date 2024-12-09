@@ -1,1 +1,31 @@
-<p>projects works!</p>
+<div class="project-component">
+
+
+
+
+  @for (project of this.project; track $index) {
+    <div class="card">
+      <div class="card-header">
+        <h3>{{ project.id }}</h3>
+      </div>
+      <div class="card-body">
+        <h4>Tipo: <small>{{project.type}}</small></h4>
+        <p>{{ project.description }}</p>
+        <div class="card-links">
+          <iframe [src]="getSafeUrl(project.iframe)" frameborder="0"></iframe>
+          <a href="{{ project.gitLink }}" target="_blank">
+            <img src="../../../../assets/svg/github-icon.svg" alt="GitHub logo"/>
+            See on GitHub
+          </a>
+        </div>
+        <h4>Tecnologías</h4>
+        @for (technology of project.technologies; track $index) {
+          <div class="chip">
+            <img [src]="'../../../../assets/svg/' + technology.toLowerCase() +'-icon.svg'" [alt]="technology + ' logo'"/>
+            {{ technology }}
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
