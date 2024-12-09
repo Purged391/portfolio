@@ -1,27 +1,55 @@
-# Portfolio
+# Portfolio - Personal Web Page
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Este es mi **portafolio personal**, desarrollado con **Angular v19** en la rama `dev/second-version`, donde muestro mis habilidades, proyectos y logros. El objetivo es atraer a empresas y reclutadores que busquen talentos como el mío.
 
-## Development server
+## 🚀 Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Diseño moderno y completamente responsive.
+- Usabilidad optimizada para móviles y escritorio.
+- Nuevas funcionalidades y mejoras de diseño en Angular v19.
+- Código limpio y buenas prácticas de desarrollo.
 
-## Code scaffolding
+## 🛠️ Tecnologías
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular v19**: Framework de desarrollo.
+- **TypeScript**: Lenguaje de programación.
+- **Sass**: Preprocesador CSS para estilos avanzados.
+- **HTML**: Estructura de la web.
 
-## Build
+## 📦 Instalación y Ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Purged391/portfolio.git
+   cd portfolio
+2. Instala las dependencias:
+  ```bash
+  npm install
 
-## Running unit tests
+3. Inicia el servidor de desarrollo:
+  ```bash
+  ng serve
+4. Abre en tu navegador: http://localhost:4200/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## 🏗️ Construcción
+Para compilar el proyecto:
+  ```bash
+  ng build
+  ```
+Los archivos de distribución se generarán en la carpeta dist/.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🧪 Pruebas
+1. Unitarias: Ejecuta con:
+  ```bash
+  ng test
+2. E2E: Pruebas end-to-end con:
+  ```bash
+  ng e2e
+## 🎯 Objetivo
+Este portafolio refleja mi experiencia como desarrollador web y es una herramienta clave para mi búsqueda de empleo.
 
-## Further help
+## 💌 Contacto
+Correo: [mariodgxiii@gmail.com]
+LinkedIn: [www.linkedin.com/in/mario-domínguez-garcía-29b371241]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
