@@ -6,11 +6,12 @@
   background-color: $color-primary;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   padding: 2rem;
   padding-top: 4rem;
   .filters {
+    position: relative;
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -19,6 +20,7 @@
     background-color: $color-primary-light;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
 
     select {
       padding: 0.5rem;
@@ -85,31 +87,39 @@
             color: $color-secondary-hover;
           }
         }
+        iframe{
+          border-radius: 20px;
+        }
       }
-      .chip{
-        display: inline-flex;
-        align-items: center;
-        border-radius: 16px;
-        height: 32px;
-        line-height: 1;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        cursor: default;
-        background-color: $color-primary-light;
-        color: white;
-        font-weight: bold;
-        font-size: small;
-        padding: 0.5rem;
-        width: fit-content;
+      .chip-section{
+        display: flex;
+        flex-wrap: wrap;
         gap: 0.2rem;
-        img {
-          border-radius: 0 !important;
-          height: 20px;
-          width: 20px;
-          margin: 0;
-      }
-      &:hover{
-        background-color: $color-primary-light-hover;
-      }
+        .chip{
+          display: inline-flex;
+          align-items: center;
+          border-radius: 16px;
+          height: 32px;
+          line-height: 1;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          cursor: default;
+          background-color: $color-primary-light;
+          color: white;
+          font-weight: bold;
+          font-size: small;
+          padding: 0.5rem;
+          width: fit-content;
+          gap: 0.2rem;
+          img {
+            border-radius: 0 !important;
+            height: 20px;
+            width: 20px;
+            margin: 0;
+        }
+        &:hover{
+          background-color: $color-primary-light-hover;
+        }
+        }
       }
     }
   }

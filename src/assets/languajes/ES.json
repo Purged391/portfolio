@@ -152,6 +152,7 @@
   "project.github": "Ver en GitHub",
   "project.technologies": "Tecnologías",
 
-  "project.card.portfolio.description": "sdghfds"
-
+  "project.card.portfolio.description": "Este proyecto, desarrollado con Angular v19, incorpora características interesantes como animaciones dinámicas, detección de ubicación para ajustar automáticamente el idioma, y una estructura completamente responsive. Con él, he querido plasmar todo lo que soy capaz de lograr con mis conocimientos actuales, funcionando como una carta de presentación profesional.",
+  "project.card.santandermuleSoft.description": "He realizado numerosas APIs y microservicios en Mulesoft v3.9 y v4.4 para el Banco Santander-USA, siguiendo las directrices de la empresa y aplicando buenas prácticas de desarrollo. Estos servicios se han integrado con diversas aplicaciones internas y externas, y han sido desplegados en entornos de desarrollo, preproducción y producción. He participado desde el proceso de definición del proyecto, la implementación y las pruebas, hasta el despliegue y la monitorización de los servicios.",
+  "project.card.santanderspringboot01.description": "He realizado un projecto que se usaba como un punto intermedio entre las APIs del banco y unos sistemas internos. Su funcionalidad consistia en recibir un JSON, transformarlo a SOAP mediante un esquema XSD y esperar la respuesta para volver a traducirla a JSON. Estuve en su desarrollo desde el principio hasta el final, incluyendo el despliegue en producción y su posterior mantenimiento y cambios o ajustes requeridos."
 }

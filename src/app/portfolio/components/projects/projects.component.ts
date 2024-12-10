@@ -22,9 +22,25 @@ export default class ProjectsComponent implements OnInit {
       id: 'Portfolio',
       description: 'project.card.portfolio.description',
       type: 'project.type.personal',
-      technologies: ['Angular'],
-      iframe: '',
+      technologies: ['Angular', 'GitHub'],
+      iframe: 'http://localhost:4200/portfolio/home#home',
       gitLink: 'https://github.com/Purged391/portfolio'
+    },
+    {
+      id: 'Santander-MuleSoft',
+      description: 'project.card.santandermuleSoft.description',
+      type: 'project.type.company',
+      technologies: ['Mulesoft', 'Postman', 'Jira', 'Confluence', 'Swagger', 'GitHub', 'Jenkins', 'Kibana', 'IBM API Connect', 'Mulesoft Platform'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-SpringBoot-01',
+      description: 'project.card.santanderspringboot01.description',
+      type: 'project.type.company',
+      technologies: ['Springboot', 'SoapUI', 'Apache', 'GitHub'],
+      iframe: '',
+      gitLink: ''
     },
   ];
 
@@ -44,8 +60,8 @@ export default class ProjectsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.filteredProjects.set(this.projects);
-    this.technologies = [...new Set(this.projects.flatMap(project => project.technologies))];
-    this.types = [...new Set(this.projects.map(project => project.type))];
+    this.technologies = [...new Set(this.projects.flatMap(project => project.technologies))].sort();
+    this.types = [...new Set(this.projects.map(project => project.type))].sort();
 
     this.filterForm.valueChanges.subscribe(() => {
       this.filterProjects();
@@ -65,5 +81,11 @@ export default class ProjectsComponent implements OnInit {
       return matchesTechnology && matchesType;
     });
     this.filteredProjects.set(filtered);
+    this.sortProjectsById();
+  }
+
+  private sortProjectsById(): void {
+    const sorted = [...this.filteredProjects()].sort((a, b) => a.id.localeCompare(b.id));
+    this.filteredProjects.set(sorted);
   }
 }
