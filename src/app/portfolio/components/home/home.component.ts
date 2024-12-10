@@ -37,11 +37,18 @@ export default class HomeComponent {
   public showScrollDown = signal(false);
   @HostListener('window:scroll', [])
   public onWindowScroll(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      if (window.scrollY > 0 && !this.showScrollDown()) {
+    const scrollY = window.scrollY;
+      const parallaxBackground = document.querySelector('.parallax-background') as HTMLElement;
+      const homeCard = document.querySelector('.home-card') as HTMLElement;
+      if (parallaxBackground) {
+        parallaxBackground.style.transform = `translateY(${scrollY * 0.5}px)`;
+      }
+      if (homeCard) {
+        homeCard.style.transform = `translateY(${scrollY * 0.6}px)`;
+      }
+      if (scrollY > 0 && !this.showScrollDown()) {
         this.showScrollDown.set(true);
       }
-    }
   }
 }
 
