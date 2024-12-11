@@ -62,7 +62,6 @@ export default class HeaderComponent {
     this.languajeService.languaje = lang;
     this.currentLanguage = lang;
     localStorage.setItem('language', lang);
-    window.location.reload();
   }
 
 }

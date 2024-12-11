@@ -8,6 +8,7 @@ import * as ES from "../../assets/languajes/ES.json"
 @Pipe({
   name: 'translate',
   standalone: true,
+  pure: false
 })
 
 export default class TranslatePipe implements PipeTransform {
