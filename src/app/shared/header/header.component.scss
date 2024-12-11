@@ -93,6 +93,19 @@
         display: block;
       }
     }
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      i {
+        font-size: 1.3rem;
+        color: var(--color-text-light);
+        transition: color 0.3s;
+        &:hover {
+          color: var(--color-secondary);
+        }
+      }
+    }
   }
 
   .menu-item-reduced {

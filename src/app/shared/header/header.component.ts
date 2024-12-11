@@ -1,6 +1,6 @@
-import { Component, computed, Inject, inject, PLATFORM_ID } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, computed, inject, PLATFORM_ID, signal } from '@angular/core';
 import TranslatePipe from '../../pipes/translate.pipe';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LanguajeService } from '../../portfolio/services/languaje.service';
@@ -65,18 +65,17 @@ export default class HeaderComponent {
     this.updateTheme();
   }
 
-  public isDarkTheme = true;
+  public isDarkTheme = signal<boolean>(true);
 
-  private updateTheme(): void {
-    if (!this.isDarkTheme) {
+  public updateTheme(): void {
+    if (!this.isDarkTheme()) {
       document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
-      this.isDarkTheme = true
+      this.isDarkTheme.set(true);
     } else {
       document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
-      this.isDarkTheme = false
-
+      this.isDarkTheme.set(false);
     }
   }
 

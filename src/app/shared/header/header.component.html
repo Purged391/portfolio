@@ -10,6 +10,13 @@
         <a (click)="setLanguage('ES')">ES</a>
       </div>
     </div>
+    <div class="theme-toggle" (click)="this.updateTheme()">
+      @if (this.isDarkTheme()) {
+        <i class="pi pi-moon"></i>
+      } @else {
+        <i class="pi pi-sun"></i>
+      }
+    </div>
   </nav>
   <nav class="menu-item-reduced">
     @for (navSection of this.navigationSections; track $index) {
@@ -21,6 +28,13 @@
         <a (click)="setLanguage('EN')">EN</a>
         <a (click)="setLanguage('ES')">ES</a>
       </div>
+    </div>
+    <div class="theme-toggle" (click)="this.updateTheme()">
+      @if (this.isDarkTheme()) {
+        <i class="pi pi-moon"></i>
+      } @else {
+        <i class="pi pi-sun"></i>
+      }
     </div>
   </nav>
 </header>
