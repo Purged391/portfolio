@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
   private languajeService = inject(LanguajeService);
   public isLanguageInitialized = false;
 
-
   public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init();
+      document.body.classList.add('dark-theme');
       this.languajeService.initializeLanguage().then(() => {
         this.isLanguageInitialized = true;
       });

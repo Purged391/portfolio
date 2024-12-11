@@ -62,6 +62,22 @@ export default class HeaderComponent {
     this.languajeService.languaje = lang;
     this.currentLanguage = lang;
     localStorage.setItem('language', lang);
+    this.updateTheme();
+  }
+
+  public isDarkTheme = true;
+
+  private updateTheme(): void {
+    if (!this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+      this.isDarkTheme = true
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+      this.isDarkTheme = false
+
+    }
   }
 
 }

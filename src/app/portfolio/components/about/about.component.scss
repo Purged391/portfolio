@@ -1,6 +1,6 @@
 @use "../../../../styles.scss" as *;
 
-@property --angle{
+@property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
@@ -10,7 +10,7 @@
   min-height: 400vh;
   height: fit-content;
   position: relative;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -28,15 +28,15 @@
       height: 40rem;
     }
   }
-  .section-about-me{
+  .section-about-me {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: fit-content;
-    .card{
-      color: $color-text-light;
+    .card {
+      color: var(--color-text-light);
       width: 100%;
       position: relative;
       margin: 2rem;
@@ -49,25 +49,25 @@
       border-radius: 0.5rem;
       border-width: 3px;
       border-style: solid;
-      border-color: $color-primary-light;
-      background-color: $color-primary;
-      .card-content{
+      border-color: var(--color-primary-light);
+      background-color: var(--color-primary);
+      .card-content {
         display: flex;
         flex: 1;
         flex-direction: column;
         justify-content: center;
         padding: 2rem;
         font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        h1{
-          color: $color-secondary;
+        h1 {
+          color: var(--color-secondary);
           font-weight: bold;
           text-align: center;
         }
-        a{
+        a {
           text-decoration: none;
-          color: $color-secondary-light;
+          color: var(--color-secondary-light);
         }
-        p{
+        p {
           line-height: 1.6;
         }
       }
@@ -90,7 +90,7 @@
       content: '';
       height: 100%;
       width: 100%;
-      background-image: conic-gradient(from var(--angle),transparent 70%,$color-secondary);
+      background-image: conic-gradient(from var(--angle), transparent 70%, var(--color-secondary));
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -125,7 +125,7 @@
         right: -2rem;
         top: 0;
         z-index: 5;
-        border: 3px solid $color-primary-light;
+        border: 3px solid var(--color-primary-light);
         background-color: white;
         aspect-ratio: 1/1;
       }
@@ -136,10 +136,10 @@
         border-radius: 0.5rem;
         border-width: 3px;
         border-style: solid;
-        border-color: $color-primary-light;
-        background-color: $color-primary;
+        border-color: var(--color-primary-light);
+        background-color: var(--color-primary);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        color: $color-text-light;
+        color: var(--color-text-light);
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -149,86 +149,85 @@
         position: absolute;
         width: 1px;
         height: 100%;
-        background-color: $color-text-light;
+        background-color: var(--color-text-light);
         top: 0;
         z-index: 4;
       }
     }
-      .left-container {
-        left: 0;
-        &::after {
-              left: 100%;
-            }
-      }
-      .right-container {
-        left: 50.1%;
-        .container-img {
-          left: -2rem;
-        }
-        &::after {
-          right: 100%;
-        }
-      }
-      .final-text{
-        display: flex;
-        position: relative;
-        margin: 0 auto;
-        //transform: translate(-50%, -5%);
-        border: 3px solid $color-primary-light;
-        background-color: white;
-        border-radius: 50%;
-        align-items: center;
-        align-self: center;
-        justify-content: center;
-        justify-self: center;
-        width: 4rem;
-        height: 4rem;
-        .final-img{
-          width: 2rem;
-          height: 2rem;
-        }
+    .left-container {
+      left: 0;
+      &::after {
+        left: 100%;
       }
     }
-
-    @media (max-width: 768px) {
-      .section-about-me{
-        .card{
-          flex-direction: column;
-
-          align-items: center;
-          img {
-            align-self: center;
-          }
-        }
+    .right-container {
+      left: 50.1%;
+      .container-img {
+        left: -2rem;
       }
-      .final-text{
-        margin: 0 !important;
-        left: -2rem !important;
-        justify-self: start !important;
+      &::after {
+        right: 100%;
       }
-      .container {
-        width: 100% !important;
-        .container-img {
-          right: -4rem;
-        }
-      }
-      .left-container {
-        left: 0;
-        img {
-          left: -2rem;
-        }
-        &::after {
-          left: 0 !important;
-        }
-      }
-      .right-container {
-        left: 0 !important;
-        &::after {
-          right: 100% !important;
-        }
+    }
+    .final-text {
+      display: flex;
+      position: relative;
+      margin: 0 auto;
+      //transform: translate(-50%, -5%);
+      border: 3px solid var(--color-primary-light);
+      background-color: white;
+      border-radius: 50%;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      justify-self: center;
+      width: 4rem;
+      height: 4rem;
+      .final-img {
+        width: 2rem;
+        height: 2rem;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .section-about-me {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        img {
+          align-self: center;
+        }
+      }
+    }
+    .final-text {
+      margin: 0 !important;
+      left: -2rem !important;
+      justify-self: start !important;
+    }
+    .container {
+      width: 100% !important;
+      .container-img {
+        right: -4rem;
+      }
+    }
+    .left-container {
+      left: 0;
+      img {
+        left: -2rem;
+      }
+      &::after {
+        left: 0 !important;
+      }
+    }
+    .right-container {
+      left: 0 !important;
+      &::after {
+        right: 100% !important;
+      }
+    }
+  }
+}
 
 @keyframes bounce {
   0% {

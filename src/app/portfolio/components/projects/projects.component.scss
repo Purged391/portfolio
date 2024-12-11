@@ -3,7 +3,7 @@
 .project-component {
   position: relative;
   min-height: 100vh;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -17,7 +17,7 @@
     flex-direction: row;
     gap: 1rem;
     padding: 1rem;
-    background-color: $color-primary-light;
+    background-color: var(--color-primary-light);
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 9999;
@@ -25,13 +25,13 @@
     select {
       padding: 0.5rem;
       border-radius: 5px;
-      border: 1px solid $color-primary;
-      background-color: $color-primary-light;
-      color: $color-text-light;
+      border: 1px solid var(--color-primary);
+      background-color: var(--color-primary-light);
+      color: var(--color-text-light);
       font-weight: bold;
-      option{
-        &:hover{
-          background-color: $color-secondary-light !important;
+      option {
+        &:hover {
+          background-color: var(--color-secondary-light) !important;
         }
       }
     }
@@ -39,95 +39,95 @@
   .project-list {
     display: flex;
     flex-direction: column;
-  .card{
-    margin: 2rem;
-    padding: 1rem;
-    border: 2px solid $color-primary-light;
-    color: $color-text-light;
-    background-color: $color-primary;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    .card-header{
+    .card {
+      margin: 2rem;
+      padding: 1rem;
+      border: 2px solid var(--color-primary-light);
+      color: var(--color-text-light);
+      background-color: var(--color-primary);
+      border-radius: 20px;
       display: flex;
-      align-self: flex-start;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .card-body{
-      display: flex;
-      width: 100%;
-      align-self: flex-start;
       flex-direction: column;
-      .card-links{
-        position: relative;
-        width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      .card-header {
         display: flex;
-        align-self: center;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: row;
-        a {
+        align-self: flex-start;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .card-body {
+        display: flex;
+        width: 100%;
+        align-self: flex-start;
+        flex-direction: column;
+        .card-links {
+          position: relative;
+          width: 100%;
           display: flex;
+          align-self: center;
           align-items: center;
-          text-decoration: none;
-          color: $color-secondary;
-          font-weight: bold;
-          transition: color 0.3s ease;
+          justify-content: space-between;
+          flex-direction: row;
+          a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--color-secondary);
+            font-weight: bold;
+            transition: color 0.3s ease;
 
-          img {
-            border-radius: 0 !important;
-            height: 20px;
-            width: 20px;
-            margin: 0;
-            margin-inline: 0.5rem;
-        }
-          &:hover {
-            color: $color-secondary-hover;
+            img {
+              border-radius: 0 !important;
+              height: 20px;
+              width: 20px;
+              margin: 0;
+              margin-inline: 0.5rem;
+            }
+            &:hover {
+              color: var(--color-secondary-hover);
+            }
+          }
+          iframe {
+            border-radius: 20px;
           }
         }
-        iframe{
-          border-radius: 20px;
-        }
-      }
-      .chip-section{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.2rem;
-        .chip{
-          display: inline-flex;
-          align-items: center;
-          border-radius: 16px;
-          height: 32px;
-          line-height: 1;
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-          cursor: default;
-          background-color: $color-primary-light;
-          color: white;
-          font-weight: bold;
-          font-size: small;
-          padding: 0.5rem;
-          width: fit-content;
+        .chip-section {
+          display: flex;
+          flex-wrap: wrap;
           gap: 0.2rem;
-          img {
-            border-radius: 0 !important;
-            height: 20px;
-            width: 20px;
-            margin: 0;
-        }
-        &:hover{
-          background-color: $color-primary-light-hover;
-        }
+          .chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 16px;
+            height: 32px;
+            line-height: 1;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            cursor: default;
+            background-color: var(--color-primary-light);
+            color: white;
+            font-weight: bold;
+            font-size: small;
+            padding: 0.5rem;
+            width: fit-content;
+            gap: 0.2rem;
+            img {
+              border-radius: 0 !important;
+              height: 20px;
+              width: 20px;
+              margin: 0;
+            }
+            &:hover {
+              background-color: var(--color-primary-light-hover);
+            }
+          }
         }
       }
     }
   }
 }
-}
 
 @media (max-width: 768px) {
-  .card-links{
+  .card-links {
     flex-direction: column !important;
   }
 }

@@ -1,8 +1,8 @@
 @use "../../../../styles.scss" as *;
 
 .card {
-  border-color: $color-primary-light;
-  background-color: $color-primary;
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary);
   display: flex;
   justify-content: center;
   width: 8rem;
@@ -12,15 +12,10 @@
   animation: float 3s ease-in-out infinite;
   animation-delay: 0s;
   cursor: pointer;
-  //perspective: 1000px;
-  //transition: transform 0.1s ease;
-  //animation-delay: var(--animation-delay, 0s);
-  //transition: transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
   animation: none;
-  background-color: $color-primary-light;
-  //transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  background-color: var(--color-primary-light);
 }
 
 @keyframes float {

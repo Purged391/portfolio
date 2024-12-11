@@ -3,10 +3,10 @@
 .resume-component {
   min-height: 100vh;
   position: relative;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   overflow: hidden;
-  .text{
-    color: white;
+  .text {
+    color: var(--color-text-light);
     width: 100vw;
     min-height: 20rem;
     //position: absolute;
@@ -18,62 +18,65 @@
       left: 50%;
       width: 35rem;
       span {
-          color: $color-secondary;
-          border-right: solid 3px $color-secondary;
-          animation:
-          blink 1s steps(1) infinite;
-        }
+        color: var(--color-secondary);
+        border-right: solid 3px var(--color-secondary);
+        animation: blink 1s steps(1) infinite;
+      }
     }
   }
-.cards-container{
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5rem;
-  align-items: center;
-  justify-content: center;
-  column-gap: 1rem;
-  row-gap: 1rem;
-  //position: absolute;
-  top: 50%;
-  width: 100vw;
-  height: fit-content;
-  img{
-    position: absolute;
-    top: -6rem;
-    animation: increment 5s ease-in-out infinite;
+  .cards-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    //position: absolute;
+    top: 50%;
+    width: 100vw;
+    height: fit-content;
+    img {
+      position: absolute;
+      top: -6rem;
+      animation: increment 5s ease-in-out infinite;
+    }
   }
 }
-}
+
 @media (max-width: 576px) {
   .resume-component {
-  .cards-container{
-    padding: 0;
-    margin-top: 4rem;
-    img{
-      top: -10rem !important;
+    .cards-container {
+      padding: 0;
+      margin-top: 4rem;
+      img {
+        top: -10rem !important;
+      }
     }
   }
-}
 }
 
 @keyframes blink {
-  from {border-color: transparent;}
-  50% {border-color: $color-secondary;}
-  to {background-color: $color-secondary;}
-
+  from {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-secondary);
+  }
+  to {
+    background-color: var(--color-secondary);
+  }
 }
 
 @keyframes increment {
   0% {
-    transform: translate(-10%, 0%) rotate(350deg) scale(1) ;
+    transform: translate(-10%, 0%) rotate(350deg) scale(1);
   }
   50% {
-    transform: translate(-10%, 0%) rotate(350deg) scale(1.2) ;
+    transform: translate(-10%, 0%) rotate(350deg) scale(1.2);
   }
   100% {
-    transform: translate(-10%, 0%) rotate(350deg) scale(1) ;
+    transform: translate(-10%, 0%) rotate(350deg) scale(1);
   }
 }
-
-

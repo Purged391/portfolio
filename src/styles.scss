@@ -39,27 +39,41 @@ body { margin: 0;}
 
 
 
-//Application Color Vars
-$color-primary: #2E2E2E;
-$color-primary-light: #393e41;
-$color-primary-light-hover: #4e5458;
-$color-secondary: #FF4D31;
-$color-secondary-light: #EE6352;
-$color-secondary-hover: #f28a75;
-$color-text-light: #d3d0cb;
-$color-chip-2: #75B9BE;
-$color-chip-2-hover: #A4D3D3;
-$color-chip-3: #317B22;
-$color-chip-3-hover: #4CAF4D;
-$color-chip-4: #5e2129;
-$color-chip-4-hover: #8E3C45;
+:root{
+  --color-text-light-bind: #d3d0cb;
+  --color-secondary: #FF4D31;
+  --color-secondary-light: #EE6352;
+  --color-secondary-hover: #f28a75;
+  --color-chip-2: #75B9BE;
+  --color-chip-2-hover: #A4D3D3;
+  --color-chip-3: #317B22;
+  --color-chip-3-hover: #4CAF4D;
+  --color-chip-4: #5e2129;
+  --color-chip-4-hover: #8E3C45;
+}
+
+/* Tema oscuro */
+body.dark-theme {
+  --color-primary: #2E2E2E;
+  --color-primary-light: #393e41;
+  --color-primary-light-hover:#4e5458;
+  --color-text-light: #d3d0cb;
+}
+
+/* Tema claro */
+body.light-theme {
+  --color-primary: #f5f5f5;
+  --color-primary-light: #e0e0e0;
+  --color-primary-light-hover:  #d0d0d0;
+  --color-text-light: #2E2E2E;
+}
 
 
 
 ::selection{
-  background: $color-secondary-hover;
+  background: var(--color-secondary-hover);
 }
 
 ::-moz-selection{
-  background: $color-secondary-hover;
+  background: var(--color-secondary-hover);
 }

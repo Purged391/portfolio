@@ -13,13 +13,13 @@
 
   .menu-item {
     display: flex;
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     padding: 1rem;
     border-radius: 1rem;
     gap: 3rem;
     a {
       text-decoration: none;
-      color: $color-text-light;
+      color: var(--color-text-light);
       font-size: 1rem;
       font-weight: bold;
       transition: 0.3s linear;
@@ -28,14 +28,14 @@
       &::after {
         content: "";
         display: block;
-        border-bottom: 2px solid $color-secondary;
+        border-bottom: 2px solid var(--color-secondary);
         width: 100%;
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.3s linear;
       }
       &:hover {
-        color: $color-secondary-hover;
+        color: var(--color-secondary-hover);
       }
       &:hover::after {
         transform: scaleX(1);
@@ -43,7 +43,7 @@
         transition: transform 0.3s linear;
       }
       &.active {
-        color: $color-secondary;
+        color: var(--color-secondary);
         font-weight: bold;
         &::after {
           transform: scaleX(1);
@@ -56,8 +56,8 @@
       display: flex;
       position: relative;
       .dropbtn {
-        background-color: $color-primary;
-        color: $color-text-light;
+        background-color: var(--color-primary);
+        color: var(--color-text-light);
         font-size: 1rem;
         font-weight: bold;
         border: none;
@@ -70,21 +70,21 @@
         margin-top: 1.5rem;
         left: -65%;
         padding: 0.5rem;
-        background-color: $color-primary;
+        background-color: var(--color-primary);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        border: 2px solid $color-text-light;
+        border: 2px solid var(--color-text-light);
         border-radius: 0.5rem;
 
         a {
-          color: $color-text-light;
+          color: var(--color-text-light);
           padding: 0.5rem 1rem;
           display: block;
           text-align: left;
           border-radius: 0.5rem;
 
           &:hover {
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
           }
         }
       }
@@ -109,7 +109,7 @@
     }
 
     .menu-item-reduced {
-      background-color: $color-primary;
+      background-color: var(--color-primary);
       padding: 1rem;
       border-radius: 1rem;
       display: flex;
@@ -117,7 +117,7 @@
 
       a {
         text-decoration: none;
-        color: $color-text-light;
+        color: var(--color-text-light);
         font-size: 1rem;
         font-weight: bold;
         transition: 0.3s linear;
@@ -128,7 +128,7 @@
           position: absolute;
           transform: translate(-35%, 100%);
           background-color: #000000;
-          color: $color-text-light;
+          color: var(--color-text-light);
           padding: 0.5rem 1rem;
           border-radius: 0.5rem;
           font-size: 0.875rem;
@@ -147,7 +147,7 @@
         &::after {
           content: "";
           display: block;
-          border: 2px solid $color-secondary;
+          border: 2px solid var(--color-secondary);
           width: 100%;
           transform: scaleX(0);
           transform-origin: right;
@@ -160,25 +160,25 @@
           transition: transform 0.3s linear;
         }
         &.active {
-          color: $color-secondary;
+          color: var(--color-secondary);
           font-weight: bold;
           &::after {
             transform: scaleX(1);
             transform-origin: left;
           }
           .pi {
-            color: $color-secondary;
+            color: var(--color-secondary);
           }
         }
         &:hover .pi {
-          color: $color-secondary-hover;
+          color: var(--color-secondary-hover);
           transform: scale(1.1);
           transition: color 0.3s linear, transform 0.3s linear;
         }
       }
       .pi {
         font-size: 1.5rem;
-        color: $color-text-light;
+        color: var(--color-text-light);
         cursor: pointer;
         transition: 0.3s linear;
       }
@@ -187,8 +187,8 @@
         display: flex;
         position: relative;
         .dropbtn {
-          background-color: $color-primary;
-          color: $color-text-light;
+          background-color: var(--color-primary);
+          color: var(--color-text-light);
           font-size: 1rem;
           font-weight: bold;
           border: none;
@@ -201,21 +201,21 @@
           margin-top: 1.5rem;
           left: -65%;
           padding: 0.5rem;
-          background-color: $color-primary;
+          background-color: var(--color-primary);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           z-index: 1;
-          border: 2px solid $color-text-light;
+          border: 2px solid var(--color-text-light);
           border-radius: 0.5rem;
 
           a {
-            color: $color-text-light;
+            color: var(--color-text-light);
             padding: 0.5rem 1rem;
             display: block;
             text-align: left;
             border-radius: 0.5rem;
 
             &:hover {
-              background-color: $color-secondary;
+              background-color: var(--color-secondary);
             }
           }
         }
