@@ -19,8 +19,6 @@ export default class TranslatePipe implements PipeTransform {
   private languajeService = inject(LanguajeService);
 
   public transform(value: string): string {
-    //console.log(this.ESList[value])
-    //console.log(this.languajeService.languaje === 'ES')
     return this.languajeService.languaje === 'ES' ? this.ESList[value] : this.ENList[value];
   }
 }

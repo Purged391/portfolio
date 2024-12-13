@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, signal } from '@angular/core';
+import { AfterViewInit, Component, computed, ElementRef, inject, PLATFORM_ID, signal } from '@angular/core';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -8,13 +8,15 @@ import TranslatePipe from '../../../pipes/translate.pipe';
 import { Card } from '../../interfaces/Card.interface';
 import CardComponent from '../card/card.component';
 import DialogComponent from '../dialog/dialog.component';
+import ThemeService from '../../services/theme.service';
 @Component({
     selector: 'portfolio-resume',
     imports: [
-        CommonModule,
-        CardComponent,
-        DialogComponent,
-    ],
+    CommonModule,
+    CardComponent,
+    DialogComponent,
+    TranslatePipe
+],
     templateUrl: './resume.component.html',
     styleUrl: './resume.component.scss'
 })
@@ -140,7 +142,6 @@ export default class ResumeComponent implements AfterViewInit {
   constructor() {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(TextPlugin);
-    //gsap.registerPlugin(Flip);
   }
 
   public ngAfterViewInit(): void {
@@ -179,4 +180,8 @@ export default class ResumeComponent implements AfterViewInit {
   public closeModal(): void {
     this.showModal.set(false);
   }
+
+  private themeService = inject(ThemeService);
+
+  public currentTheme = computed(() => this.themeService.theme);
 }

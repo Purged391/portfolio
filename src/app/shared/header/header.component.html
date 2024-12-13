@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="theme-toggle" (click)="this.updateTheme()">
-      @if (this.isDarkTheme()) {
+      @if (this.currentTheme() === 'dark-theme') {
         <i class="pi pi-moon"></i>
       } @else {
         <i class="pi pi-sun"></i>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="theme-toggle" (click)="this.updateTheme()">
-      @if (this.isDarkTheme()) {
+      @if (this.currentTheme() === 'dark-theme') {
         <i class="pi pi-moon"></i>
       } @else {
         <i class="pi pi-sun"></i>

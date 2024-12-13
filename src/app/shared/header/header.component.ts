@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LanguajeService } from '../../portfolio/services/languaje.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import ThemeService from '../../portfolio/services/theme.service';
 
 @Component({
     selector: 'shared-header',
@@ -62,21 +63,14 @@ export default class HeaderComponent {
     this.languajeService.languaje = lang;
     this.currentLanguage = lang;
     localStorage.setItem('language', lang);
-    this.updateTheme();
   }
 
-  public isDarkTheme = signal<boolean>(true);
+  private themeService = inject(ThemeService);
+
+  public currentTheme = computed(() => this.themeService.theme);
 
   public updateTheme(): void {
-    if (!this.isDarkTheme()) {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
-      this.isDarkTheme.set(true);
-    } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-      this.isDarkTheme.set(false);
-    }
+      this.themeService.theme = this.currentTheme() === 'light-theme' ? 'dark-theme' : 'light-theme';
   }
 
 }

@@ -45,6 +45,8 @@
   "about.timeline.fullstack.description.point.three": "- Development of APIs with Mulesoft.",
   "about.timeline.fullstack.description.point.four": "- Member of the Governance team, performing tasks such as Code Reviews and merges to Preproduction and Production.",
 
+  "resume.technologies": "Technologies",
+  "resume.technologies.text": "Why don't you try dragging the cards?...",
   "resume.card.common.certificates": "Certificates",
 
   "resume.card.angular.experience": "01/07/2020/of experience",
