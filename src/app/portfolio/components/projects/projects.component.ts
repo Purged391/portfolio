@@ -42,6 +42,22 @@ export default class ProjectsComponent implements OnInit {
       iframe: '',
       gitLink: ''
     },
+    {
+      id: 'Santander-SpringBoot-02',
+      description: 'project.card.santanderspringboot02.description',
+      type: 'project.type.company',
+      technologies: ['Springboot', 'GitHub'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-Gluon-01',
+      description: 'project.card.santandergluon01.description',
+      type: 'project.type.company',
+      technologies: ['Springboot', 'GitHub'],
+      iframe: '',
+      gitLink: ''
+    },
   ];
 
   private sanitizer = inject(DomSanitizer);
