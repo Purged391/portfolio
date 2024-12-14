@@ -33,7 +33,7 @@ This is my **personal portfolio**, developed with **Angular v19** where I showca
 ## 🏗️ Build
 1. To compile the project:
    ```bash
-   ng build
+   ng build --configuration production
 The distribution files will be generated in the dist/ folder.
 
 ## 🧪 Tests

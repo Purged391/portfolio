@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import TranslatePipe from '../../../pipes/translate.pipe';
+import { environment } from '../../../../environments/environment';
 
 @Component({
     selector: 'portfolio-projects',
@@ -23,8 +24,8 @@ export default class ProjectsComponent implements OnInit {
       description: 'project.card.portfolio.description',
       type: 'project.type.personal',
       technologies: ['Angular', 'GitHub'],
-      iframe: 'http://localhost:4200/portfolio/home#home',
-      gitLink: 'https://github.com/Purged391/portfolio'
+      iframe: environment.portfolioIframe,
+      gitLink: environment.portfolioGitHub
     },
     {
       id: 'Santander-MuleSoft',
@@ -76,6 +77,7 @@ export default class ProjectsComponent implements OnInit {
 
   public ngOnInit(): void {
     this.filteredProjects.set(this.projects);
+    this.sortProjectsById();
     this.technologies = [...new Set(this.projects.flatMap(project => project.technologies))].sort();
     this.types = [...new Set(this.projects.map(project => project.type))].sort();
 
