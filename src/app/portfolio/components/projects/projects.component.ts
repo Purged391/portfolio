@@ -47,7 +47,23 @@ export default class ProjectsComponent implements OnInit {
       id: 'Santander-SpringBoot-02',
       description: 'project.card.santanderspringboot02.description',
       type: 'project.type.company',
-      technologies: ['Springboot', 'GitHub'],
+      technologies: ['Springboot', 'GitHub', 'PostgreSQL'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-SpringBoot-03',
+      description: 'project.card.santanderspringboot03.description',
+      type: 'project.type.company',
+      technologies: ['Springboot', 'GitHub', 'PostgreSQL'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-SpringBoot-04',
+      description: 'project.card.santanderspringboot04.description',
+      type: 'project.type.company',
+      technologies: ['Springboot', 'GitHub', 'PostgreSQL'],
       iframe: '',
       gitLink: ''
     },
@@ -56,6 +72,22 @@ export default class ProjectsComponent implements OnInit {
       description: 'project.card.santandergluon01.description',
       type: 'project.type.company',
       technologies: ['Springboot', 'GitHub'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-Angular-01',
+      description: 'project.card.santanderangular01.description',
+      type: 'project.type.company',
+      technologies: ['Angular', 'GitHub'],
+      iframe: '',
+      gitLink: ''
+    },
+    {
+      id: 'Santander-Angular-02',
+      description: 'project.card.santanderangular02.description',
+      type: 'project.type.company',
+      technologies: ['Angular', 'GitHub'],
       iframe: '',
       gitLink: ''
     },
