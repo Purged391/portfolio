@@ -39,7 +39,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     this.scene = new THREE.Scene();
 
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 4;
+    this.camera.position.z = 8;
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
@@ -54,7 +54,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
 
     const earthGroup = new THREE.Group();
 
-    const geometry = new THREE.IcosahedronGeometry(1, 12);
+    const geometry = new THREE.IcosahedronGeometry(2, 12);
     const material = new THREE.MeshStandardMaterial({
       map: loader.load('assets/images/earth/earth_color_10K.png'),
     });
@@ -63,7 +63,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     earthGroup.rotation.z = -23.4 * Math.PI / 180;
 
     const lightsMat = new THREE.MeshBasicMaterial({
-      map: loader.load('assets/images/earth/earthlights1k.jpg'),
+      map: loader.load('assets/images/earth/earth_nightlights_10K.png'),
       blending: THREE.AdditiveBlending,
      });
     const lightsMesh = new THREE.Mesh(geometry, lightsMat);
@@ -85,6 +85,20 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
     sunMesh.position.set(-100, 30, 50);
     this.scene.add(sunMesh);
+
+    const moonMat = new THREE.MeshStandardMaterial({
+      map: loader.load('assets/images/moon/moonmap4k.jpg'),
+      displacementMap: loader.load('assets/images/moon/moonbump4k.jpg'),
+      displacementScale: 0.005,
+      bumpMap: loader.load('assets/images/moon/moonbump4k.jpg'),
+      bumpScale: 0.04,
+    });
+    const moon = new THREE.SphereGeometry(1, 64, 64);
+    const moonMesh = new THREE.Mesh(moon, moonMat);
+    moonMesh.position.set(-4, 2, -5);
+    moonMesh.rotation.y = 10;
+    this.scene.add(moonMesh);
+
 
 
     const animate = () => {
