@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy, signal } from '@angular/core';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -39,7 +39,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     this.scene = new THREE.Scene();
 
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 8;
+    this.camera.position.z = 5;
 
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
@@ -96,16 +96,22 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     const moon = new THREE.SphereGeometry(1, 64, 64);
     const moonMesh = new THREE.Mesh(moon, moonMat);
     moonMesh.position.set(-4, 2, -5);
-    moonMesh.rotation.y = 10;
-    this.scene.add(moonMesh);
+    const moonOrbitGroup = new THREE.Group();
+
+    moonOrbitGroup.add(moonMesh);
+    moonOrbitGroup.position.copy(earthMesh.position);
+
+    this.scene.add(moonOrbitGroup);
 
 
 
     const animate = () => {
       this.animationId = requestAnimationFrame(animate);
+
       earthMesh.rotation.y += 0.0008;
       lightsMesh.rotation.y += 0.0008;
       cloudsMesh.rotation.y += 0.00099;
+      //moonOrbitGroup.rotation.y += 0.001;
       this.controls.update();
       this.renderer.render(this.scene, this.camera);
     };
@@ -117,5 +123,19 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
+  public display = signal<string>('earth');
+
+  public goToMoon(){
+    this.controls.target.set(0, 0, 0);
+    this.camera.position.set(-7, 2.5, -7);
+    this.display.set('moon');
+  }
+
+  public goToEarth(){
+    this.controls.target.set(0, 0, 0);
+    this.camera.position.set(0, 0, 5);
+    this.display.set('earth');
   }
 }
