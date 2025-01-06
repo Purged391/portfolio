@@ -22,6 +22,22 @@
     color: var(--color-text-light-bind);
     .text-container{
       height: 15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      row-gap: 0.5rem;
+
+      a{
+        color: var(--color-text-light-bind);
+        width: fit-content;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+          color: var(--color-secondary);
+        }
+      }
     }
     .button-container{
       display: flex;
@@ -62,5 +78,22 @@
     }
   }
 
+
+  @media (max-width: 1200px) {
+    .container{
+      right: 0rem;
+    }
+  }
+  @media (max-width: 992px) {
+    .container{
+      width: 40%;
+    }
+  }
+  @media (max-width: 768px) {
+    .container{
+      width: auto;
+      left: 0
+    }
+  }
 
 }

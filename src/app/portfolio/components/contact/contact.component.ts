@@ -1,10 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy, signal } from '@angular/core';
+import TranslatePipe from 'src/app/pipes/translate.pipe';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 @Component({
   selector: 'portfolio-contact',
   templateUrl: './contact.component.html',
+  imports: [
+    CommonModule,
+    TranslatePipe
+  ],
   styleUrls: ['./contact.component.scss']
 })
 
