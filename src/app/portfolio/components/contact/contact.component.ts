@@ -3,6 +3,8 @@ import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, O
 import TranslatePipe from 'src/app/pipes/translate.pipe';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import * as TWEEN from '@tweenjs/tween.js';
+
 
 @Component({
   selector: 'portfolio-contact',
@@ -22,6 +24,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
   private camera!: THREE.PerspectiveCamera;
   private controls!: OrbitControls;
   private animationId!: number;
+  private tweenGroup = new TWEEN.Group();
 
   public ngAfterViewInit() {
     if (this.platformId === 'browser') {
@@ -111,7 +114,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
 
 
 
-    const animate = () => {
+    const animate = ((time: number | undefined) => {
       this.animationId = requestAnimationFrame(animate);
 
       earthMesh.rotation.y += 0.0008;
@@ -119,10 +122,27 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
       cloudsMesh.rotation.y += 0.00099;
       //moonOrbitGroup.rotation.y += 0.001;
       this.controls.update();
+      this.tweenGroup.update(time);
       this.renderer.render(this.scene, this.camera);
+    });
+
+    animate(0);
+  }
+
+  private transitionCamera(targetPosition: { x: number, y: number, z: number }) {
+    const currentCameraPosition = {
+      x: this.camera.position.x,
+      y: this.camera.position.y,
+      z: this.camera.position.z
     };
 
-    animate();
+    new TWEEN.Tween(currentCameraPosition, this.tweenGroup)
+      .to(targetPosition, 2000) // 2000ms for the transition
+      .easing(TWEEN.Easing.Quadratic.InOut)
+      .onUpdate(() => {
+        this.camera.position.set(currentCameraPosition.x, currentCameraPosition.y, currentCameraPosition.z);
+      })
+      .start();
   }
 
   private onWindowResize() {
@@ -135,13 +155,13 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
 
   public goToMoon(){
     this.controls.target.set(0, 0, 0);
-    this.camera.position.set(-7, 2.5, -7);
+    this.transitionCamera({ x: -7, y: 2.5, z: -7 });
     this.display.set('moon');
   }
 
   public goToEarth(){
     this.controls.target.set(0, 0, 0);
-    this.camera.position.set(0, 0, 5);
+    this.transitionCamera({ x: 0, y: 0, z: 5 });
     this.display.set('earth');
   }
 }
