@@ -4,6 +4,7 @@ import TranslatePipe from 'src/app/pipes/translate.pipe';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as TWEEN from '@tweenjs/tween.js';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 interface EarthObjectGroup {
   earthGroup: THREE.Group,
@@ -19,7 +20,15 @@ interface EarthObjectGroup {
     CommonModule,
     TranslatePipe
   ],
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      state('void', style({ transform: 'translateX(-100%)' })),
+      transition('void => *', [
+        animate('1s ease-in')
+      ]),
+    ])
+  ]
 })
 
 export default class ContactComponent implements AfterViewInit, OnDestroy {
