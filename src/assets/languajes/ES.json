@@ -165,5 +165,7 @@
   "project.card.santanderangular02.description": "Desarrollé varias pestañas en un portal interno del banco, diseñado con un sistema de permisos que diferenciaba entre desarrolladores y miembros de gobierno. Implementé numerosas tablas utilizando Angular Material, integrando funcionalidades avanzadas como filtros, diseño responsivo y otras mejoras para optimizar la experiencia del usuario. Además, llevé a cabo mejoras y optimizaciones adicionales en la aplicación que no formaban parte de los requisitos iniciales, contribuyendo a un mejor rendimiento y usabilidad del sistema.",
 
   "contact.earth": "Tierra",
-  "contact.moon": "Luna"
+  "contact.moon": "Luna",
+
+  "loading.text": "Cargando..."
 }

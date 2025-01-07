@@ -164,6 +164,8 @@
   "project.card.santanderangular02.description": "I developed several tabs for an internal bank portal, designed with a permission system that distinguished between developers and governance members. I implemented numerous tables using Angular Material, integrating advanced features such as filters, responsive design, and other enhancements to optimize the user experience. Additionally, I carried out improvements and optimizations beyond the initial requirements, contributing to better system performance and usability.",
 
   "contact.earth": "Earth",
-  "contact.moon": "Moon"
+  "contact.moon": "Moon",
+
+  "loading.text": "Loading..."
 }
 

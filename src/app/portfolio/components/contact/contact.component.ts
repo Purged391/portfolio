@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as TWEEN from '@tweenjs/tween.js';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import LoadingComponent from "../../../shared/loading/loading.component";
 
 interface EarthObjectGroup {
   earthGroup: THREE.Group,
@@ -18,8 +19,9 @@ interface EarthObjectGroup {
   templateUrl: './contact.component.html',
   imports: [
     CommonModule,
-    TranslatePipe
-  ],
+    TranslatePipe,
+    LoadingComponent
+],
   styleUrls: ['./contact.component.scss'],
   animations: [
     trigger('slideInOut', [
@@ -86,6 +88,9 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
       this.renderer.render(this.scene, this.camera);
     });
     animate(0);
+    setTimeout(() => {
+      this.isModelLoaded.set(true);
+    }, 2000);
   }
 
   private createStars(): void {
