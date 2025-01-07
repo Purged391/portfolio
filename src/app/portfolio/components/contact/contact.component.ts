@@ -65,6 +65,7 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     this.scene.add(this.createSunLight());
     this.scene.add(this.createSunMesh());
     this.scene.add(this.createMoon(loader, earthGroupObject));
+    this.createStars();
 
     const animate = ((time: number | undefined) => {
       this.animationId = requestAnimationFrame(animate);
@@ -78,9 +79,28 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     animate(0);
   }
 
+  private createStars(): void {
+    const sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const minDistance = 400;
+
+    for (let i = 0; i < 5000; i++) {
+      const sphere = new THREE.Mesh(sphereGeometry, material);
+      let x, y, z;
+      do {
+        x = THREE.MathUtils.randFloatSpread(2000);
+        y = THREE.MathUtils.randFloatSpread(2000);
+        z = THREE.MathUtils.randFloatSpread(2000);
+      } while (Math.sqrt(x * x + y * y + z * z) < minDistance);
+
+      sphere.position.set(x, y, z);
+      this.scene.add(sphere);
+    }
+  }
+
   private createCamera(): THREE.PerspectiveCamera {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 5;
+    camera.position.z = 5;
     return camera;
   }
 
