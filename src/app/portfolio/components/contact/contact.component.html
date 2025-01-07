@@ -1,23 +1,22 @@
+    <div class="contact-container">
+    <canvas #canvas></canvas>
+    <div class="container">
+      @if (this.display() === 'earth') {
+        <div class="text-container">
+          <a href="https://www.linkedin.com/in/mario-dom%C3%ADnguez-garc%C3%ADa-29b371241/"><i class="pi pi-linkedin"></i> Mario Domínguez García</a>
+          <a href="mailto:mariodgxiii@gmail.com"><i class="pi pi-envelope"></i> mariodgxiii&#64;gmail.com</a>
+          <a href="../../../../assets/pdf/Curriculum.pdf" download="Curriculum_Mario_Dominguez.pdf"><i class="pi pi-cloud-download"></i> Curriculum</a>
+        </div>
 
-  <div class="contact-container">
-  <canvas #canvas></canvas>
-  <div class="container">
-    @if (this.display() === 'earth') {
-      <div class="text-container">
-        <a href="https://www.linkedin.com/in/mario-dom%C3%ADnguez-garc%C3%ADa-29b371241/"><i class="pi pi-linkedin"></i> Mario Domínguez García</a>
-        <a href="mailto:mariodgxiii@gmail.com"><i class="pi pi-envelope"></i> mariodgxiii&#64;gmail.com</a>
-        <a href="../../../../assets/pdf/Curriculum.pdf" download="Curriculum_Mario_Dominguez.pdf"><i class="pi pi-cloud-download"></i> Curriculum</a>
+      } @else{
+        <div class="text-container">
+          <a href="https://github.com/Purged391"><i class="pi pi-github"></i> Github</a>
+        </div>
+      }
+
+      <div class="button-container">
+        <button [class.active] = "this.display() === 'moon'" (click)="this.goToMoon()">{{"contact.moon" | translate}}</button>
+        <button [class.active] = "this.display() === 'earth'" (click)="this.goToEarth()">{{"contact.earth" | translate}}</button>
       </div>
-
-    } @else{
-      <div class="text-container">
-        <a href="https://github.com/Purged391"><i class="pi pi-github"></i> Github</a>
-      </div>
-    }
-
-    <div class="button-container">
-      <button [class.active] = "this.display() === 'moon'" (click)="this.goToMoon()">{{"contact.moon" | translate}}</button>
-      <button [class.active] = "this.display() === 'earth'" (click)="this.goToEarth()">{{"contact.earth" | translate}}</button>
     </div>
-  </div>
-  </div>
+    </div>

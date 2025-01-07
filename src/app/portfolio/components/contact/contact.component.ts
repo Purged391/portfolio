@@ -1,10 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy, signal } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy, signal, AfterViewChecked } from '@angular/core';
 import TranslatePipe from 'src/app/pipes/translate.pipe';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as TWEEN from '@tweenjs/tween.js';
 
+interface EarthObjectGroup {
+  earthGroup: THREE.Group,
+  earthMesh: THREE.Mesh,
+  lightsMesh: THREE.Mesh,
+  cloudsMesh: THREE.Mesh
+}
 
 @Component({
   selector: 'portfolio-contact',
@@ -17,7 +23,7 @@ import * as TWEEN from '@tweenjs/tween.js';
 })
 
 export default class ContactComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('canvas') canvasRef!: ElementRef;
+  @ViewChild('canvas', { static: false }) canvasRef!: ElementRef<HTMLCanvasElement>;
   private platformId = inject(PLATFORM_ID);
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
@@ -25,10 +31,12 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
   private controls!: OrbitControls;
   private animationId!: number;
   private tweenGroup = new TWEEN.Group();
+  public isModelLoaded = signal<boolean>(false);
 
-  public ngAfterViewInit() {
+
+  public async ngAfterViewInit() {
     if (this.platformId === 'browser') {
-      this.createScene();
+      await this.createScene();
       window.addEventListener('resize', this.onWindowResize.bind(this), false);
     }
   }
@@ -40,29 +48,66 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  private createScene() {
+  private async createScene() {
     const canvas = this.canvasRef.nativeElement;
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.scene = new THREE.Scene();
 
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.z = 5;
+    this.camera = this.createCamera();
 
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableDamping = true;
-    this.controls.dampingFactor = 0.25;
-    this.controls.enableZoom = false;
-
-    const sunLight = new THREE.DirectionalLight(0xffffff);
-    sunLight.position.set(-2, 0.5, 1);
-    this.scene.add(sunLight);
+    this.controls = this.createOrbitControls();
 
     const loader = new THREE.TextureLoader();
+    const earthGroupObject: EarthObjectGroup = this.createEarth(loader);
+    this.scene.add(earthGroupObject.earthGroup);
+    this.scene.add(this.createSunLight());
+    this.scene.add(this.createSunMesh());
+    this.scene.add(this.createMoon(loader, earthGroupObject));
 
+    const animate = ((time: number | undefined) => {
+      this.animationId = requestAnimationFrame(animate);
+      earthGroupObject.earthGroup.getObjectById(earthGroupObject.earthMesh.id)!.rotation.y += 0.0008;
+      earthGroupObject.earthGroup.getObjectById(earthGroupObject.lightsMesh.id)!.rotation.y += 0.0008;
+      earthGroupObject.earthGroup.getObjectById(earthGroupObject.cloudsMesh.id)!.rotation.y += 0.00099;
+      this.controls.update();
+      this.tweenGroup.update(time);
+      this.renderer.render(this.scene, this.camera);
+    });
+    animate(0);
+  }
+
+  private createCamera(): THREE.PerspectiveCamera {
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera.position.z = 5;
+    return camera;
+  }
+
+  private createOrbitControls(): OrbitControls {
+    const controls = new OrbitControls(this.camera, this.renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.enableZoom = false;
+    return controls;
+  }
+
+  private createSunLight(): THREE.DirectionalLight {
+    const sunLight = new THREE.DirectionalLight(0xffffff);
+    sunLight.position.set(-2, 0.5, 1);
+    return sunLight;
+  }
+
+  private createSunMesh(): THREE.Mesh {
+    const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
+    const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
+    sunMesh.position.set(-100, 30, 50);
+    return sunMesh;
+  }
+
+  private createEarth(loader: THREE.TextureLoader): EarthObjectGroup {
     const earthGroup = new THREE.Group();
-
     const geometry = new THREE.IcosahedronGeometry(2, 12);
     const material = new THREE.MeshStandardMaterial({
       map: loader.load('assets/images/earth/earth_color_10K.png'),
@@ -85,16 +130,10 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
     cloudsMesh.scale.setScalar(1.02);
     earthGroup.add(cloudsMesh);
+    return {earthGroup, earthMesh, lightsMesh, cloudsMesh};
+  }
 
-    this.scene.add(earthGroup);
-
-
-    const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
-    const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-    const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
-    sunMesh.position.set(-100, 30, 50);
-    this.scene.add(sunMesh);
-
+  private createMoon(loader: THREE.TextureLoader, earthGroupObject: EarthObjectGroup): THREE.Group {
     const moonMat = new THREE.MeshStandardMaterial({
       map: loader.load('assets/images/moon/moonmap4k.jpg'),
       displacementMap: loader.load('assets/images/moon/moonbump4k.jpg'),
@@ -108,25 +147,8 @@ export default class ContactComponent implements AfterViewInit, OnDestroy {
     const moonOrbitGroup = new THREE.Group();
 
     moonOrbitGroup.add(moonMesh);
-    moonOrbitGroup.position.copy(earthMesh.position);
-
-    this.scene.add(moonOrbitGroup);
-
-
-
-    const animate = ((time: number | undefined) => {
-      this.animationId = requestAnimationFrame(animate);
-
-      earthMesh.rotation.y += 0.0008;
-      lightsMesh.rotation.y += 0.0008;
-      cloudsMesh.rotation.y += 0.00099;
-      //moonOrbitGroup.rotation.y += 0.001;
-      this.controls.update();
-      this.tweenGroup.update(time);
-      this.renderer.render(this.scene, this.camera);
-    });
-
-    animate(0);
+    moonOrbitGroup.position.copy(earthGroupObject.earthGroup.position);
+    return moonOrbitGroup;
   }
 
   private transitionCamera(targetPosition: { x: number, y: number, z: number }) {
