@@ -22,9 +22,9 @@ This is my **personal portfolio**, developed with **Angular v19** where I showca
    ```bash
    git clone https://github.com/Purged391/portfolio.git
    cd portfolio
-2. Install dependencies:
+2. Install dependencies (Using primeNg v17 cause dependency error):
    ```bash
-   npm install
+   npm install --force
 3. Start the development server:
    ```bash
    ng serve
