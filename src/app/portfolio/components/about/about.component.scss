@@ -86,6 +86,7 @@
     }
 
     .card::after, .card::before {
+      box-sizing: unset;
       position: absolute;
       content: '';
       height: 100%;

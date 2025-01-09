@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, AfterViewInit, OnDestroy, signal, AfterViewChecked } from '@angular/core';
 import TranslatePipe from 'src/app/pipes/translate.pipe';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as TWEEN from '@tweenjs/tween.js';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import LoadingComponent from "../../../shared/loading/loading.component";

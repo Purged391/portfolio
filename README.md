@@ -24,10 +24,10 @@ This is my **personal portfolio**, developed with **Angular v19** where I showca
    cd portfolio
 2. Install dependencies (Using primeNg v17 cause dependency error):
    ```bash
-   npm install --force
+   npm install
 3. Start the development server:
    ```bash
-   ng serve
+   ng serve -o
 4. Open in your browser: http://localhost:4200/
 
 ## 🏗️ Build
@@ -36,13 +36,19 @@ This is my **personal portfolio**, developed with **Angular v19** where I showca
    ng build --configuration production
 The distribution files will be generated in the dist/ folder.
 
+##  Docker
+1. To build the image execute
+   ```
+   docker build -t portfolio-ssr-app:1.0.0 .
+   ```
+2. To run the container
+   ```
+   docker container run -p 4000:4000 portfolio-ssr-app:1.0.0
+   ```
+
 ## 🧪 Tests
-1. Unit tests: Run with:
-   ```bash
-   ng test
-1. E2E: End-to-end tests with:
-   ```bash
-   ng e2e
+No test for this personal project
+
 ## 🎯 Objective
 This portfolio reflects my experience as a web developer and is a key tool in my job search.
 

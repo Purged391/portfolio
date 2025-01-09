@@ -64,12 +64,10 @@
           position: relative;
           width: 100%;
           display: flex;
-          align-self: center;
-          align-items: center;
-          justify-content: space-between;
-          flex-direction: row;
+          gap: 1rem;
+          flex-wrap: wrap;
           a {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             text-decoration: none;
             color: var(--color-secondary);
@@ -86,9 +84,15 @@
             &:hover {
               color: var(--color-secondary-hover);
             }
+            i{
+              margin-inline: 0.5rem;
+            }
           }
           iframe {
+            display: block;
+            width: 100%;
             border-radius: 20px;
+            margin-bottom: 1rem;
           }
         }
         .chip-section {

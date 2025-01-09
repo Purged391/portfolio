@@ -1,18 +1,14 @@
-FROM node:20.16-alpine3.20 as dev-deps
+FROM node:20.16-alpine3.20 as build
 WORKDIR /app
-COPY package.json ./
+COPY package*.json ./
 RUN npm install
-
-FROM node:20.16-alpine3.20 as builder
-WORKDIR /app
-COPY --from=dev-deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build:ssr
 
-FROM node:20.16-alpine3.20 as prod-deps
+FROM node:20.16-alpine3.20 as production
 WORKDIR /app
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/dist ./dist
+COPY --from=build /app/package*.json ./
 RUN npm install --only=production
+COPY --from=build /app/dist ./dist
 EXPOSE 4000
-CMD ["node", "dist/portfolio/server/main.js"]
+CMD ["npm", "run", "serve:ssr"]
