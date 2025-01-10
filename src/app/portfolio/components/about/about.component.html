@@ -1,0 +1,258 @@
+<div class="about-component">
+  <div class="section-letters">
+    <svg
+      class="masked-svg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 20"
+      id="svgText"
+    >
+      <defs>
+        <mask
+          id="text-mask"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="150"
+          height="40"
+        >
+          <rect x="0" y="0" width="100" height="20" fill="black" />
+          <text
+            x="50%"
+            y="95%"
+            font-size="20"
+            fill="white"
+            text-anchor="middle"
+            font-family="'Roboto', sans-serif"
+            font-weight="bold"
+          >
+            {{'header.buttons.about' | translate}}
+          </text>
+        </mask>
+        <linearGradient
+          id="wordmark_b"
+          x1="0"
+          x2="982"
+          y1="192"
+          y2="192"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stop-color="#F0060B">
+            <animate
+              attributeName="stop-color"
+              values="#F0060B; #CC26D5; #7702FF; #F0060B"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="50%" stop-color="#CC26D5">
+            <animate
+              attributeName="stop-color"
+              values="#CC26D5; #7702FF; #F0060B; #CC26D5"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="100%" stop-color="#7702FF">
+            <animate
+              attributeName="stop-color"
+              values="#7702FF; #F0060B; #CC26D5; #7702FF"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </linearGradient>
+
+        <!-- Definir gradiente radial -->
+        <radialGradient
+          id="wordmark_c"
+          cx="1"
+          cy="1.1"
+          r="0.2"
+          gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FF41F8">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #7702FF; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </radialGradient>
+        <radialGradient
+          id="wordmark_d"
+          cx="0.8"
+          cy="0.8"
+          r="0.2"
+          gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FF41F8">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #7702FF; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+          <stop offset="1" stop-color="#FF41F8" stop-opacity="0">
+            <animate
+              attributeName="stop-color"
+              values="#FF41F8; #CC26D5; #FF41F8"
+              dur="6s"
+              repeatCount="indefinite"
+            />
+          </stop>
+        </radialGradient>
+      </defs>
+
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_b)"
+        mask="url(#text-mask)"
+      />
+
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_c)"
+        mask="url(#text-mask)"
+      />
+      <rect
+        x="0"
+        y="0"
+        width="100"
+        height="20"
+        fill="url(#wordmark_d)"
+        mask="url(#text-mask)"
+      />
+    </svg>
+  </div>
+  <div class="section-about-me">
+    <div class="card">
+      <img class="container-img" src="assets/images/foto_portfolio.png" alt="Photo of myself: Mario Domínguez García" />
+      <div class="card-content">
+        <h1>{{'about.resume.section' | translate}}</h1>
+        <p>
+            {{'about.resume.paragraph.first.part.one' | translate}} <span>{{this.age()}}</span> {{'about.resume.paragraph.first.part.two' | translate}}
+        </p>
+        <p>
+            {{'about.resume.paragraph.second.part.one' | translate}}<a href="https://www.keifitech.com/#/home" target="_blank">Keifi Technologies By Izertis</a>{{'about.resume.paragraph.second.part.two' | translate}}
+        </p>
+
+        <h1>{{'about.value.section' | translate}}</h1>
+        <p>
+            {{'about.value.paragraph.first.part.one' | translate}} <span>{{this.workExperience()}}</span> {{'about.value.paragraph.first.part.two' | translate}}
+        </p>
+    </div>
+    </div>
+  </div>
+  <div class="section-timeline">
+      <div data-aos="fade-down" data-aos-offset="1000" data-aos-anchor-placement="center-bottom" class="container left-container">
+        <img class="container-img" src="../../../../assets/images/Logo_UC3M.png" alt="Logo Universidad Carlos III de Madrid" />
+        <div class="card" data-aos="fade-right" data-aos-offset="1010" data-aos-delay="300" data-aos-anchor-placement="center-bottom">
+          <h3>{{ "about.timeline.university.section" | translate }}</h3>
+          <strong>{{ "about.timeline.university.name" | translate }}</strong>
+          <ul>
+          <li>
+            {{ "about.timeline.university.period" | translate }}
+            <span>{{ "about.timeline.university.period.value" | translate }}</span><br />
+          </li>
+          <li>
+            {{ "about.timeline.university.degree" | translate }}
+            <span>{{ "about.timeline.university.degree.value" | translate }}</span><br />
+          </li>
+          <li>
+            {{ "about.timeline.university.description" | translate }}<br />
+            <small>{{ "about.timeline.university.description.point.one" | translate }}</small><br />
+            <small>{{ "about.timeline.university.description.point.two" | translate }}</small><br />
+          </li>
+          </ul>
+        </div>
+      </div>
+      <div data-aos="fade-down" data-aos-offset="1050" data-aos-anchor-placement="center-bottom" class="container right-container">
+        <img class="container-img" src="../../../../assets/images/Logo_Keifi.png" alt="Logo de Empresa Keifitech" />
+        <div class="card" data-aos="fade-left" data-aos-offset="1060" data-aos-delay="300" data-aos-anchor-placement="center-bottom">
+          <h3>{{ "about.timeline.practices.section" | translate }}</h3>
+          <strong>{{ "about.timeline.practices.company" | translate }}</strong>
+          <ul>
+            <li>
+              {{ "about.timeline.practices.period" | translate }}
+              <span>{{ "about.timeline.practices.period.value" | translate }}</span><br />
+            </li>
+            <li>
+              {{ "about.timeline.practices.position" | translate }}
+              <span>{{ "about.timeline.practices.position.value" | translate }}</span><br />
+            </li>
+            <li>
+              {{ "about.timeline.practices.description" | translate }}<br />
+              <small>{{ "about.timeline.practices.description.point.one" | translate }}</small><br />
+              <small>{{ "about.timeline.practices.description.point.two" | translate }}</small><br />
+              <small>{{ "about.timeline.practices.description.point.three" | translate }}</small><br />
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div data-aos="fade-down" data-aos-offset="1100" data-aos-anchor-placement="center-bottom" class="container left-container">
+        <img class="container-img" src="../../../../assets/images/Logo_Keifi.png" alt="Logo de Empresa Keifitech" />
+        <div class="card" data-aos="fade-left" data-aos-offset="1110" data-aos-delay="300" data-aos-anchor-placement="center-bottom">
+          <h3>{{ "about.timeline.fullstack.section" | translate }}</h3>
+          <strong>{{ "about.timeline.fullstack.company" | translate }}</strong>
+          <ul>
+            <li>
+              {{ "about.timeline.fullstack.period" | translate }}
+              <span>{{ "about.timeline.fullstack.period.value" | translate }}</span><br />
+            </li>
+            <li>
+              {{ "about.timeline.fullstack.position" | translate }}
+              <span>{{ "about.timeline.fullstack.position.value" | translate }}</span><br />
+            </li>
+            <li>
+              {{ "about.timeline.fullstack.description" | translate }}<br />
+              <small>{{ "about.timeline.fullstack.description.point.one" | translate }}</small><br />
+              <small>{{ "about.timeline.fullstack.description.point.two" | translate }}</small><br />
+              <small>{{ "about.timeline.fullstack.description.point.three" | translate }}</small><br />
+              <small>{{ "about.timeline.fullstack.description.point.four" | translate }}</small><br />
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+    <div class="final-text" data-aos="fade-down" data-aos-offset="1100" data-aos-anchor-placement="center-bottom">
+      <img class="final-img" src="../../../../assets/svg/briefcase.svg" alt="Briefcase SVG">
+      <!--<p class="mt-0">Future</p>-->
+    </div>
+  </div>
+</div>

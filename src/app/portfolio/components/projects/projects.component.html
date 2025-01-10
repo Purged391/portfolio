@@ -1,0 +1,59 @@
+<div class="project-component">
+
+  <form [formGroup]="filterForm" (ngSubmit)="filterProjects()">
+    <div class="filters">
+      <select formControlName="technologyFilter">
+        <option value="">All Technologies</option>
+        @for (technology of this.technologies; track $index) {
+          <option [value]="technology">{{ technology }}</option>
+        }
+      </select>
+      <select formControlName="typeFilter">
+        <option value="">All Types</option>
+        @for (type of this.types; track $index) {
+          <option [value]="type">{{ type | translate }}</option>
+        }
+      </select>
+    </div>
+  </form>
+
+
+  <div class="project-list">
+  @for (project of this.filteredProjects(); track $index) {
+
+      <div class="card">
+        <div class="card-header">
+          <h3>{{ project.id }}</h3>
+        </div>
+        <div class="card-body">
+          <h4>{{"project.type" | translate}}: <small>{{project.type | translate}}</small></h4>
+          <p>{{ project.description | translate}}</p>
+          <div class="card-links">
+            @if (project.iframe) {
+              <iframe [src]="getSafeUrl(project.iframe)" frameborder="0" width="600" height="400"></iframe>
+              <a href="{{ project.iframe }}" target="_blank">
+                <i class="pi pi-globe"> </i>
+                Demo
+              </a>
+            }
+            @if (project.gitLink) {
+              <a href="{{ project.gitLink }}" target="_blank">
+                <img src="../../../../assets/svg/github-icon.svg" alt="GitHub logo"/>
+                {{"project.github" | translate}}
+              </a>
+            }
+          </div>
+          <h4>{{"project.technologies" | translate}}</h4>
+          <div class="chip-section">
+            @for (technology of project.technologies; track $index) {
+              <div class="chip">
+                <img [src]="'../../../../assets/svg/' + technology.toLowerCase() +'-icon.svg'" [alt]="technology + ' logo'"/>
+                {{ technology }}
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

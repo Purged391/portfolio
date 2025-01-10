@@ -1,0 +1,41 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "version", "support" ]
+  pull_request:
+    branches: [ "version",  "support" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Extract version from package.json
+      id: get_version
+      run: |
+        NEW_VERSION=$(jq -r '.version' package.json)
+        echo "Version from package.json: $NEW_VERSION"
+        echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+    # - name: Docker Login
+    #   env:
+    #     DOCKER_USER: ${{secrets.DOCKER_USER}}
+    #     DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+    #   run: |
+    #     docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    # - name: Build Docker image
+    #   run: |
+    #     echo $NEW_VERSION
+    #     docker build -t mdg391/docker-portfolio:$NEW_VERSION .
+    #     docker build -t mdg391/docker-portfolio:latest .
+    # - name: Push Docker image
+    #   run: |
+    #     docker push mdg391/docker-portfolio:$NEW_VERSION
+    #     docker push mdg391/docker-portfolio:latest
+      

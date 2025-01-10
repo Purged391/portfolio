@@ -1,0 +1,202 @@
+/* Asegúrate de que el estilo esté en el archivo SCSS correspondiente */
+@use "../../../../styles.scss" as *;
+
+dialog {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  height: 90%;
+  width: 50%;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &:focus-visible {
+    outline: none;
+  }
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .close-button {
+    display: flex;
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    &:focus-visible {
+      outline: none;
+    }
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    .pi {
+      font-size: 1.5rem;
+    }
+  }
+  .image-section {
+    align-self: center;
+    justify-self: center;
+  }
+  .experience-section {
+    color: #6c757d;
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+  .content-section {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+    .form-input {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-self: flex-end;
+        i {
+          position: absolute;
+          left: 10px;
+          font-size: 1.2rem;
+          color: var(--color-text-light);
+          pointer-events: none;
+        }
+        input {
+          margin-block: 1rem;
+          font-size: 1rem;
+          border: 1px solid var(--color-text-light);
+          border-radius: 25px;
+          outline: none;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          color: var(--color-text-light);
+          background-color: var(--color-primary);
+          padding: 0.5rem 1rem;
+          padding-left: 2.5rem;
+          &:focus {
+            border-color: adjust(var(--color-primary), 10%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+  .fieldset {
+    color: var(--color-text-light);
+    margin: 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 16px;
+    position: relative;
+    background-color: var(--color-primary);
+    .fieldset-header {
+      position: absolute;
+      background-color: var(--color-primary);
+      top: -10px;
+      left: 16px;
+      padding: 0 8px;
+      margin-bottom: 0.2rem;
+      font-weight: bold;
+      border-radius: 4px;
+      z-index: 1;
+    }
+    .fieldset-content {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 16px;
+    height: 32px;
+    line-height: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    background-color: var(--color-primary-light);
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    padding: 0.5rem;
+    img {
+      border-radius: 0 !important;
+      height: 20px;
+      width: 20px;
+      margin: 0;
+    }
+    &:hover {
+      background-color: var(--color-primary-light-hover);
+    }
+  }
+  .chip-1 {
+    background-color: var(--color-secondary);
+    &:hover {
+      background-color: var(--color-secondary-hover);
+    }
+  }
+  .chip-2 {
+    background-color: var(--color-chip-2);
+    &:hover {
+      background-color: var(--color-chip-2-hover);
+    }
+  }
+  .chip-3 {
+    background-color: var(--color-chip-3);
+    &:hover {
+      background-color: var(--color-chip-3-hover);
+    }
+  }
+  .chip-4 {
+    background-color: var(--color-chip-4);
+    &:hover {
+      background-color: var(--color-chip-4-hover);
+    }
+  }
+  .certificate-section {
+    margin: 2rem;
+    img {
+      border-radius: 16px;
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  dialog {
+    width: calc(100% - 20vw);
+  }
+}
+
+@media (max-width: 768px) {
+  dialog {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    .content-section {
+      .form-input {
+        .input-wrapper {
+          flex-grow: 1;
+          input {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+}

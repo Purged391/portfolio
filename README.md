@@ -1,27 +1,58 @@
-# Portfolio
+# Portfolio - Personal Web Page
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+This is my **personal portfolio**, developed with **Angular v19** where I showcase my skills, projects, and achievements. The goal is to attract companies and recruiters looking for talents like mine.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Modern and fully responsive design.
+- Optimized usability for mobile and desktop.
+- New functionalities and design improvements in Angular v19.
+- Clean code and best development practices.
 
-## Code scaffolding
+## 🛠️ Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular v19**: Development framework.
+- **TypeScript**: Programming language.
+- **Sass**: CSS preprocessor for advanced styles.
+- **HTML**: Web structure.
 
-## Build
+## 📦 Installation and Execution
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Purged391/portfolio.git
+   cd portfolio
+2. Install dependencies (Using primeNg v17 cause dependency error):
+   ```bash
+   npm install
+3. Start the development server:
+   ```bash
+   ng serve -o
+4. Open in your browser: http://localhost:4200/
 
-## Running unit tests
+## 🏗️ Build
+1. To compile the project:
+   ```bash
+   ng build --configuration production
+The distribution files will be generated in the dist/ folder.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##  Docker
+1. To build the image execute
+   ```
+   docker build -t portfolio-ssr-app:1.0.0 .
+   ```
+2. To run the container
+   ```
+   docker container run -p 4000:4000 portfolio-ssr-app:1.0.0
+   ```
 
-## Running end-to-end tests
+## 🧪 Tests
+No test for this personal project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🎯 Objective
+This portfolio reflects my experience as a web developer and is a key tool in my job search.
 
-## Further help
+## 💌 Contact
+Email: mariodgxiii@gmail.com
+LinkedIn: [Mario Dominguez Garcia](www.linkedin.com/in/mario-domínguez-garcía-29b371241)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
