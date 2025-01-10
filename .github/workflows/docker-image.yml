@@ -23,19 +23,28 @@ jobs:
         NEW_VERSION=$(jq -r '.version' package.json)
         echo "Version from package.json: $NEW_VERSION"
         echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
-    # - name: Docker Login
-    #   env:
-    #     DOCKER_USER: ${{secrets.DOCKER_USER}}
-    #     DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-    #   run: |
-    #     docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    # - name: Build Docker image
-    #   run: |
-    #     echo $NEW_VERSION
-    #     docker build -t mdg391/docker-portfolio:$NEW_VERSION .
-    #     docker build -t mdg391/docker-portfolio:latest .
-    # - name: Push Docker image
-    #   run: |
-    #     docker push mdg391/docker-portfolio:$NEW_VERSION
-    #     docker push mdg391/docker-portfolio:latest
+    - name: Docker Login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build Docker image
+      run: |
+        echo $NEW_VERSION
+        docker build -t mdg391/docker-portfolio:$NEW_VERSION .
+        docker build -t mdg391/docker-portfolio:latest .
+    - name: Push Docker image
+      run: |
+        docker push mdg391/docker-portfolio:$NEW_VERSION
+        docker push mdg391/docker-portfolio:latest
+    - name: Create GitHub Tag
+      if: success()
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NEW_VERSION: ${{ env.NEW_VERSION }}
+      run: |
+        echo "Creating a new tag for version $NEW_VERSION"
+        git tag -a "v$NEW_VERSION" -m "Release version $NEW_VERSION"
+        git push origin "v$NEW_VERSION"
       
