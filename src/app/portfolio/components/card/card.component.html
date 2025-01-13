@@ -1,0 +1,9 @@
+<div
+  class="border-round-lg card border-3 p-5"
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="onMouseLeave($event)"
+  [ngStyle]="{ 'animation-delay': this.delay() / 10 + 's' }"
+  pDraggable
+>
+  <img [src]="'../../../../assets/svg/' + this.id().toLowerCase() + '-icon.svg'" [alt]="this.alt()"/>
+</div>

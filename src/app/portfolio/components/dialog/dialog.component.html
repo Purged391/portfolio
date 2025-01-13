@@ -1,0 +1,49 @@
+<dialog (cancel)="this.closeModal()">
+  <button class="close-button" (click)="closeModal()">
+    <span class="pi pi-times"></span>
+  </button>
+  <div class="image-section">
+    <img width="100" height="100" [src]="'../../../../assets/svg/' + this.card().id.toLowerCase() + '-icon.svg'" [alt]="this.card().alt"/>
+  </div>
+  <h1>{{this.card().id}}</h1>
+  @if (this.card().experience.length > 0) {
+    <span class="experience-section">{{ this.card().experience| translate | timeGap }}</span>
+  }
+  <h4>{{ this.card().information.concat(".versions") | translate }}</h4>
+  <div class="content-section">
+    @for (chip of this.card().chipList; track $index) {
+      <div class="chip">
+        <img [src]="'../../../../assets/svg/' + chip.toLowerCase() +'.svg'" [alt]="chip + ' logo'"/>
+        {{chip}}
+      </div>
+    }
+    <form class="form-input" [formGroup]="this.form">
+      <div class="input-wrapper">
+          <i class="pi pi-search"></i>
+          <input type="text" formControlName="searchInput" placeholder="Search..." />
+      </div>
+    </form>
+  </div>
+  @for (section of this.card().sections; track $index; let i = $index; ) {
+    <div class="fieldset">
+      <div class="fieldset-header">
+        {{this.card().information.concat(section) | translate}}
+      </div>
+      <div class="fieldset-content">
+        @for (item of (this.card().information.concat(section + ".list") | translate).split(","); track $index) {
+        @if (item.toLowerCase().includes(this.inputSignal().trim())) {
+          <div [class]="'chip chip-' + (i+1)">{{ item }}</div>
+        }
+        }
+      </div>
+    </div>
+  }
+  @if (this.card().certificates.length > 0) {
+    <div class="certificate-section">
+      <h3>{{'resume.card.common.certificates' | translate }}</h3>
+      @for (certificate of this.card().certificates; track $index) {
+        <img [src]="certificate" [alt]="this.card().id + 'Certificate'">
+      }
+    </div>
+  }
+</dialog>

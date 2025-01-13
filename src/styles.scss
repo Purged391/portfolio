@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeicons/primeicons.css";
+
+html, body {
+  scroll-behavior: smooth;
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+
+  /* Carril (track) del scrollbar: color verde para comprobar si se aplica el estilo */
+  &::-webkit-scrollbar-track {
+    background-color: #2E2E2E; /* Color verde para verificar si el track cambia */
+  }
+
+  /* Scrollbar (barra de desplazamiento) */
+  &::-webkit-scrollbar-thumb {
+    background-color: #2f4f4f; /* Gris pizarra */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid transparent; /* Espacio alrededor del scrollbar */
+    background-clip: padding-box; /* Permite el espacio alrededor del scrollbar */
+  }
+
+  /* Scrollbar al hacer clic y arrastrar (hover o active) */
+  &::-webkit-scrollbar-thumb:active,
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #4f6f6f; /* Un gris más claro cuando se interactúa */
+  }
+
+  /* Scrollbar en Firefox */
+  scrollbar-width: thin; /* Scrollbar más delgado en Firefox */
+  scrollbar-color: #2f4f4f #2E2E2E; /* Color verde para el track en Firefox */
+}
+body { margin: 0;}
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+:root{
+  --color-text-light-bind: #d3d0cb;
+  --color-secondary: #FF4D31;
+  --color-secondary-light: #EE6352;
+  --color-secondary-hover: #f28a75;
+  --color-chip-2: #75B9BE;
+  --color-chip-2-hover: #A4D3D3;
+  --color-chip-3: #317B22;
+  --color-chip-3-hover: #4CAF4D;
+  --color-chip-4: #5e2129;
+  --color-chip-4-hover: #8E3C45;
+}
+
+/* Tema oscuro */
+body.dark-theme {
+  --color-primary: #2E2E2E;
+  --color-primary-light: #393e41;
+  --color-primary-light-hover:#4e5458;
+  --color-text-light: #d3d0cb;
+}
+
+/* Tema claro */
+body.light-theme {
+  --color-primary: #f5f5f5;
+  --color-primary-light: #e0e0e0;
+  --color-primary-light-hover:  #d0d0d0;
+  --color-text-light: #2E2E2E;
+}
+
+
+
+::selection{
+  background: var(--color-secondary-hover);
+}
+
+::-moz-selection{
+  background: var(--color-secondary-hover);
+}

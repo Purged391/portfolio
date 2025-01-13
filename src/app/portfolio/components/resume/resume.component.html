@@ -1,0 +1,23 @@
+<div class="resume-component">
+  <div class="text">
+    <h1>
+      {{"resume.technologies" | translate}}
+      <br>
+      <small>
+        <span></span>
+        <div class="blink-bar"></div>
+      </small>
+    </h1>
+  </div>
+  <div class="cards-container">
+    @for (card of this.cards; track $index) {
+      @if ($index === 0) {
+        <img id="clickme" [src]="this.currentTheme() === 'dark-theme' ? '../../../../assets/svg/click-me.svg': '../../../../assets/svg/click-me-dark.svg'" alt="Click Me with and arrow">
+      }
+        <portfolio-card class="portfolioCard" [ngClass]="card.id" [id]="card.id" [alt]="card.alt" [delay]="$index" (click)="this.openModal(card)"/>
+      }
+  </div>
+  @if (this.showModal()) {
+    <portfolio-dialog [cardInput]="this.card()" (modalClosed)="closeModal()"/>
+  }
+</div>
