@@ -2,9 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "version" ]
-  pull_request:
-    branches: [ "version" ]
+    branches:
+      - version
 
 jobs:
 
@@ -38,6 +37,10 @@ jobs:
       run: |
         docker push mdg391/docker-portfolio:$NEW_VERSION
         docker push mdg391/docker-portfolio:latest
+    - name: Set Git identity
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
     - name: Create GitHub Tag
       if: success()
       env:
