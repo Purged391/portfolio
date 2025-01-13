@@ -23,7 +23,7 @@ export default class ProjectsComponent implements OnInit {
       id: 'Portfolio',
       description: 'project.card.portfolio.description',
       type: 'project.type.personal',
-      technologies: ['Angular', 'GitHub'],
+      technologies: ['Angular', 'GitHub', 'Docker'],
       iframe: environment.portfolioIframe,
       gitLink: environment.portfolioGitHub
     },

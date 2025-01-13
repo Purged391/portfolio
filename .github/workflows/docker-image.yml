@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "version", "support" ]
+    branches: [ "version" ]
   pull_request:
-    branches: [ "version",  "support" ]
+    branches: [ "version" ]
 
 jobs:
 
@@ -47,4 +47,4 @@ jobs:
         echo "Creating a new tag for version $NEW_VERSION"
         git tag -a "v$NEW_VERSION" -m "Release version $NEW_VERSION"
         git push origin "v$NEW_VERSION"
-      
+
